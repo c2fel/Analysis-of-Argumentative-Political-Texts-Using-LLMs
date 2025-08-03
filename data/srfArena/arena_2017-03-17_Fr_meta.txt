@@ -1,0 +1,16 @@
+Trenner;Person;Funktion;vorOrt;Rolle;Link
+@1;Moderation;Hauptmoderator der Sendung;Ja;Moderator;https://www.srf.ch/sendungen/arena/fremde-redner
+@2;Off-Stimme;Stimme zu Einspielern/Beiträgen etc.;-;-;-
+@3;Anderes;Nicht gesprochene Annotationen;-;-;-
+@4;Roland Rino Büchel;Nationalrat SVP;Ja;Diskutant;-
+@5;Andrea Caroni;Nationalrat FDP;Ja;Diskutant;-
+@6;Chantal Galladé;Nationalrat SP;Ja;Diskutant;-
+@7;Tiana Angelina Moser;Nationalrätin GLP;Ja;Diskutant;-
+@8;Recep Tayyip Erdogan;Präsident Türkei;Nein;Andere;-
+@9;Zafer Aksoy;Informatiker;Ja;Diskutant;-
+@10;Maurus Reinkowski;Professor für Islamwissenschaft Universität Basel;Ja;Experte;-
+@11;Hakan Parlak;Pensionskassenspezialist;Ja;Diskutant;-
+@12;Hans Hegetschweiler;Jurist;Ja;Zuschauer;-
+@13;Pierre Vogel;Islam-Prediger;Nein;Anderes;-
+@14;Kurt Pelda;Journalist;Ja;Experte;-
+@15;Hans-Jürg Käser;Präsident Polizei- und Justizdirektorenkonferenz;Ja;Andere;-

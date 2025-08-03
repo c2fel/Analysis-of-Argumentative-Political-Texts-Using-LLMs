@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"Masseneinwanderungsinitiative"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Bilaterale, Arbeitslose"
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"Geladen, emotional"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"gehässig, grösstenteils aber fair"
+"Konfliktstruktur";"Welche Lager bildeten sich?";"SVP vs. SP, FDP"

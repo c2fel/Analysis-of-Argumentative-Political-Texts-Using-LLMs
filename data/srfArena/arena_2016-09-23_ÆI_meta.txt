@@ -1,0 +1,14 @@
+"Trenner";"Person";"Funktion";"vorOrt";"Rolle";"Link"
+"@1";"Moderation";"Hauptmoderator der Sendung";"Ja";"Moderator";"https://www.srf.ch/sendungen/arena/inlaendervorrang-light-ist-das-der-volkswille"
+"@2";"Off-Stimme";"Stimme zu Einspielern/Beiträgen etc.";"-";"-";"-"
+"@3";"Anderes";"Nicht gesprochene Annotationen";"-";"-";"-"
+"@4";"Petra Gössi";"Präsidentin FDP";"Ja";"Diskutant";"-"
+"@5";"Cédric Wermuth";"Nationalrat SP/AG";"Ja";"Diskutant";"-"
+"@6";"Albert Rösti";"Präsident SVP";"Ja";"Diskutant";"-"
+"@7";"Pirmin Bischof";"Ständerat CVP/SO";"Ja";"Diskutant";"-"
+"@8";"Christa Tobler";"Professorin für Europarecht Universität Basel";"Ja";"Experte";"-"
+"@9";"Bernhard Ehrenzeller";"Professor für öffentliches Recht";"Ja";"Experte";"-"
+"@10";"Pascal Mangold";"IT-Unternehmer";"Ja";"Zuschauer";NA
+"@11";"Markus Welschtein";"Politologe";"Ja";"Zuschauer";NA
+"@12";"Ernst Michel";"Rentner";"Ja";"Zuschauer";NA
+"@13";"Werner Niederer";"ehemaliger Arzt";"Ja";"Zuschauer";NA

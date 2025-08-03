@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"Nein Ecopop-Initiative, Umsetzung MEI"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";""
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"moderat"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"respektvoll"
+"Konfliktstruktur";"Welche Lager bildeten sich?";"verschiedene Konfliktstrukturen, aber v.a. SVP vs andere"

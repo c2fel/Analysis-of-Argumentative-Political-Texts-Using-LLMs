@@ -1,0 +1,12 @@
+Trenner;Person;Funktion;vorOrt;Rolle;Link
+@1;Moderation;Hauptmoderator der Sendung;Ja;Moderator;https://www.srf.ch/sendungen/arena/unser-europarat
+@2;Off-Stimme;Stimme zu Einspielern/Beiträgen etc.;-;-;-
+@3;Anderes;Nicht gesprochene Annotationen;-;-;-
+@4;Roland Rino Büchel;Nationalrat SVP;Ja;Diskutant;-
+@5;Elisabeth Schneider-Schneiter;Nationalrätin CVP;Ja;Diskutant;-
+@6;Alfred Heer;Nationalrat SVP;Ja;Diskutant;-
+@7;Filippo Lombardi;Ständerat CVP;Ja;Diskutant;-
+@8;Liliane Maury Pasquier;Ständerätin SP;Ja;Diskutant;-
+@9;Angela Merkel;Bundeskanzlerin Deutschland;Nein;Bild;-
+@10;Emmanuel Macron;Präsident Frankreich;Nein;Bild;-
+@11;Alexander Gauland;Fraktionsvorsitzender AfD;Nein;Bild;-

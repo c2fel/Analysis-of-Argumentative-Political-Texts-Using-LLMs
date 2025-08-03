@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"Selbstbestimmungsinitiative"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Masseneinwanderungsinnitiative"
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"Sachlich"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"Respektvoll"
+"Konfliktstruktur";"Welche Lager bildeten sich?";"Alle gegen SVP"

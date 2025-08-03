@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"Vollgeld-Initiative"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"-"
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"Sachlich, aber teilweise ins lächerliche gezogen"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"Mehrheitlich respektvoll, aber mit Seitenhieben"
+"Konfliktstruktur";"Welche Lager bildeten sich?";"Initianten gegen alle Parteien"

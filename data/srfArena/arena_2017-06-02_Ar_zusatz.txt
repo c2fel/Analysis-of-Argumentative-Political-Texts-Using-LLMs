@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"Kampfjets"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Sicherheit, Bildung"
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"hitzig"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"korrekt, aber sie sind einander oft ins Wort gefallen"
+"Konfliktstruktur";"Welche Lager bildeten sich?";"SVP&Vollenweider vs SP&Grüne"

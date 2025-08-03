@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"Kapitalismus / Klassenkampf"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Unternehmenssteuerreform III"
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"Engagiert"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"Respektvoll"
+"Konfliktstruktur";"Welche Lager bildeten sich?";"FDP, Liberale - SP, Soziale"

@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"AHV 2020"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Migration (nur angeschnitten)"
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"Sachlich"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"Gesittet und respektvoll"
+"Konfliktstruktur";"Welche Lager bildeten sich?";"Ständerat vs. Nationalrat, SVP FDP vs. BDP SP"

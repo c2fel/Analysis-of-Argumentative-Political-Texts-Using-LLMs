@@ -1,0 +1,15 @@
+Trenner;Person;Funktion;vorOrt;Rolle;Link
+@1;Moderation;Hauptmoderator der Sendung;Ja;Moderator;https://www.srf.ch/sendungen/arena/der-eu-showdown-teil-2
+@2;Off-Stimme;Stimme zu Einspielern/Beiträgen etc.;-;-;-
+@3;Anderes;Nicht gesprochene Annotationen;-;-;-
+@4;Corrado Pardini;Nationalrat SP/BE;Ja;Diskutant;-
+@5;Christoph Blocher;ex-Bundesrat;Ja;Diskutant;-
+@6;Petra Gössi;Nationalrätin FDP/SZ;Ja;Diskutant;-
+@7;Tiana Angelina Moser;Nationalrätin GLP/ZH;Ja;Diskutant;-
+@8;Filippo Lombardi;Ständerat CVP;Ja;Diskutant;-
+@9;Laura Zimmermann;Co-Präsidentin Operation Libero;Ja;Diskutant;-
+@10;Jean-Philippe Kohl;Direktor Swissmem;Ja;Diskutant;-
+@11;Michael Hengartner;Rektor Universität Zürich;Ja;Diskutant;-
+@12;Ignazio Cassis;Bundesrat;Nein;Andere;-
+@13;Christa Tobler;Professorin für Europarecht Universität Basel;Ja;Experte;-
+@14;Johann Schneider-Ammann;Bundesrat;Nein;Andere;NA

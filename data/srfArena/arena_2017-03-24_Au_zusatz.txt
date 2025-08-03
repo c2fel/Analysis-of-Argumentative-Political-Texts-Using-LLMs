@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"EU-Beitritt Schweiz, Ja oder Nein?"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Bilaterale Verträge, Freizügigkeitsabkommen"
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"sehr hitzig"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"man lässt sich nicht ausreden"
+"Konfliktstruktur";"Welche Lager bildeten sich?";"SVP/CVP vs. SP/YES"

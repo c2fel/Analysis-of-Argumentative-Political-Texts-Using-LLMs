@@ -1,0 +1,14 @@
+Trenner;Person;Funktion;vorOrt;Rolle;Link
+@1;Moderation;Hauptmoderator der Sendung;Ja;Moderator;https://www.srf.ch/sendungen/arena/wegsperren-fuer-immer
+@2;Off-Stimme;Stimme zu Einspielern/Beiträgen etc.;-;-;-
+@3;Anderes;Nicht gesprochene Annotationen;-;-;-
+@4;Natalie Rickli;Nationalrat SVP/ZH;Ja;Diskutant;-
+@5;Andrea Caroni;Ständerat FDP/AR;Ja;Diskutant;-
+@6;Peter Schneider;Psychoanalytiker;Ja;Diskutant;-
+@7;Marc Graf;Forensischer Psychiater;Ja;Diskutant;-
+@8;Hans-Rudolf Ammann;Kaufmann;Ja;Zuschauer;-
+@9;Pascale Ruetsch;Pflegefachfrau;Ja;Zuschauer;-
+@10;Luca Gut;Sachbearbeiter;Ja;Zuschauer;-
+@11;Selina S.;Gewaltopfer;Ja;Zuschauer;-
+@12;Hugo Portmann;Strafgefangener;Nein;Andere;-
+@13;Thomas N.;Mörder;Nein;Andere;-

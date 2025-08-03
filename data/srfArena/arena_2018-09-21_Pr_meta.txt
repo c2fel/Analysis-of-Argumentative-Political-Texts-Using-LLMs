@@ -1,0 +1,13 @@
+Trenner;Person;Funktion;vorOrt;Rolle;Link
+@1;Moderation;Hauptmoderator der Sendung;Ja;Moderator;https://www.srf.ch/sendungen/arena/praesidenten-arena-politik-am-volk-vorbei
+@2;Off-Stimme;Stimme zu Einspielern/Beiträgen etc.;-;-;-
+@3;Anderes;Nicht gesprochene Annotationen;-;-;-
+@4;Albert Rösti;Präsident SVP;Ja;Diskutant;-
+@5;Beat Jans;Vize-Präsident SP;Ja;Diskutant;-
+@6;Gerhard Pfister;Präsident CVP;Ja;Diskutant;-
+@7;Regula Rytz;Präsidentin Grüne;Ja;Diskutant;-
+@8;Jürg Grossen;Präsident GLP;Ja;Diskutant;-
+@9;Martin Landolt;Präsident BDP;Ja;Diskutant;-
+@10;Beat Walti;Fraktionspräsident FDP ZH;Ja;Diskutant;-
+@11;Christian Levrat;Präsident SP;Nein;Andere;-
+@12;Jean-Claude Juncker;EU-Kommissionspräsident;Nein;Andere;-

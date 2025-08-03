@@ -1,0 +1,15 @@
+Trenner;Person;Funktion;vorOrt;Rolle;Link
+@1;Moderation;Hauptmoderator der Sendung;Ja;Moderator;https://www.srf.ch/sendungen/arena/krankes-gesundheitssystem
+@2;Off-Stimme;Stimme zu Einspielern/Beiträgen etc.;-;-;-
+@3;Anderes;Nicht gesprochene Annotationen;Ja;Diskutant;-
+@4;Thierry Carrel;Herzchirurg Inselspital Bern;Ja;Diskutant;-
+@5;Jean-François Steiert;Nationalrat SP/FR;Ja;Diskutant;-
+@6;Heinz Brand;Nationalrat SVP/GR;Ja;Diskutant;-
+@7;Christine Häsler;Nationalrätin Grüne/BE;Ja;Diskutant;-
+@8;Tilman Slembeck;Gesundheitsökonom;Ja;Experte;-
+@9;Monika Huber;Hausfrau;Ja;Zuschauer;NA
+@10;Mark Willi;Polymechaniker;Ja;Zuschauer;NA
+@11;Silvia Zweifel;Rentnerin;Ja;Zuschauer;NA
+@12;Mark Bürkli;Rentner;Ja;Zuschauer;NA
+@13;Thomas Fischer;Unternehmer;Ja;Zuschauer;NA
+@14;Jörg Will;Rentner;Ja;Zuschauer;NA

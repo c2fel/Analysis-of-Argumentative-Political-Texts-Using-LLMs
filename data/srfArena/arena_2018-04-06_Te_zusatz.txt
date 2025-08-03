@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"Lärmschutzverordnung - Tempo 30"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"allg. Verkehrspolitik"
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"hitzig, humorvoll"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"z.T. angriffig"
+"Konfliktstruktur";"Welche Lager bildeten sich?";"SVP&FDP vs GLP&Grüne"

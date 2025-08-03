@@ -1,0 +1,15 @@
+Trenner;Person;Funktion;vorOrt;Rolle;Link
+@1;Moderation;Hauptmoderator der Sendung;Ja;Moderator;https://www.srf.ch/sendungen/arena/profit-statt-moral
+@2;Off-Stimme;Stimme zu Einspielern/Beiträgen etc.;-;-;-
+@3;Anderes;Nicht gesprochene Annotationen;-;-;-
+@4;Jacqueline Badran;Nationalrätin SP;Ja;Diskutant;-
+@5;Thomas Matter;Nationalrat SVP;Ja;Diskutant;-
+@6;Ruedi Noser;Ständerat FDP;Ja;Diskutant;-
+@7;Jean Ziegler;Soziologe;Ja;Diskutant;-
+@8;Gabriel Rumo;Direktor SwissHoldings;Ja;Diskutant;-
+@9;Andreas Missbach;Mitarbeiter Public Eye;Ja;Diskutant;-
+@10;Sven Brügger;Lernender;Ja;Zuschauer;-
+@11;George Estermann;Logistiker;Ja;Zuschauer;-
+@12;Zuschauer 1;NA;Ja;Zuschauer;-
+@13;Zuschauer 2;NA;Ja;Zuschauer;-
+@14;Zuschauer 3;NA;Ja;Zuschauer;-

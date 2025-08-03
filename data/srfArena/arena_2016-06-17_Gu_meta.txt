@@ -1,0 +1,16 @@
+"Trenner";"Person";"Funktion";"vorOrt";"Rolle";"Link"
+"@1";"Moderation";"Hauptmoderator der Sendung";"Ja";"Moderator";"https://www.srf.ch/sendungen/arena/gut-genug-fuer-den-schweizer-pass"
+"@2";"Off-Stimme";"Stimme zu Einspielern/Beiträgen etc.";"-";"-";"-"
+"@3";"Anderes";"Nicht gesprochene Annotationen";"-";"-";"-"
+"@4";"Lukas Reimann";"Nationalrat SVP/SG";"Ja";"Diskutant";"-"
+"@5";"Cédric Wermuth";"Nationalrat SP/AG";"Ja";"Diskutant";"-"
+"@6";"Christian Wasserfallen";"Nationalrat FDP/BE";"Ja";"Diskutant";"-"
+"@7";"Ruth Humbel";"Nationalrätin CVP/AG";"Ja";"Diskutant";"-"
+"@8";"Endrit Sadiku";"Student";"Ja";"Zuschauer";"-"
+"@9";"Jolanda Vogel-Nussbaumer";"Rentnerin";"Ja";"Zuschauer";"-"
+"@10";"Claudio La Cioppa";"Geschäftsführer";"Ja";"Zuschauer";"-"
+"@11";"Mic Rasmussen";"Gymnasiallehrer";"Ja";"Zuschauer";"-"
+"@12";"Jolanda Magnin";"Reiseleiterin";"Ja";"Zuschauer";"-"
+"@13";"Walter Gschwendtner";"Unternehmer";"Ja";"Zuschauer";"-"
+"@14";"Ruedi Vogel";NA;"Ja";"Zuschauer";NA
+"@15";"Herr Ziegler";NA;"Ja";"Zuschauer";NA

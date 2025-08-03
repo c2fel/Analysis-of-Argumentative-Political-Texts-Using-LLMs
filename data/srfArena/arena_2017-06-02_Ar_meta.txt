@@ -1,0 +1,15 @@
+Trenner;Person;Funktion;vorOrt;Rolle;Link
+@1;Moderation;Hauptmoderator der Sendung;Ja;Moderator;https://www.srf.ch/sendungen/arena/armee-oben-ohne
+@2;Off-Stimme;Stimme zu Einspielern/Beiträgen etc.;-;-;-
+@3;Anderes;Nicht gesprochene Annotationen;-;-;-
+@4;Thomas Hurter;Nationalrat SVP;Ja;Diskutant;-
+@5;Balthasar Glättli;Nationalrat Grüne/ZH;Ja;Diskutant;-
+@6;Willi Vollenweider;Präsident Gruppe Giardino;Ja;Diskutant;-
+@7;Chantal Galladé;Nationalrätin SP;Ja;Diskutant;-
+@8;Markus Schindler;Naturwissenschaftler;Ja;Zuschauer;-
+@9;Marc Schneuwly;Architekt;Ja;Zuschauer;-
+@10;Remo Wettach;Projektleiter;Ja;Zuschauer;-
+@11;Simon Zumbrunn;Landwirt;Ja;Zuschauer;-
+@12;Milo Schefer;Gymnasiast;Ja;Zuschauer;-
+@13;Guy Parmelin;Bundesrat;Nein;Andere;-
+@14;Paul Wiesli;Rentner;Ja;Zuschauer;-

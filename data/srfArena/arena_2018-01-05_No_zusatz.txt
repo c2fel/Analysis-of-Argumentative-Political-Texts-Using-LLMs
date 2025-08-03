@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"No Billag"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"No Billag gefährlich oder eine Chance für alle private Fernsehsender?"
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"meist respektvoll"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"hitzig"
+"Konfliktstruktur";"Welche Lager bildeten sich?";"Andras Kleeb, Silvan Amberg vs. Martin Candidas, Laura Zimmermann"

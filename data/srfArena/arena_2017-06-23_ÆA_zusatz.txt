@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"Altervorsorge 2020"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";NA
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"sachlich"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"respektvoll"
+"Konfliktstruktur";"Welche Lager bildeten sich?";"JFS&JSVP vs CVP&SP"

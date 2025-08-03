@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"USR III"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Sparpotential Bundesausgaben"
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"gesittet"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"mehrheitlich höflich"
+"Konfliktstruktur";"Welche Lager bildeten sich?";"SP/EVP vs. Rest"

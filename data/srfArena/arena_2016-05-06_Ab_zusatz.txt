@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"Milchkuh"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"NAF"
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"intensiv"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";NA
+"Konfliktstruktur";"Welche Lager bildeten sich?";"SVP& Auto Schweiz vs CVP&SP"

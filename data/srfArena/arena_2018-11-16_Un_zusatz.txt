@@ -1,0 +1,7 @@
+Dimensionen;Beschrieb;Eintrag
+Hauptthema;Welches Thema stand im Vordergrund?;Europarat, EGMR
+Weitere Themen;Welche weiteren Themen kamen zur Sprache?;EU, Menschenrechte
+Art der Diskussion;Wie gestaltet sich die Diskussion?;Runder Tisch und keine Podiumsdebatte
+Umgang;Wie war der Umgang zw. den Diskutanten?;Respektvoll, aber immer wieder Seitenhiebe unter Kollegen
+Konfliktstruktur;Welche Lager bildeten sich?;SVP vs. CVP,SP
+Bemerkung;;*erste zweisprachige Arena

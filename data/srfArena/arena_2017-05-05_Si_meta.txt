@@ -1,0 +1,14 @@
+Trenner;Person;Funktion;vorOrt;Rolle;Link
+@1;Moderation;Hauptmoderator der Sendung;Ja;Moderator;https://www.srf.ch/sendungen/arena/sind-wir-zu-freizuegig
+@2;Off-Stimme;Stimme zu Einspielern/Beiträgen etc.;-;-;-
+@3;Anderes;Nicht gesprochene Annotationen;-;-;-
+@4;Luzi Stamm;Nationalrat SVP;Ja;Diskutant;-
+@5;Cédric Wermuth;Nationalrat SP;Ja;Diskutant;-
+@6;Markus Somm;Chefredaktor Basler Zeitung;Ja;Diskutant;-
+@7;Elisabeth Schneider-Schneiter;Nationalrätin CVP;Ja;Diskutant;-
+@8;Christa Tobler;Professorin für Europarecht Universität Basel;Ja;Experte;-
+@9;Marine Le Pen;Präsidentschaftskandidatin;Nein;Andere;-
+@10;Emmanuel Macron;Präsidentschaftskandidat;Nein;Andere;-
+@11;Paul Gnos;Rentner;Ja;Zuschauer;-
+@12;Martin Marggi;Rentner;Ja;Zuschauer;-
+@13;Beat Ringger;Vorstand Rasa;Ja;Zuschauer;-

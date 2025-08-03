@@ -1,0 +1,13 @@
+"Trenner";"Person";"Funktion";"vorOrt";"Rolle";"Link"
+"@1";"Moderation";"Hauptmoderator der Sendung";"Ja";"Moderator";"https://www.srf.ch/sendungen/arena/wie-viel-eu-braucht-die-schweiz"
+"@2";"Off-Stimme";"Stimme zu Einspielern/Beiträgen etc.";"-";"-";"-"
+"@3";"Anderes";"Nicht gesprochene Annotationen";"-";"-";"-"
+"@4";"Elisabeth Schneider-Schneiter";"Nationalrätin CVP/BL";"Ja";"Diskutant";"-"
+"@5";"Eric Nussbaumer";"Nationalrat SP/BL";"Ja";"Diskutant";"-"
+"@6";"Philipp Müller";"Nationalrat FDP/AG";"Ja";"Diskutant";"-"
+"@7";"Albert Rösti";"Nationalrat SVP/BE";"Ja";"Diskutant";"-"
+"@8";"Peter Grünenfelder";"Direktor Avenir Suisse";"Ja";"Diskutant";"-"
+"@9";"Werner Gartenmann";"Geschäftsführer AUNS";"Ja";"Diskutant";"-"
+"@10";"Lukas Wegmüller";"Generalsekretär Nebs";"Ja";"Diskutant";"-"
+"@11";"Willi Hegnauer";NA;"Ja";"Zuschauer";NA
+"@12";"Roland Guazzini";NA;"Ja";"Zuschauer";NA

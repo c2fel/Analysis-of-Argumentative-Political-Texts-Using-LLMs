@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"Unternehmenssteuerreform 3"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";NA
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"sachlich, abstrakt (sehr viele Zahlen)"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"z.T. angriffig"
+"Konfliktstruktur";"Welche Lager bildeten sich?";"SP vs FDP&SVP (CVP?)"

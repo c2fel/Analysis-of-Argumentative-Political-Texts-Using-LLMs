@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag";"X__1"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"WEF und Trump, Globalisierung und Freihandel";NA
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";NA;"Steuerreform"
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"gesellig";NA
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"meist respektvoll";NA
+"Konfliktstruktur";"Welche Lager bildeten sich?";"CVP, SVP, Ökonom vs. Juso";NA

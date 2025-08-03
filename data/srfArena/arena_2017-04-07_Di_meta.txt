@@ -1,0 +1,14 @@
+"Trenner";"Person";"Funktion";"vorOrt";"Rolle";"Link"
+"@1";"Moderation";"Hauptmoderator der Sendung";"Ja";"Moderator";"https://www.srf.ch/sendungen/arena/die-attacke"
+"@2";"Off-Stimme";"Stimme zu Einspielern/Beiträgen etc.";"-";"-";"-"
+"@3";"Anderes";"Nicht gesprochene Annotationen";"-";"-";"-"
+"@4";"Hans-Ueli Vogt";"Nationalrat SVP";"Ja";"Diskutant";"-"
+"@5";"Kurt Fluri";"Nationalrat FDP";"Ja";"Diskutant";"-"
+"@6";"Paul Widmer";"ex-Botschafter";"Ja";"Diskutant";"-"
+"@7";"Lukas Bärfuss";"Schriftsteller";"Ja";"Diskutant";"-"
+"@8";"Maya Hertig";"Professorin für Verfassungsrecht Universität Genf";"Ja";"Experte";"-"
+"@9";"Monika Rühl";"Direktor Economiesuisse";"Ja";"Experte";"-"
+"@10";"Edi Lang";"Unternehmer";"Ja";"Zuschauer";"-"
+"@11";"Luca Fabian";"Student";"Ja";"Zuschauer";"-"
+"@12";"Unbekannt 1";"Zuschauer";"Ja";"Zuschauer";NA
+"@13";"Unbekannt 2";"Zuschauer";"Ja";"Zuschauer";NA

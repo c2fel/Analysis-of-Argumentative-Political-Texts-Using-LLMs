@@ -1,0 +1,13 @@
+Trenner;Person;Funktion;vorOrt;Rolle;Link
+@1;Moderation;Hauptmoderator der Sendung;Ja;Moderator;https://www.srf.ch/sendungen/arena/ein-pakt-fuer-migranten
+@2;Off-Stimme;Stimme zu Einspielern/Beiträgen etc.;-;-;-
+@3;Anderes;Nicht gesprochene Annotationen;-;-;-
+@4;Lukas Bärfuss;Schriftsteller;Ja;Diskutant;-
+@5;Doris Fiala;Nationalrätin FDP/ZH;Ja;Diskutant;-
+@6;Cédric Wermuth;Nationalrat SP/AG;Ja;Diskutant;-
+@7;Andreas Glarner;Nationalrat SVP/AG;Ja;Diskutant;-
+@8;Fredy Gsteiger;UNO-Korrespondent;Ja;Experte;-
+@9;Daniel Feiner;IT-Service Manager;Ja;Zuschauer;-
+@10;Matthias Lanzendörfer;Informatiker;Ja;Zuschauer;-
+@11;Ruben Neugebauer;Seenotretter;Ja;Zuschauer;-
+@12;Patti Basler;Kabarettistin;Ja;Andere;-

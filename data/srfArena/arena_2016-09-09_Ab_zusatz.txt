@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"Referendum: Nachrichtendienstgesetz"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"-"
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"sachlich"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"respektvoll, korrekt"
+"Konfliktstruktur";"Welche Lager bildeten sich?";"SP&Grüne vs CVP&SVP(Bundesrat)"

@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"Erleichterte Einbürgerung"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Kampagnenstrategien SVP"
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"hitzig"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"man lässt sich mehrheitlich ausreden"
+"Konfliktstruktur";"Welche Lager bildeten sich?";"SVP vs. Rest"

@@ -1,0 +1,13 @@
+Trenner;Person;Funktion;vorOrt;Rolle;Link
+@1;Moderation;Hauptmoderator der Sendung;Ja;Moderator;https://www.srf.ch/sendungen/arena/jobs-weg-freiheit-weg-globalisieren-wir-die-schweiz-kaputt
+@2;Off-Stimme;Stimme zu Einspielern/Beiträgen etc.;-;-;-
+@3;Anderes;Nicht gesprochene Annotationen;-;-;-
+@4;Tamara Funiciello;Präsidentin Juso;Ja;Diskutant;-
+@5;Ruedi Noser;Ständerat FDP/ZH;Ja;Diskutant;-
+@6;Lukas Reimann;Nationalrat SVP/SG;Ja;Diskutant;-
+@7;Peter Grünenfelder;Direktor Avenir Suisse;Ja;Diskutant;-
+@8;Stefanie Walter;Politologin;Ja;Experte;-
+@9;Urs Thierstein;Unternehmer;Ja;Zuschauer;-
+@10;Christian Engeli;Kampagnenleiter Greenpeace Schweiz;Ja;Zuschauer;-
+@11;Bauer;NA;Nein;Andere;NA
+@12;Sam Hermann;Landwirt;Ja;Zuschauer;NA

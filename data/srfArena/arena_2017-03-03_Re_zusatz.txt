@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"Rentenreform"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"-"
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"mehrheitlich gesittet"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"höfluch, man lässt sich mehrheitlich ausreden"
+"Konfliktstruktur";"Welche Lager bildeten sich?";"Ständerat vs. Nationalrat"

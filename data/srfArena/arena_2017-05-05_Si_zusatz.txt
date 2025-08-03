@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"Personenfreizügigkeit"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Wahlen in Frankreich, AUNS, RASA, Unternehmenssteuerreform"
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"hitzig, sachlich"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"respektvoll"
+"Konfliktstruktur";"Welche Lager bildeten sich?";"SVP&Somm vs SP (&CVP)"

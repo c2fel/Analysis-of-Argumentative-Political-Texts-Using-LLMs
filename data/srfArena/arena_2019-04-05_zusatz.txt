@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"Abstimmung:Waffenrecht"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Schengen,Dublin"
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"hitzig"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";" zT angriffig"
+"Konfliktstruktur";"Welche Lager bildeten sich?";"SVP&Filippini vs SP&Bundesrat"

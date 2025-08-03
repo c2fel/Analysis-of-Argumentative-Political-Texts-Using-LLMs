@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag";"X__1"
+"Hauptthema";"Welches Thema stand im Vordergrund?";NA;"Lohngleichheit gesetzlich festschreiben?"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";NA;"Führungsetagen und Frauenquoten"
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";NA;"gesellig"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";NA;"respektvoll"
+"Konfliktstruktur";"Welche Lager bildeten sich?";NA;"SVP/FDP vs. SP/CVP"

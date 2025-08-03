@@ -1,0 +1,20 @@
+Trenner;Person;Funktion;vorOrt;Rolle;Link
+@1;Moderation;Hauptmoderator der Sendung;Ja;Moderator;https://www.srf.ch/sendungen/arena/live-sondersendung-zur-brexit-abstimmung
+@2;Off-Stimme;Stimme zu Einspielern/Beiträgen etc.;-;-;-
+@3;Anderes;Nicht gesprochene Annotationen;-;-;-
+@4;François Hollande;Präsident Frankreich;Nein;Andere;-
+@5;Micheline Calmy-Rey;ex-Bundesrätin;Ja;Diskutant;-
+@6;Johannes Hübner;FPÖ-Politiker;Ja;Diskutant;-
+@7;Georg Kreis;Historiker;Ja;Diskutant;-
+@8;Katja Gentinetta;Politik-Philosophin;Ja;Diskutant;-
+@9;Angela Merkel;Bundeskanzlerin Deutschland;Nein;Andere;-
+@10;Donald Tusk;EU-Ratspräsident;Nein;Andere;-
+@11;Sebastian Kurz;Aussenminister Österreich;Nein;Andere;-
+@12;Andrzej Duda;Präsident Polen;Nein;Andere;-
+@13;Winston Churchill;ex-Premierminister Grossbritannien;Nein;Andere;-
+@14;Edward Heath;ex-Premierminister Grossbritannien;Nein;Andere;-
+@15;Alexis Tsipras;Ministerpräsident Griechenland;Nein;Andere;-
+@16;Urs Gredig;Korrespondent SRF, London;Nein;Andere;-
+@17;Sebastian Ramspeck;Korrespondent SRF, Brüssel;Nein;Andere;-
+@18;Adrian Arnold;Korrespondent SRF, Berlin;Nein;Andere;-
+@19;Katharina Locher;SRF Mitarbeiterin im Studio;Ja;Andere;-

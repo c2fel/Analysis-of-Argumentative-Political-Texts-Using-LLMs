@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"Flüchtlingspolitik, Grenzöffnung/-schliessung"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Aufgaben des Militärs"
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"emotional, hitzig"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"man lässt sich nicht ausreden"
+"Konfliktstruktur";"Welche Lager bildeten sich?";"SVP vs. Kirche/Sp (FDP nimmt Mittelposition ein)"

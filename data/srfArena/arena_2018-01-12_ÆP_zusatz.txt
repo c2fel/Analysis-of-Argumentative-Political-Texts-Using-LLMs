@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag";"X__1"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"Rente und AHV";NA
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";NA;"Europa-Frage und Gesnundheitskosten"
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"gesittet";NA
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"respektvoll, man lässt sich ausreden";NA
+"Konfliktstruktur";"Welche Lager bildeten sich?";"Bundespräsident, FDP, SVP vs. Grüne";NA

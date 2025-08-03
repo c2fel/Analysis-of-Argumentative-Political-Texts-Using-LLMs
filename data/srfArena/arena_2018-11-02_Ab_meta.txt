@@ -1,0 +1,17 @@
+Trenner;Person;Funktion;vorOrt;Rolle;Link
+@1;Moderation;Hauptmoderator der Sendung;Ja;Moderator;https://www.srf.ch/sendungen/arena/abstimmungs-arena-hornkuh-initiative
+@2;Off-Stimme;Stimme zu Einspielern/Beiträgen etc.;-;-;-
+@3;Anderes;Nicht gesprochene Annotationen;-;-;-
+@4;Johann Schneider-Ammann;Bundesrat;Ja;Diskutant;-
+@5;Armin Capaul;Initiant Hornkuh-Initiative;Ja;Diskutant;-
+@6;Tamara Fretz;Tierpsychologin;Ja;Diskutant;-
+@7;Regula Imperatori;Bäuerin;-;-;-
+@8;Silva Semadeni;Nationalrätin SP/GR;Ja;Diskutant;-
+@9;Martin Ott;Schulleiter für biodynamische Landwirtschaft;Ja;Diskutant;-
+@10;Duri Campell;Nationalrat BDP/GR;Ja;Diskutant;-
+@11;Christine Bühler;Präsidentin Bäuerinnen- und Landfrauenverband;ja;Diskutant;-
+@12;Martin Schlup;Grossrat SVP/BE;Ja;Zuschauer;-
+@13;Urs Iselin;Präsident Gesellschaft Bündner Tierärzte;Ja;Diskutant;-
+@14;Claudia Spadavecchia;Professorin für Tiermedizin Universität Bern;Nein;-;-
+@15;Ueli Braun;Emerierter Professor Veterinärmedizin UZH;Nein;-;-
+@16;Zuschauer aus dem Hintergrund;NA;NA;NA;NA

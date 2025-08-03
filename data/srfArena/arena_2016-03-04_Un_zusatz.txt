@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"Bilaterale Verträge"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";NA
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"emotional, hitzig"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"mehrheitlich respektvoll"
+"Konfliktstruktur";"Welche Lager bildeten sich?";"SVP/FDP vs. SP/Operation Libero"

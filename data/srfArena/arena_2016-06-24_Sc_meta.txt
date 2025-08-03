@@ -1,0 +1,17 @@
+Trenner;Person;Funktion;vorOrt;Rolle;Link
+@1;Moderation;Hauptmoderator der Sendung;Ja;Moderator;https://www.srf.ch/sendungen/arena/schweiz-und-eu-nach-dem-brexit
+@2;Off-Stimme;Stimme zu Einspielern/Beiträgen etc.;-;-;-
+@3;Anderes;Nicht gesprochene Annotationen;-;-;-
+@4;Kathy Riklin;Nationalrätin CVP/ZH;Ja;Diskutant;-
+@5;Roger Köppel;Nationalrat SVP/ZH;Ja;Diskutant;-
+@6;Eric Nussbaumer;Nationalrat SP/BL;Ja;Diskutant;-
+@7;Petra Gössi;Nationalrätin FDP/SZ;Ja;Diskutant;-
+@8;Micheline Calmy-Rey;ex-Bundesrätin;Ja;Diskutant;-
+@9;Magdalena Martullo-Blocher;Nationalrätin SVP/GR;Nein;andere;-
+@10;Johannes Hübner;FPÖ-Politiker;Ja;Diskutant;-
+@11;Ernst Michel;Rentner;Ja;Zuschauer;-
+@12;Till Burckhardt;Student - Operation Libero;Ja;Zuschauer;-
+@13;Alexander Kuhn;Student;Ja;Zuschauer;-
+@14;Katharina Locher;SRF Mitarbeiterin im Studio;Ja;Andere;-
+@15;Zuschauer (namenlos);-;Ja;Zuschauer;-
+@16;Zuschauer (namenlos);-;Ja;Zuschauer;-

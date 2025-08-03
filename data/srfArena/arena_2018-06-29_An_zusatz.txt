@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"Verschiedene Themen"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Bilaterale, Rahmenabkommen, Lohnschutz, AHV, Gesundheitskosten, Flüchtlinge, Asy, Migration"
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"Hitzig, Teilweise auf den Mann/Frau gespielt"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"Respektvoll aber Seitehiebe"
+"Konfliktstruktur";"Welche Lager bildeten sich?";"Je nach Thema unterschiedliche Allianzen"

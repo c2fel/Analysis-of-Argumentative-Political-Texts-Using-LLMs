@@ -1,0 +1,14 @@
+"Trenner";"Person";"Funktion";"vorOrt";"Rolle";"Link"
+"@1";"Moderation";"Hauptmoderator der Sendung";"Ja";"Moderator";"https://www.srf.ch/sendungen/arena/was-stoppt-terroristen"
+"@2";"Off-Stimme";"Stimme zu Einspielern/Beiträgen etc.";"-";"-";"-"
+"@3";"Anderes";"Nicht gesprochene Annotationen";"-";"-";"-"
+"@4";"Gerhard Pfister";"Präsident CVP";"Ja";"Diskutant";"-"
+"@5";"Chantal Galladé";"Nationalrätin SP";"Ja";"Diskutant";"-"
+"@6";"Irène Kälin";"Nationalrätin Grüne/AG";"Ja";"Diskutant";"-"
+"@7";"Jean-Paul Rouiller";"Terrorismusexperte";"Ja";"Diskutant";"-"
+"@8";"Montassar BenMrad";"Präsident islamischer Dachorganisationen FIDS";"Ja";"Diskutant";"-"
+"@9";"Steven Christen";"Buchhalter und Fotograf";"Ja";"Zuschauer";"-"
+"@10";"Oskar Herzig-Jonasch";"Bürgergemeinderat BS/SVP";"Ja";"Zuschauer";"-"
+"@11";"Felix Jenmaire";"Rentner";"Ja";"Zuschauer";"-"
+"@12";"Zuschauer 1";NA;"Ja";"Zuschauer";NA
+"@13";"Zuschauer 2";NA;"Ja";"Zuschauer";NA

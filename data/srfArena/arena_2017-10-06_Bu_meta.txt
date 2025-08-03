@@ -1,0 +1,14 @@
+Trenner;Person;Funktion;vorOrt;Rolle;Link
+@1;Moderation;Hauptmoderator der Sendung;Ja;Moderator;https://www.srf.ch/sendungen/arena/burka-da-sehen-wir-schwarz
+@2;Off-Stimme;Stimme zu Einspielern/Beiträgen etc.;-;-;-
+@3;Anderes;Nicht gesprochene Annotationen;-;-;-
+@4;Elham Manea;Politikwissenschaftlerin;Ja;Diskutant;-
+@5;Yvonne Feri;Nationalrätin SP;Ja;Diskutant;-
+@6;Andrea Caroni;Ständerat FDP;Ja;Diskutant;-
+@7;Walter Wobmann;Nationalrat SVP;Ja;Diskutant;-
+@8;Raphaela Azennoud-Willimann;Kaufmännische Angestellte;Ja;Zuschauer;-
+@9;Irena Lampérth;Lehrerin;Ja;Zuschauer;-
+@10;Nora Illi;Islamischer Zentralrat Schweiz;Nein;Andere;-
+@11;Selami Tahiri;Filialleiter;Ja;Zuschauer;-
+@12;Sibylle Suter;Hotelfachfrau;Ja;Zuschauer;-
+@13;Andreas Züllig;Präsident Hotelleriesuisse;Ja;Zuschauer;-

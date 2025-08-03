@@ -1,0 +1,14 @@
+Trenner;Person;Funktion;vorOrt;Rolle;Link
+@1;Moderation;Hauptmoderator der Sendung;Ja;Moderator;https://www.srf.ch/sendungen/arena/aktenzeichen-eu-ungeloest
+@2;Off-Stimme;Stimme zu Einspielern/Beiträgen etc.;-;-;-
+@3;Anderes;Nicht gesprochene Annotationen;-;-;-
+@4;Philipp Müller;Ständerat FDP;Ja;Diskutant;-
+@5;Lukas Reimann;Nationalrat SVP;Ja;Diskutant;-
+@6;Thomas Geiser;Professor Universität St. Gallen;Ja;Diskutant;-
+@7;Nenad Stojanovic;Politologe;Ja;Diskutant;-
+@8;Tanja Schneider;Marketingfachfrau;Ja;Zuschauer;-
+@9;Walter Leutwiler;Rentner;Ja;Zuschauer;-
+@10;Willi Vollenweider;"Komitee ""Bürgerbewegung.ch""";Ja;Zuschauer;-
+@11;Pirmin Schenk;Student;Ja;Zuschauer;-
+@12;Stephan Brändlin;Maschineningenieur;Ja;Zuschauer;-
+@13;Adrian Amstutz;SVP Fraktionschef;Nein;Andere;NA

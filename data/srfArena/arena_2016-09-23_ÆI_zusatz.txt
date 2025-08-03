@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"Umsetzung der Zuwanderungs-Initiative"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"EU, Bilaterale"
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"hart, sachlich"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"respektvoll"
+"Konfliktstruktur";"Welche Lager bildeten sich?";"SVP vs. Rest, Ständerat vs. Nationalrat"

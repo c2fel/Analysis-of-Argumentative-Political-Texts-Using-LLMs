@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"Armee Luftwaffe"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Sicherheitspolitik, Vaterschaftsurlaub, Zuwanderung"
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"Sachlich."
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"Respektvol. Ganz kurzes Hickhack zwischen SVP und Grüne"
+"Konfliktstruktur";"Welche Lager bildeten sich?";"SVP, BDP gegen Grüne.  Mitte-rechts gegen links"

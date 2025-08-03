@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"Service Public Initiative"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Gewinn"
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"z.T. hitzig, humorvoll"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"respektvoll, z.T. nicht immer ausreden lassen"
+"Konfliktstruktur";"Welche Lager bildeten sich?";"Bundesrat,SP,BDP & Initiativ-Komitee & EDU"

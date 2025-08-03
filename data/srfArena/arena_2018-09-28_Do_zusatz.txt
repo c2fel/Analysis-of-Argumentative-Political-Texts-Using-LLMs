@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"Bundesratswahlen, Europapolitik"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Rahmenabkommen, Bilaterale"
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"Sachlich"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"Respektvoll"
+"Konfliktstruktur";"Welche Lager bildeten sich?";"SP vs. CVP vs. FDP vs. SVP"

@@ -1,0 +1,14 @@
+Trenner;Person;Funktion;vorOrt;Rolle;Link
+@1;Moderation;Hauptmoderator der Sendung;Ja;Moderator;https://www.srf.ch/sendungen/arena/dreckiges-gold
+@2;Off-Stimme;Stimme zu Einspielern/Beiträgen etc.;-;-;-
+@3;Anderes;Nicht gesprochene Annotationen;-;-;-
+@4;Karl Hofstetter;Präsident Swiss Holdings;Ja;Diskutant;-
+@5;Andreas Missbach;Konzernverantwortungs-Initiative;Ja;Diskutant;-
+@6;Elisabeth Schneider-Schneiter;Nationalrätin CVP/BL;Ja;Diskutant;-
+@7;Ruedi Noser;Ständerat FDP/ZH;Ja;Diskutant;-
+@8;Cédric Wermuth;Nationalrat SP/AG;Ja;Diskutant;-
+@9;Arthur Braunschweig;Verband für nachhaltiges Wirtschaften öbu;Ja;Diskutant;-
+@10;Patti Basler;Slam-Poetin;Ja;Andere;-
+@11;Stefan Bamberger;Erwachsenenbildner;Ja;Zuschauer;-
+@12;Grischa Ruprecht;Gymnasiast;Ja;Zuschauer;-
+@13;Raymond Gétaz;Europäisches BürgerInnenforum EBF;Ja;Diskutant;-

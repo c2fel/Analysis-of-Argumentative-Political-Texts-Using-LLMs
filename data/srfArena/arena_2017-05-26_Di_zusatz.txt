@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"Parteipräsidenten - Halbzeit in Bern"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Unternehenssteuerreform, Rentenreform, Personenfreizügigkeit, Energiewende"
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"hitzig"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"z.T. angriffig"
+"Konfliktstruktur";"Welche Lager bildeten sich?";"alle gegen alle?"

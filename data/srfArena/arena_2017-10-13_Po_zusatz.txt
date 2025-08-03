@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"Transparenz-Initiative"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";NA
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"hitzig"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"angriffig"
+"Konfliktstruktur";"Welche Lager bildeten sich?";"SVP&FDP vs SP&Hostettler"

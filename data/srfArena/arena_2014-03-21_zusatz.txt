@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"Ecopop-Initiative"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";""
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"hitzig"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"angriffig"
+"Konfliktstruktur";"Welche Lager bildeten sich?";"Thommen,Minder & Gasche vs andere"

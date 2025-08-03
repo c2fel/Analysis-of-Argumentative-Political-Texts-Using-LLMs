@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"Schweizer Neutralitätspolitik"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Sanktionen, Krim-Krise"
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"moderat"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"respektvoll"
+"Konfliktstruktur";"Welche Lager bildeten sich?";"SVP&CVP vs FDP/Grüne/SP"

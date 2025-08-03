@@ -1,0 +1,14 @@
+Trenner;Person;Funktion;vorOrt;Rolle;Link
+@1;Moderation;Hauptmoderator der Sendung;Ja;Moderator;https://www.srf.ch/sendungen/arena/volkes-macht
+@2;Off-Stimme;Durchsetzungsinitiative;-;-;-
+@3;Anderes;Nicht gesprochene Annotationen;-;-;-
+@4;Christoph Blocher;alt-Bundesrat;Ja;Diskutant;-
+@5;Andreas Auer;Professor für Staatsrecht;Ja;Diskutant;-
+@6;Philipp Müller;Nationalrat FDP/AG;Ja;Diskutant;-
+@7;Anita Fetz;Ständerätin SP/BS;Ja;Diskutant;-
+@8;Thomas Minder;Ständerat parteilos/SH;Ja;Experte;-
+@9;Josef Lang;ex-Nationalrat Grüne/ZG;Ja;Experte;-
+@10;Helen Keller;Richterin Europäischer Gerichtshof für Menschenrechte Strassburg;Nein;Experte;-
+@11;Unbekannt;Zuschauerin im Studio;Ja;Zuschauer;NA
+@12;Divers;Befragte aus der Schweizer Bevölkerung;Nein;Andere;NA
+@13;Unbekannt;Moderation Strasse;Nein;Andere;NA

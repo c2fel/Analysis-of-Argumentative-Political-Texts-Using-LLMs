@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"Fair-food-initiative"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";NA
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"sehr sachlich"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"sehr respektvoll"
+"Konfliktstruktur";"Welche Lager bildeten sich?";"Bundesrat, FDP vs. SP"

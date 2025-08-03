@@ -1,0 +1,15 @@
+Trenner;Person;Funktion;vorOrt;Rolle;Link
+@1;Moderation;Hauptmoderator der Sendung;Ja;Moderator;https://www.srf.ch/sendungen/arena/abstimmungsarena-no-billag-initiative
+@2;Off-Stimme;Stimme zu Einspielern/Beiträgen etc.;-;-;-
+@3;Anderes;Nicht gesprochene Annotationen;-;-;-
+@4;Olivier Kessler;"Co-Präsident ""No Billag""";Ja;Diskutant;-
+@5;Gregor Rutz;Nationalrat SVP/ZH;Ja;Diskutant;-
+@6;Doris Leuthard;Bundesrätin;Ja;Diskutant;-
+@7;Andreas Kleeb;"Co-Präsident ""No Billag""";Ja;Zuschauer;-
+@8;Jessica Brestel;Vize-Präsidentin Jungfreisinnige Stadt Zürich;Ja;Zuschauer;-
+@9;Joachim Eder;Ständerat FDP;Ja;Diskutant;-
+@10;Roger Nordmann;Nationalrat SP/VD;Ja;Zuschauer;-
+@11;André Moesch;Präsident Telesuisse;Ja;Zuschauer;-
+@12;Robert Gubler;Vorstand Gewerbeverband SGV;Ja;Experte;-
+@13;Ladina Heimgartner;Stv. Generaldirektorin SRG;Ja;Experte;-
+@14;Dominik Kaiser;TV - Unternehmer 3+;Nein;Andere;NA

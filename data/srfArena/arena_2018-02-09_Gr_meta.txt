@@ -1,0 +1,13 @@
+Trenner;Person;Funktion;vorOrt;Rolle;Link
+@1;Moderation;Hauptmoderator der Sendung;Ja;Moderator;https://www.srf.ch/sendungen/arena/grenze-auf-fuer-steuerfluechtlinge
+@2;Off-Stimme;Stimme zu Einspielern/Beiträgen etc.;-;-;-
+@3;Anderes;Nicht gesprochene Annotationen;-;-;-
+@4;Anita Fetz;Ständerätin SP;Ja;Diskutant;-
+@5;Regula Rytz;Präsidentin Grüne;Ja;Diskutant;-
+@6;Markus Somm;Chefredaktor Basler Zeitung;Ja;Diskutant;-
+@7;Beat Walti;Nationalrat FDP/ZH;Ja;Diskutant;-
+@8;Roman Abramowitsch;Unternehmer;Nein;Anderes;-
+@9;Thomas Knellwolf;Journalist Tagesanzeiger;Ja;Zuschauer;-
+@10;Michael Hofer;Surprise-Verkäufer;Ja;Zuschauer;-
+@11;Raymond Bisang;Anwalt;Ja;Zuschauer;-
+@12;Matthias Kuert Killer;Travail Suisse;Ja;Zuschauer;-

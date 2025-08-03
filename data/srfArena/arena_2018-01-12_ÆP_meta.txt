@@ -1,0 +1,13 @@
+Trenner;Person;Funktion;vorOrt;Rolle;Link
+@1;Moderation;Hauptmoderator der Sendung;Ja;Moderator;https://www.srf.ch/sendungen/arena/praesidialarena-mit-alain-berset
+@2;Off-Stimme;Stimme zu Einspielern/Beiträgen etc.;-;-;-
+@3;Anderes;Nicht gesprochene Annotationen;-;-;-
+@4;Alain Berset;Bundespräsident;Ja;Diskutant;-
+@5;Petra Gössi;Nationalrätin FDP, Parteipräsidentin;Ja;Diskutant;-
+@6;Regula Rytz;Nationalrätin Grüne Partei, Parteipräsidentin;Ja;Diskutant;-
+@7;Albert Rösti;Nationalrat SVP, Parteipräsident;Ja;Diskutant;-
+@8;Deborah Knöpfli;Schülerin;Ja;Zuschauer;-
+@9;Manfred Geiger;Rentner;Ja;Zuschauer;-
+@10;Peter Güller;Rentner;Ja;Zuschauer;-
+@11;Arnold Imfeld;Einkäufer;Ja;Zuschauer;-
+@12;Bruno Facci;Rentner;Ja;Zuschauer;-

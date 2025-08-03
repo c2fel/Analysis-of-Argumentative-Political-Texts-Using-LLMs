@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"Regulierung von ""Hate-Speech"" im Internet"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Mediensystem Schweiz"
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"hitzig"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"man lässt sich nicht ausreden"
+"Konfliktstruktur";"Welche Lager bildeten sich?";"PRO Regulierung (FDP/Netzcourage) vs. KONTRA (SVP)"

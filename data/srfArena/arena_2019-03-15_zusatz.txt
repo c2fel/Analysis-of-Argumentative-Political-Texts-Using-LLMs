@@ -1,0 +1,6 @@
+"Dimensionen;""Beschrieb"";""Eintrag"""
+"Hauptthema;""Welches Thema stand im Vordergrund?"";""Klimastreik"""
+"Weitere Themen;""Welche weiteren Themen kamen zur Sprache?"";""Erneuerbare Energien"""
+"Art der Diskussion;""Wie gestaltet sich die Diskussion?"";""hitzig"""
+"Umgang;""Wie war der Umgang zw. den Diskutanten?"";""z.T. angriffig"""
+"Konfliktstruktur;""Welche Lager bildeten sich?"";""Jugendliche vs Politiker (insbesondere gegen SVP, aber nicht gegen Rytz)"""

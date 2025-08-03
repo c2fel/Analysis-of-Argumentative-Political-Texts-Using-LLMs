@@ -1,0 +1,15 @@
+Trenner;Person;Funktion;vorOrt;Rolle;Link
+@1;Moderation;Hauptmoderator der Sendung;Ja;Moderator;https://www.srf.ch/sendungen/arena/blocher-gegen-alle
+@2;Off-Stimme;Stimme zu Einspielern/Beiträgen etc.;-;-;-
+@3;Anderes;Nicht gesprochene Annotationen;-;-;-
+@4;Tiana Angelina Moser;Nationalrätin GLP/ZH;Ja;Diskutant;-
+@5;Thomas Minder;Ständerat parteilos/SH;Ja;Diskutant;-
+@6;Eric Nussbaumer;Nationalrat SP;Ja;Diskutant;-
+@7;Christoph Blocher;ex-Bundesrat;Ja;Diskutant;-
+@8;Didier Burkhalter;Bundesrat;Nein;Andere;-
+@9;Rolf Sonderegger;CEO Kistler Group;Ja;Zuschauer;-
+@10;Michael Hengartner;Rektor Universität Zürich;Ja;Zuschauer;-
+@11;Ernst Moser;Rentner;Ja;Zuschauer;-
+@12;Margrit Meier;Rentnerin;Ja;Zuschauer;-
+@13;Barbara Weber;Rentnerin;Ja;Zuschauer;-
+@14;Ignazio Cassis;Bundesrat;Nein;Andere;-

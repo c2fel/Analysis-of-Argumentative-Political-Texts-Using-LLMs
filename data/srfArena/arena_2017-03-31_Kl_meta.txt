@@ -1,0 +1,13 @@
+Trenner;Person;Funktion;vorOrt;Rolle;Link
+@1;Moderation;Hauptmoderator der Sendung;Ja;Moderator;https://www.srf.ch/sendungen/arena/klick-like-hass
+@2;Off-Stimme;Stimme zu Einspielern/Beiträgen etc.;-;-;-
+@3;Anderes;Nicht gesprochene Annotationen;-;-;-
+@4;Irina Studhalter;Verein Netzcourage;Ja;Diskutant;-
+@5;Andreas Glarner;Nationalrat SVP;Ja;Diskutant;-
+@6;Christa Markwalder;Nationalrätin FDP;Ja;Diskutant;-
+@7;Regula Stämpfli;Politologin;Ja;Diskutant;-
+@8;Lea Stahel;Soziologin Universität Zürich;Ja;Experte;-
+@9;Martin Steiger;Anwalt;Ja;Experte;-
+@10;Rudolf Lienhart;Kleinunternehmer;Ja;Zuschauer;-
+@11;Patrik Müller;Anti-Agressivitäts-Trainer;Ja;Zuschauer;-
+@12;Anas Modamani;Flüchtling;Nein;Anderes;-

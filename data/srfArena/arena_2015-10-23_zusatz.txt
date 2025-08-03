@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"Schweiz-EU (Bilaterale)"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Umsetzung MEI"
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"hitzig, z.T. humorvoll"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"respektvoll"
+"Konfliktstruktur";"Welche Lager bildeten sich?";"Köppel& Minder vs Nussbaumer&Markwalder"

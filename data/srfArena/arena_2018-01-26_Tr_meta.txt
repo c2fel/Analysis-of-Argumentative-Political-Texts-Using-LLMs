@@ -1,0 +1,12 @@
+Trenner;Person;Funktion;vorOrt;Rolle;Link
+@1;Moderation;Hauptmoderator der Sendung;Ja;Moderator;https://www.srf.ch/sendungen/arena/trump-vs-wef
+@2;Off-Stimme;Stimme zu Einspielern/Beiträgen etc.;-;-;-
+@3;Anderes;Nicht gesprochene Annotationen;-;-;-
+@4;Elisabeth Schneider-Schneiter;Nationalrätin CVP;Ja;Diskutant;-
+@5;Claudio Zanetti;Nationalrat SVP;Ja;Diskutant;-
+@6;Tamara Funiciello;Präsidentin JUSO Schweiz;Ja;Diskutant;-
+@7;Klaus Wellershoff;Ökonom;Ja;Diskutant;-
+@8;Hans R. Stucki;Hotelier;Ja;Zuschauer;-
+@9;Rolf Luchsinger;Gastronom;Ja;Zuschauer;-
+@10;Hedwig Kaufmann;Rentnerin;Ja;Zuschauer;-
+@11;Donald Trump;US-Präsident;Nein;Anderes;-

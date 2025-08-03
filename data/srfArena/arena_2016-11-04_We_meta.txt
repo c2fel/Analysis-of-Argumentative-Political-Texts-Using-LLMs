@@ -1,0 +1,14 @@
+Trenner;Person;Funktion;vorOrt;Rolle;Link
+@1;Moderation;Hauptmoderator der Sendung;Ja;Moderator;https://www.srf.ch/sendungen/arena/wer-hat-das-sagen-im-land
+@2;Off-Stimme;Stimme zu Einspielern/Beiträgen etc.;-;-;-
+@3;Anderes;Nicht gesprochene Annotationen;-;-;-
+@4;Tiana Angelina Moser;Nationalrätin GLP/ZH;Ja;Diskutant;-
+@5;Christoph Blocher;ex-Bundesrat;Ja;Diskutant;-
+@6;Eric Nussbaumer;Nationalrat SP/BS;Ja;Diskutant;-
+@7;Alexander Gauland;stv. Vorsitzender Alternative für Deutschland (AfD);Ja;Diskutant;-
+@8;Peter Schneider;Psychoanalytiker;Ja;Diskutant;-
+@9;Adrian Amstutz;Nationalrat SVP/BE;Nein;Andere;-
+@10;Timon Kleeb;Gymnasiast;Ja;Zuschauer;NA
+@11;Michael Szolcsan;Betreuer;Ja;Zuschauer;NA
+@12;Andrea Huber;Aktion Schutzfaktor M;Ja;Zuschauer;NA
+@13;Imgard Kretschmer;Buchhalterin;Ja;Zuschauer;NA

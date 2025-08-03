@@ -1,0 +1,13 @@
+"Trenner";"Person";"Funktion";"vorOrt";"Rolle";"Link"
+"@1";"Moderation";"Hauptmoderator der Sendung";"Ja";"Moderator";"https://www.srf.ch/sendungen/arena/abstimmungs-arena-altersvorsorge-2020"
+"@2";"Off-Stimme";"Stimme zu Einspielern/Beiträgen etc.";"-";"-";"-"
+"@3";"Anderes";"Nicht gesprochene Annotationen";"-";"-";"-"
+"@4";"Alain Berset";"Bundesrat";"Ja";"Diskutant";"-"
+"@5";"Karin Keller-Sutter";"Ständerätin FDP";"Ja";"Diskutant";"-"
+"@6";"Ruth Humbel";"Nationalrat CVP";"Ja";"Diskutant";"-"
+"@7";"Roland Eberle";"Nationalrat SVP";"Ja";"Diskutant";"-"
+"@8";"Salome Vogt";"Avenir Jeunesse";"Ja";"Zuschauer";"-"
+"@9";"Alessandro Pelizzari";"Präsident Gewerkschaftsbund Genf";"Ja";"Zuschauer";"-"
+"@10";"Doris Bianchi";"Schweizerischer Gewerkschaftsbund";"Ja";"Zuschauer";"-"
+"@11";"Nico Planzer";"Präsident Junge BDP";"Ja";"Zuschauer";"-"
+"@12";"namenloser Zuschauer";NA;"Ja";"Zuschauer";NA

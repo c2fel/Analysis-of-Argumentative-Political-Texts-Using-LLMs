@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"Rentenreform"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";NA
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"sachlich, moderat"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"korrekt, respektvoll"
+"Konfliktstruktur";"Welche Lager bildeten sich?";"SVP&FDP vs SP&CVP"

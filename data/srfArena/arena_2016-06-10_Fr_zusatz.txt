@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"Frauen->warum bleiben so viele zu  Hause"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Lohndiskriminierung, Quoten"
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"hitzig"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"respektvoll"
+"Konfliktstruktur";"Welche Lager bildeten sich?";"Moser&Zapfl vs Weyermann&Gut"

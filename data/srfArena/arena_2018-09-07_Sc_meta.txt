@@ -1,0 +1,16 @@
+Trenner;Person;Funktion;vorOrt;Rolle;Link
+@1;Moderation;Hauptmoderator der Sendung;Ja;Moderator;https://www.srf.ch/sendungen/arena/schweizer-waffen-in-buergerkriegslaender
+@2;Off-Stimme;Stimme zu Einspielern/Beiträgen etc.;-;-;-
+@3;Anderes;Nicht gesprochene Annotationen;-;-;-
+@4;Patti Basler;Slam-Poetin;Ja;Andere;-
+@5;Tiana Angelina Moser;Nationalrätin GLP/ZH;Ja;Diskutant;-
+@6;Josef Dittli;Ständerat FDP/UR;Ja;Diskutant;-
+@7;Lewin Lempert;Sekretär GSoA;Ja;Diskutant;-
+@8;Claudio Zanetti;Nationalrat SVP/ZH;Ja;Diskutant;-
+@9;Rosmarie Quadranti;Nationalrätin BDP/ZH;Ja;Diskutant;-
+@10;Urs Loher;CEO Rheinmetall;Ja;Diskutant;-
+@11;Joel Probst;Praktikant;Ja;Zuschauer;-
+@12;Peter Maurer;Präsident IKRK;Ja;Zuschauer;-
+@13;Renato Agustoni;Kaufmann;Ja;Zuschauer;-
+@14;Ernst Moser;Rentner;Ja;Zuschauer;-
+@15;Publikum;NA;Ja;Andere;NA

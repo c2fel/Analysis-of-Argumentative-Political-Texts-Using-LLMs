@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"Unternehmenssteuern und AHV Paket"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Personenfreizügigkeit"
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"Sachlich"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"Respektvoll, kollegial"
+"Konfliktstruktur";"Welche Lager bildeten sich?";"Unterschiedliche Allianzen"

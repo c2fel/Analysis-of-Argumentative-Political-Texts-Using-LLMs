@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"Didier Burkhalter Präsidialarena"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Bilaterale, Souveränität"
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"moderat"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"respektvoll"
+"Konfliktstruktur";"Welche Lager bildeten sich?";"Diskussion sehr stark auf Didier Burkhalter zentriert"

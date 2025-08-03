@@ -1,0 +1,6 @@
+"Dimensionen;""Beschrieb"";""Eintrag"""
+"Hauptthema;""Welches Thema stand im Vordergrund?"";""Widerspruchslösung Organspende"""
+"Weitere Themen;""Welche weiteren Themen kamen zur Sprache?"";""Tod"""
+"Art der Diskussion;""Wie gestaltet sich die Diskussion?"";""persönliche Geschichten, aber grösstenteils sachlich"""
+"Umgang;""Wie war der Umgang zw. den Diskutanten?"";""korrekt"""
+"Konfliktstruktur;""Welche Lager bildeten sich?"";""Befürworter(Büsser,Gutzwiller,Immer) der Widerspruchslösung vs Gegner(Kirchschläger,Frei,Gilli,Engler)"""

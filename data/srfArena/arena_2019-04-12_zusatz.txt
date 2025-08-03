@@ -1,0 +1,6 @@
+"Dimensionen";"Beschrieb";"Eintrag"
+"Hauptthema";"Welches Thema stand im Vordergrund?";"STAF (Steuerreform und AHV-Finanzierung"
+"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";""
+"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"hitzig aber z.T. auch humorvoll"
+"Umgang";"Wie war der Umgang zw. den Diskutanten?";"korrekt"
+"Konfliktstruktur";"Welche Lager bildeten sich?";"verschiedene Konfliktstrukturen. Maurer, Badran, Paganini und Bigler dafür / Vögeli, Rytz, Amberg und Prelicz-Huber dagegen (aber nicht die gleichen Gründe)"
