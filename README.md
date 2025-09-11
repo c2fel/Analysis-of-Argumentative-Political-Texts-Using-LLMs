@@ -2,10 +2,18 @@
 
 ## Models
 1. Random Forest Model as Baseline
-2. Comparison of open and closed LLM models
+2. Closed source LLMs 
+   - grok-4
+   - grok-3-mini (not implemented yet)
+   - gpt-5-2025-08-07 (not implemented yet)
+   - gpt-5-mini-2025-08-07 (not implemented yet)
+   - gpt-5-nano-2025-08-07 (not implemented yet)
+3. Open source LLMs 
+   - Apertus-70B (not implemented yet)
+   - Apertus-8B (not implemented yet)
 
 ## UI
-Run `prototype/app.py` and open `http://127.0.0.1:5000` in browser. There are currently no LLM functions in this prototype.
+Run `prototype/app.py` and open `http://127.0.0.1:5000` in browser. Multilanguage and one LLM is implemented. For demonstration and performance purposes, all necessary metadata is stored in `prototype/static/votes.json`. If you want to run the app from scratch you need to create a `.env` file in `prototype/agents/` and add your own API keys.
 
 ## Acknowledgement
 The Federal Chancellery ([Bundeskanzlei](`https://www.bk.admin.ch/bk/en/home.html`)) kindly provided two endpoints to 
