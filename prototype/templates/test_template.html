@@ -69,8 +69,38 @@
         <p>Ut wisi enim ad minim veniam, <a tabindex="0" class="btn btn-sm btn-outline-secondary" role="button" data-bs-toggle="popover" data-bs-content="Dies ist die Annotation!">[Dies ist die Annotation!]</a> quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
         <p class="lead">Zwischentitel 4</p>
         <p>Nam liber tempor cum soluta nobis eleifend option <span class="annotation-inline" style="background: #ffeeba; color: #856404; border-radius: 3px; padding: 2px 4px;">[Dies ist die Annotation!]</span> congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+        <p class="lead">Zwischentitel 5</p>
+        <p>
+            <form id="markForm" method="POST" action="/submit_to_LLM">
+  <div id="textContent">
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua..
+  </div>
+  <input type="hidden" name="selected_text" id="selected_text">
+    <button type="button" onclick="sendMarkedText()">Simplify</button>
+        <button type="button" onclick="sendMarkedText()">Explain this</button>
+</form>
+        </p>
+
     </div>
 </main>
 {% include "footer.html" %}
+<script>
+function submitSelection() {
+  let selection = window.getSelection();
+  let selectedText = selection ? selection.toString() : '';
+  document.getElementById('selected_text').value = selectedText;
+  document.getElementById('markForm').submit();
+}
+
+function sendMarkedText() {
+  const selection = window.getSelection();
+  const selectedText = selection ? selection.toString() : "";
+  // ENCODE URI COMPONENT, damit Sonderzeichen korrekt übertragen werden!
+  const encoded = encodeURIComponent(selectedText);
+
+  // Beispiel: Seite neu laden mit GET-Parameter "text"
+  window.location.href = "/submit_to_LLM?text=" + encoded;
+}
+</script>
 </body>
 </html>

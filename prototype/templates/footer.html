@@ -1,8 +1,59 @@
 <footer class="footer mt-auto py-3 bg-body-tertiary">
     <div class="container d-flex justify-content-between align-items-center">
-        <img src="../static/unisg.jpeg" alt="Logo" style="height:100px;">
+        <img src="http://127.0.0.1:5000/static/unisg.jpeg" alt="Logo" style="height:100px;">
         <span class="text-body-secondary">Master Thesis, Christoph Zweifel</span>
     </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Get the current language from URL query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const currentLanguage = urlParams.get('language') || 'de'; // Default to 'de' if no parameter
+
+        // Find all dropdown items and add 'selected' class to the matching language
+        document.querySelectorAll('.dropdown-item').forEach(item => {
+            const lang = item.getAttribute('href').split('=')[1];
+            if (lang === currentLanguage) {
+                item.classList.add('selected');
+            }
+        });
+    </script>
+<script>
+        // Funktion zur Formatierung des Datums
+        function formatAbstimmungstag(dateString) {
+            try {
+                const date = new Date(dateString);
+                if (isNaN(date)) {
+                    return "Ungültiges Datum";
+                }
+                const day = date.getDate(); // Tag ohne führende Null
+                const month = date.toLocaleDateString("de-DE", { month: "long" }); // Monat als Wort
+                const year = date.getFullYear();
+
+
+                //return `${day}. ${month} ${year}`;
+                return date.toLocaleDateString("de-DE", {
+                    day: "2-digit",
+                    month: "long",
+                    year: "numeric"
+                });
+
+
+
+            } catch (error) {
+                return "Fehler beim Formatieren des Datums";
+            }
+        }
+
+        // Beim Laden der Seite alle <span id="formatted-date"> verarbeiten
+        document.addEventListener("DOMContentLoaded", () => {
+            const dateElements = document.querySelectorAll("span#formatted-date.formatted-date");
+            dateElements.forEach(element => {
+                const dateString = element.textContent; // Lies das Datum (z. B. {{ abstimmungstag }})
+                const formattedDate = formatAbstimmungstag(dateString);
+                element.textContent = formattedDate; // Ersetze durch formatiertes Datum
+            });
+        });
+    </script>
