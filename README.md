@@ -4,13 +4,13 @@
 1. Random Forest Model as Baseline
 2. Closed source LLMs 
    - grok-4
-   - grok-3-mini (partially)
-   - gpt-5-2025-08-07 (partially)
-   - gpt-5-mini-2025-08-07 (partially)
-   - gpt-5-nano-2025-08-07 (partially)
+   - grok-3-mini (partially in the Prototype Application)
+   - gpt-5-2025-08-07 (partially in the Prototype Application)
+   - gpt-5-mini-2025-08-07 (partially in the Prototype Application)
+   - gpt-5-nano-2025-08-07 (partially in the Prototype Application)
 3. Open source LLMs 
-   - Apertus-70B (not implemented yet)
-   - Apertus-8B (not implemented yet)
+   - Apertus-70B (only in Jupyter Notebook)
+   - Apertus-8B (only in Jupyter Notebook)
 
 ## UI
 Run `prototype/app.py` and open `http://127.0.0.1:5000` in browser. Multilanguage and one LLM is implemented. For demonstration and performance purposes, all necessary metadata is stored in `prototype/static/votes.json`. If you want to run the app from scratch you need to create a `.env` file in `prototype/agents/` and add your own API keys.
