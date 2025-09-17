@@ -4,10 +4,10 @@
 1. Random Forest Model as Baseline
 2. Closed source LLMs 
    - grok-4
-   - grok-3-mini (not implemented yet)
-   - gpt-5-2025-08-07 (not implemented yet)
-   - gpt-5-mini-2025-08-07 (not implemented yet)
-   - gpt-5-nano-2025-08-07 (not implemented yet)
+   - grok-3-mini (partially)
+   - gpt-5-2025-08-07 (partially)
+   - gpt-5-mini-2025-08-07 (partially)
+   - gpt-5-nano-2025-08-07 (partially)
 3. Open source LLMs 
    - Apertus-70B (not implemented yet)
    - Apertus-8B (not implemented yet)
