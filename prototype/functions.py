@@ -11,7 +11,7 @@ from xai_sdk import Client
 from transformers.models.xlm.tokenization_xlm import lowercase_and_remove_accent
 import logging
 
-from prototype.agents.xai import classify_topic_by_title, score_complexity_by_markdown
+from prototype.agents.llm_functions import classify_topic_by_title, score_complexity_by_markdown
 
 # Konfiguriere Logging
 logging.basicConfig(
@@ -21,7 +21,7 @@ logging.basicConfig(
 )
 
 
-def initialize_data():
+def initialize_data(TESTMODE=None):
     # During development: Purge any content from votes.json at the start
     file_path = "static/votes.json"
     #try:
@@ -33,6 +33,8 @@ def initialize_data():
 
     # Greife auf des existierende JSON file zurück
     # Prüfe, ob die Datei existiert
+
+    # TODO diese file macht im Moment gar nichts
     if os.path.exists(file_path) and os.path.isfile(file_path):
         try:
             # Öffne und lade die Datei
@@ -51,6 +53,25 @@ def initialize_data():
 
     # Fetch all voting dates and the respective votes
     voting_data = parse_votes()
+
+    # FIXME: Only for small test:
+    # Annahme: Struktur wie data["regionen"][0]["abstimmtage"]
+    if TESTMODE:
+        regionen = voting_data.get("regionen", [])
+        if regionen and "abstimmtage" in regionen[0]:
+            abstimmtage = regionen[0]["abstimmtage"]
+            gekuerzt = abstimmtage[:2]  # nur die ersten zwei
+        else:
+            gekuerzt = []
+
+        # neues Dict mit derselben Struktur, aber gekürzt
+        voting_data = {
+            "regionen": [
+                {
+                    "abstimmtage": gekuerzt
+                }
+            ]
+        }
 
     # Funktion zum Verarbeiten einer einzelnen Abstimmung
     def process_vote(vote_id, vote, vote_date, vote_index):
@@ -84,6 +105,7 @@ def initialize_data():
 
                 # Classify vote type
                 vote['voteType'] = classify_vote_by_vorlagenArtId(vote['vorlagenArtId'])
+                # TODO assess this output and try _by_title_with_llm with some retries.
 
                 # LLM-based classification
                 vote['voteTopic'] = classify_topic_by_title(client, vote['voteTitle']['de'])
@@ -98,7 +120,7 @@ def initialize_data():
                         vote['voteComplexity'] = score_complexity_by_markdown(client, vote['markdown_files']['de'], f"The last output from the same prompt was not as expected. Your last output: {vote['voteComplexity']}. Expected output should be one of these labels: {print(repr(range_complexity_score))}. Thus, eveluate again:")
 
                 else:
-                    vote['voteComplexity'] = "n/a"
+                    vote['voteComplexity'] = 0
 
                 print(f"LLM labeling completed for voteId {vote['voteId']}")
 

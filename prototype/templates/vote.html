@@ -142,6 +142,71 @@
           <li>{{ balken.label }}: {{ balken.value }}</li>
         {% endfor %}
       </ul>
+        <!-- half cirlce charts -->
+        <figure class="highcharts-figure">
+            <div id="{{ k.vote.titel | replace(' im ', ' ') | lower | replace(' ', '-') }}"></div>
+                <p class="highcharts-description">
+                    Illustration zur {{ k.vote.titel }}
+                </p>
+        </figure>
+        {% set words = k.vote.titel.split() %}
+        {% set filtered_words = words | reject('lower', 'im') %}
+<script>
+// Data retrieved from https://netmarketshare.com/
+Highcharts.chart('{{ k.vote.titel | replace(" im ", " ") | lower | replace(" ", "-") }}', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: 0,
+        plotShadow: false
+    },
+    title: {
+        text: '{{ k.vote.titel | replace(" im ", "<br />") | safe }}',
+        align: 'center',
+        verticalAlign: 'middle',
+        y: 60,
+        style: {
+            fontSize: '1.1em'
+        }
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    accessibility: {
+        point: {
+            valueSuffix: ' Stimmen'
+        }
+    },
+    plotOptions: {
+        pie: {
+            dataLabels: {
+                enabled: true,
+                distance: -50,
+                style: {
+                    fontWeight: 'bold',
+                    color: 'white'
+                }
+            },
+            startAngle: -90,
+            endAngle: 90,
+            center: ['50%', '75%'],
+            size: '110%'
+        }
+    },
+    series: [{
+        type: 'pie',
+        name: 'Anteil',
+        innerSize: '50%',
+        data: [
+            {% for label in ['Nein', 'Enthaltungen', 'Ja'] %}
+        {% for balken in k.vote.balken if balken.label == label %}
+            ['{{ balken.label }}', {{ balken.value }}]{% if not (label == 'Ja') %},{% endif %}
+        {% endfor %}
+    {% endfor %}
+        ]
+    }]
+});
+
+</script>
     </div>
   {% endif %}
 

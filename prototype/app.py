@@ -119,6 +119,6 @@ if __name__ == '__main__':
         api_key=os.getenv("XAI_API_KEY"),
         timeout=3600,  # change for longer timeout when submitting large prompts
     )
-    initialize_data()
+    initialize_data(TESTMODE=True)
     print((time.time() - s) / 60, "minutes")
     app.run(debug=True) # for later: debug=False or at least: use_reloader=False (better performance at start up)
