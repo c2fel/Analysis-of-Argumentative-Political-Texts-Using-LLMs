@@ -12,7 +12,7 @@
    - Apertus-70B (only in Jupyter Notebook)
    - Apertus-8B (only in Jupyter Notebook)
 
-## UI
+## Prototype Application with GUI
 Run `prototype/app.py` and open `http://127.0.0.1:5000` in browser. Multilanguage and one LLM is implemented. For demonstration and performance purposes, all necessary metadata is stored in `prototype/static/votes.json`. If you want to run the app from scratch you need to create a `.env` file in `prototype/agents/` and add your own API keys.
 
 ## Acknowledgement
