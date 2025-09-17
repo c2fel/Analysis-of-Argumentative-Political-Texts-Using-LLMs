@@ -10,6 +10,7 @@ from dotenv import load_dotenv
 from xai_sdk import Client
 from transformers.models.xlm.tokenization_xlm import lowercase_and_remove_accent
 import logging
+import tiktoken
 
 from prototype.agents.llm_functions import classify_topic_by_title, score_complexity_by_markdown
 
@@ -172,7 +173,7 @@ def initialize_data(TESTMODE=None):
 
 # Rest der Datei bleibt unverändert
 def parse_votes():
-    url = "https://app-prod-ws.voteinfo-app.ch/v1/archive/vorlagen?searchTerm=&geoLevelNummer=0&geoLevelLevel=0"
+    # url = "https://app-prod-ws.voteinfo-app.ch/v1/archive/vorlagen?searchTerm=&geoLevelNummer=0&geoLevelLevel=0"
     try:
         resp = requests.get(url, timeout=10, headers={"User-Agent": "Mozilla/5.0"})
     except Exception as e:
@@ -468,3 +469,32 @@ def classify_vote(voteId):
         return "Referendum"
     else:
         return "Other"
+
+def build_vote_url(vote_id: int, file_name: str = "erlaeuterung.json", dotenv_path="agents/.env") -> str:
+    # TODO this code needs to be implemented in functions.py
+    load_dotenv(dotenv_path=dotenv_path)
+    template = os.getenv("BK_API_ERLAEUTERUNGEN")
+    url = template.format(vote_id=vote_id, file_name=file_name)
+    return url
+
+def build_votes_url(dotenv_path="agents/.env") -> str:
+    # TODO this code needs to be implemented in functions.py
+    load_dotenv(dotenv_path=dotenv_path)
+    template = os.getenv("BK_API_VORLAGE")
+    return template
+
+def evaluate_context_window(prompt: str, encoding_type: str = "cl100k_base", limit: int = 131072):
+    # Encoder für Grok-Modelle (cl100k_base)
+    encoding = tiktoken.get_encoding(encoding_type)
+
+    # Tokens zählen
+    tokens = len(encoding.encode(prompt))
+    print(f"Anzahl Tokens im Prompt: {tokens}")
+
+    # Check gegen Limit
+    if tokens > limit:
+        return "⚠️ Überschreitet das Limit! Kürze den Prompt."
+    elif tokens > limit * 0.8:  # 80% Puffer für Response
+        return "️⚠️ Nah am Limit – prüfe mit Response-Schätzung."
+    else:
+        return "✅ Sicher unter dem Limit."
