@@ -7,7 +7,7 @@
    - grok-3-mini (partially in the Prototype Application)
    - gpt-5-2025-08-07 (partially in the Prototype Application)
    - gpt-5-mini-2025-08-07 (partially in the Prototype Application)
-   - gpt-5-nano-2025-08-07 (partially in the Prototype Application)
+   - gpt-5-nano-2025-08-07 (skipping because of TPM limit)
 3. Open source LLMs 
    - Apertus-70B (only in Jupyter Notebook)
    - Apertus-8B (only in Jupyter Notebook)
