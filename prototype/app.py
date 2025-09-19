@@ -1,12 +1,8 @@
 import sys
 import time
-from dotenv import load_dotenv
 from flask import Flask, jsonify, render_template, request
-import requests
-import os
+
 from functions import load_votes, load_vote, count_votes, classify_vote, parse_votes, initialize_data
-import json
-from xai_sdk import Client
 
 app = Flask(__name__)
 
@@ -83,17 +79,10 @@ def vorlage_html():
 
 if __name__ == '__main__':
     s = time.time()
-    # Das macht eh nichts, weil .env im wdir nicht existiert und kein alternativer Pfad angegeben ist
-    # load_dotenv()
-    # den client braucht es hier nicht
-    #client = Client(
-    #    api_key=os.getenv("XAI_API_KEY"),
-    #    timeout=3600,  # change for longer timeout when submitting large prompts
-    #)
     success, return_string = initialize_data(TESTMODE=True)
     if not success:
         print(f"Failed to initialize data: {return_string}")
         sys.exit(0)
 
-    print((time.time() - s) / 60, "minutes")
+    print("Time of Initialization: ", (time.time() - s) / 60, "minutes")
     app.run(debug=True, use_reloader=False) # for later: debug=False or at least: use_reloader=False (better performance at start up)

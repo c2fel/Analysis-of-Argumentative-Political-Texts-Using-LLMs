@@ -36,7 +36,7 @@
                             <tr>
                                 <!--<td>{{ vote.voteId }}</td>-->
                                 <td><a href="/votes/{{ vote.voteId }}">{{ vote.voteTitle[language] }}</a></td>
-                                <td><button type="button" class="btn btn-secondary btn-sm">{{ vote.voteType }}</button> <button type="button" class="btn btn-info btn-sm">{{ vote.voteTopic }}</button> <button type="button" class="btn btn-warning btn-sm">{{ vote.voteComplexity }}</button></td>
+                                <td><button type="button" class="btn btn-secondary btn-sm">{{ vote.voteType }}</button> <button type="button" class="btn btn-info btn-sm">{{ vote.voteTopic }}</button> <button type="button" class="btn btn-warning btn-sm">{{ vote.voteComplexity }}</button> <button type="button" class="btn btn-warning btn-sm">{{ vote.status }}</button></td>
                             </tr>
                         {% endfor %}
                         </tbody>

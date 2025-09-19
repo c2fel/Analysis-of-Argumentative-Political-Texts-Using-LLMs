@@ -18,6 +18,8 @@ from xai_sdk import Client
 from xai_sdk.search import SearchParameters, web_source
 from xai_sdk.chat import system, user
 
+from prototype.agents.clients import get_openai_client, get_xai_client
+
 load_dotenv()
 
 # TODO: This is depreciated, model configs are saved in .env
@@ -35,6 +37,11 @@ MAX_RETRIES = 3 # TODO: This is not implemented yet
 
 def classify_topic_by_title(client, title="Bundesbeschluss über den Ausbauschritt 2023 für die Nationalstrassen"):
     # TODO reference this in the Thesis https://www.arxiv.org/pdf/2508.03181
+
+    # TODO maybe also assess which department is considered for this vote
+    # topics = ["Foreign Affairs", "Home Affairs", "Justice and Police", "Defence, Civil Protection and Sport", "Finance",
+    #               "Economic Affairs, Education and Research", "Environment, Transport, Energy and Communications"]
+
     prompt = f"""Given the classes Environment, Social Affairs and Education, Economy and Finance, Foreign and Security Policy, Infrastructure and Transportation, Health and Other, classify the following popular vote in Switzerland by its title: {title}. Only output the class label, no reasoning at all."""
 
     try:
@@ -67,6 +74,8 @@ def classify_topic_by_title(client, title="Bundesbeschluss über den Ausbauschri
 
 
 def score_complexity_by_markdown(client, path_to_markdown="../markdown_output/erlaeuterungen_6770_de.md", retry=""):
+    # TODO: Aktuell werden alle resultate als "normal" zurückgegeben,
+    # TODO: prüfe mittels few shot prompt, ob sich das verändern lasst
     model = 'grok-4-0709' # change this later when multiple models are implemented
     try:
         with open(path_to_markdown, "r", encoding="utf-8") as f:
@@ -173,11 +182,11 @@ def search_news_articles(vote_title: str, vote_date: str, vote_id: int) -> dict[
         "to freely form an opinion on their own by adding context to their questions and tasks."
     )
     system_message = (
-        f"Suche Zeitungsartikel, die die Abstimmung zur {vote_title} diskutieren, "
+        f"Suche 3-5 Zeitungsartikel, die die Abstimmung zur {vote_title} diskutieren, "
         f"welche vor dem {vote_date} publiziert wurden. "
         "Achte darauf, dass du Schweizer Zeitungen mit verschiedenen politischen Ausrichtungen "
-        "berücksichtigst, wie beispielsweise die WOZ (links/ökologisch), Tagesanzeiger (zentristisch-links), "
-        "NZZ (konservativ), und Weltwoche (rechts)."
+        "berücksichtigst, wie beispielsweise die WOZ, Tagesanzeiger, "
+        "NZZ, und Weltwoche."
     )
 
     # Umgebungsvariablen laden
@@ -185,14 +194,14 @@ def search_news_articles(vote_title: str, vote_date: str, vote_id: int) -> dict[
     model_config = json.loads(os.environ['MODEL_CONFIG'])
 
     # OpenAI Client initialisieren
-    openai_client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+    openai_client = get_openai_client()
     messages = [
         {"role": "system", "content": system_message},
         {"role": "user", "content": user_message},
     ]
 
     # Natives xAI Client initialisieren
-    xai_client = Client(api_key=os.getenv("XAI_API_KEY"))
+    xai_client = get_xai_client()
 
     # Parse vote_date to datetime
     vote_date_dt = datetime.strptime(vote_date, "%Y-%m-%d")
@@ -376,6 +385,102 @@ def classify_arguments_by_markdown(markdown_path):
     return response.content
 
 def write_summary_by_markdown(markdown_path):
-    return "Lorem ipsum"
+    # Lade Markdown file
+    # markdown_path = "../markdown_output/erlaeuterungen_6770_de.md"  # Ersetze durch deinen Pfad
+    with open(markdown_path, "r", encoding="utf-8") as f:
+        markdown_text = f.read()
+
+    # Prompt
+    user_message = (
+        "You are a highly intelligent AI assistant helping Swiss citizens "
+        "to freely form an opinion on their own by adding context to their questions and tasks."
+    )
+    system_message = (
+        f"Write a summary"
+    )
+
+    # Umgebungsvariablen laden
+    load_dotenv()
+    model_config = json.loads(os.environ['MODEL_CONFIG'])
+
+    # OpenAI Client initialisieren
+    openai_client = get_openai_client()
+    messages = [
+        {"role": "system", "content": system_message},
+        {"role": "user", "content": user_message},
+    ]
+
+    # Natives xAI Client initialisieren
+    xai_client = get_xai_client()
+
+    # Parse vote_date to datetime
+    vote_date_dt = datetime.strptime(vote_date, "%Y-%m-%d")
+
+    # Search parameters für Live Search
+    search_params = SearchParameters(
+        mode="on",  # Force live search
+        return_citations=True,  # Für URLs und Quellen
+        # from_date=datetime(2022, 1, 1), # TODO is this necessary? 6-12 months prior
+        to_date=vote_date_dt,  # Articles before vote_date
+        max_search_results=20,
+        sources=[web_source(country="CH")]
+    )
+
+    result = {}
+
+    for provider in model_config:
+        for model in provider["models"]:
+            if provider["provider"] == 'OpenAI':
+                #  GPT Request mit Web Search
+                try:
+                    if model == "gpt-5-nano":  # tpm limit of 200 000, one markdown request has ca 80% of that
+                        # warte einige Sekunden um bei gpt-5 nano eine rate limit zu erreichen
+                        # important to wait before the first execution as we use multi threading
+                        time.sleep(60)
+
+                    openai_response = openai_client.responses.parse(
+                        model=model,
+                        tools=[{"type": "web_search"}],  # Web Search aktivieren
+                        input=messages,
+                        text_format=News,  # Pydantic Schema
+                    )
+
+                    news_obj_openai: News = openai_response.output_parsed
+                    news_obj_openai.title = vote_title
+                    news_obj_openai.vote_id = vote_id
+
+                    result[model] = news_obj_openai.model_dump()
+
+                except Exception as e:
+                    print(f"Fehler beim OpenAI API-Aufruf {sys._getframe().f_code.co_name}: {e}")
+                    # news_obj_openai = News(title=vote_title, vote_id=vote_id, article_list=[])
+            elif provider["provider"] == 'xAI':
+                try:
+                    # xAI Request mit SearchParameters und response_model für Parsing
+                    xai_chat = xai_client.chat.create(
+                        model=model,
+                        messages=[system(system_message)],
+                        search_parameters=search_params
+                    )
+                    xai_chat.append(user(user_message))
+
+                    # The parse method returns pydantic object
+                    xai_response, xai_news = xai_chat.parse(News)
+                    assert isinstance(xai_news, News)
+
+                    # Add variables
+                    xai_news.title = vote_title
+                    xai_news.vote_id = vote_id
+
+                    result[model] = xai_news.model_dump()
+
+                except Exception as e:
+                    print(f"Fehler beim xAI API-Aufruf {sys._getframe().f_code.co_name}: {e}")
+                    # news_obj_xai = News(title=vote_title, vote_id=vote_id, article_list=[])
+
+    # FIXME Usage:
+    # news = search_news_articles("Umweltverantwortungsinitiative", "2025-02-09", 6770)
+    # print(news)
+    return result
 
 # print(search_news_articles("Umweltverantwortungsinitiative", "2025-02-09", 6770))

@@ -1,24 +1,26 @@
-import random
-import time
+""" This module provides all necessary functions
+    to load data from local sources
+    to request data from external sources
+    and to process them """
+
 import json
 import os
-import sys
 from itertools import islice
 
-import requests
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, date
-from concurrent.futures import ThreadPoolExecutor, as_completed
+import requests
 from dotenv import load_dotenv
 from xai_sdk import Client
-from transformers.models.xlm.tokenization_xlm import lowercase_and_remove_accent
-import logging
 import tiktoken
 
-from prototype.agents.llm_functions import classify_topic_by_title, score_complexity_by_markdown, search_news_articles, \
-    classify_arguments_by_markdown
+from prototype.agents.llm_functions import classify_topic_by_title, score_complexity_by_markdown, \
+    search_news_articles
 
 
 def initialize_data(TESTMODE=None):
+    """ This method tries to load data from local JSON file
+        and if not possible, requests data directly from the Bundeskanzlei API """
     # During development: Purge any content from votes.json at the start
     file_path = "static/votes.json"
     if TESTMODE:
@@ -38,7 +40,8 @@ def initialize_data(TESTMODE=None):
             # Öffne und lade die Datei
             with open(file_path, 'r', encoding='utf-8') as file:
                 voting_data = json.load(file)
-                # if voting_data has been successfully parsed, we return 1 as all necessary data exists for UI
+                # if voting_data has been successfully parsed,
+                # we return 1 as all necessary data exists for UI
             return True, "OK"
 
         except json.JSONDecodeError as e:
@@ -58,7 +61,7 @@ def initialize_data(TESTMODE=None):
 
     #print(voting_data)
     if TESTMODE:
-        voting_data = dict(islice(voting_data.items(), 1))
+        voting_data = dict(islice(voting_data.items(), 2))
 
     # print(type(voting_data))
 
@@ -77,7 +80,6 @@ def initialize_data(TESTMODE=None):
 
             if not isinstance(vote_details, dict):
                 print(f"Fehler: Ungültige Daten für voteId {vote['voteId']}")
-                logging.error(f"Ungültige Daten für voteId {vote['voteId']}: {vote_details}")
                 return {
                     "vote_date": vote_date,
                     "vote_index": vote_index,
@@ -102,19 +104,31 @@ def initialize_data(TESTMODE=None):
 
                 # LLM-based classification
                 vote['voteTopic'] = classify_topic_by_title(client, vote['voteTitle']['de'])
-                vote['voteNewsArticles'] = search_news_articles(vote['voteTitle']['de'], vote_date, vote['voteId'])
+                vote['voteNewsArticles'] = search_news_articles(
+                    vote['voteTitle']['de'],
+                    vote_date, vote['voteId']
+                )
 
                 if vote_details['status'] > 1:
                     # LLM-based complexity score
-                    vote['voteComplexity'] = score_complexity_by_markdown(client, vote['markdown_files']['de'])
+                    vote['voteComplexity'] = score_complexity_by_markdown(
+                        client,
+                        vote['markdown_files']['de']
+                    )
                     # Assess if llm output label is in pre-defined range of label:
                     range_complexity_score = ["easy", "normal", "difficult"]
                     if vote['voteComplexity'] not in range_complexity_score:
                         # retry the same prompt
-                        vote['voteComplexity'] = score_complexity_by_markdown(client, vote['markdown_files']['de'], f"The last output from the same prompt was not as expected. Your last output: {vote['voteComplexity']}. Expected output should be one of these labels: {print(repr(range_complexity_score))}. Thus, eveluate again:")
+                        vote['voteComplexity'] = score_complexity_by_markdown(
+                            client,
+                            vote['markdown_files']['de'],
+                            f"The last output from the same prompt was not as expected. "
+                            f"Your last output: {vote['voteComplexity']}. "
+                            f"Expected output should be one of these labels: {range_complexity_score}. "
+                            f"Thus, eveluate again:")
 
                     # LLM-based
-                    #vote['argumentationAssessment'] = classify_arguments_by_markdown(vote['markdown_files']['de'])
+                    # vote['argumentationAssessment'] = classify_arguments_by_markdown(vote['markdown_files']['de'])
 
                     # Add LLM-based summary as introduction
                     # vote['voteSummary'] = write_summary_by_markdown(vote['markdown_files']['de'])
@@ -131,7 +145,6 @@ def initialize_data(TESTMODE=None):
 
         except Exception as e:
             print(f"Fehler bei der Verarbeitung von voteId {vote['voteId']}: {e}")
-            # logging.error(f"Fehler bei voteId {vote['voteId']}: {e}")
             return {
                 "vote_date": vote_date,
                 "vote_index": vote_index,
@@ -141,7 +154,7 @@ def initialize_data(TESTMODE=None):
     # Parallelisiere die Verarbeitung der Abstimmungen
     results = []
     if TESTMODE:
-        number_of_workers = 1
+        number_of_workers = 4
     else:
         number_of_workers = 50 # works with 30
 
@@ -160,7 +173,6 @@ def initialize_data(TESTMODE=None):
                 print(f"Abstimmung {result['vote_data']['voteId']} verarbeitet")
             except Exception as e:
                 print(f"Fehler bei der parallelen Verarbeitung für voteId {vote_date}/{vote_index}: {e}")
-                logging.error(f"Paralleler Fehler für voteId {vote_date}/{vote_index}: {e}")
                 voting_data[vote_date][vote_index] = {
                     "voteId": voting_data[vote_date][vote_index]['voteId'],
                     "status": 0,
@@ -338,9 +350,9 @@ def generate_markdowns(voteId, data):
                         vote_info = component.get("vote", {})
                         titel = vote_info.get("titel", "")
                         markdown_content += f"### {titel}\n\n"
-                        for bar in vote_info.get("balken", []):
-                            label = bar.get("label", "")
-                            value = bar.get("value", "")
+                        for result_type in vote_info.get("balken", []):
+                            label = result_type.get("label", "")
+                            value = result_type.get("value", "")
                             markdown_content += f"- {label}: {value}\n"
                         markdown_content += "\n"
 
@@ -355,6 +367,8 @@ def generate_markdowns(voteId, data):
 
 
 def count_votes():
+    """ This method compares the number of LLM-tracked votes
+        against the total number of votes available. """
     # delete later
     # url = "https://app-prod-ws.voteinfo-app.ch/v1/archive/vorlagen?searchTerm=&geoLevelNummer=0&geoLevelLevel=0"
     try:
@@ -388,6 +402,8 @@ def count_votes():
 
 
 def load_votes(lang):
+    """ Depending on availability, this method loads data from popular votes
+        which were held in Switzerland """
     path_votes_json = 'static/votes.json'
     try:
         with open(path_votes_json, 'r', encoding='utf-8') as file:
@@ -399,7 +415,7 @@ def load_votes(lang):
     except Exception as e:
         print(f"Ein Fehler ist aufgetreten: {e}")
 
-    if lang != "de" and lang != "fr" and lang != "it" and lang != "rm":
+    if lang not in ('de', 'fr', 'it', 'rm'):
         print("Selected language is not available")
         return -1
     else:
@@ -407,6 +423,7 @@ def load_votes(lang):
 
 
 def load_vote(voteId, language):
+    """ Depending on availability, this method loads data for a given popular vote """
     # first try to fetch data from local json
     path_votes_json = 'static/votes.json'
     try:
@@ -437,13 +454,9 @@ def load_vote(voteId, language):
     return vote_json
 
 
-def classify_topic(title):
-    topics = ["Foreign Affairs", "Home Affairs", "Justice and Police", "Defence, Civil Protection and Sport", "Finance",
-              "Economic Affairs, Education and Research", "Environment, Transport, Energy and Communications"]
-    return topics[random.randint(0, len(topics)) - 1]
-
-
 def classify_vote_by_vorlagenArtId(vorlagenArtId):
+    """ Depending on `vorlagenArtId` in the vote dict,
+        the string label "Initiative" or "Referendum" is matched """
     if vorlagenArtId in [1, 3, 10102]:
         return "Initiative"
     elif vorlagenArtId in [2, 10106, 10107]:
@@ -451,8 +464,11 @@ def classify_vote_by_vorlagenArtId(vorlagenArtId):
     else:
         return "Other"
 
+# FIXME: These two method do the same, one should be deleted
 
 def classify_vote(voteId):
+    """ Depending on `vorlagenArtId` in the vote dict,
+        the string label "Initiative" or "Referendum" is matched """
     if not isinstance(voteId, int):
         raise TypeError("voteId must be an integer")
 
@@ -486,18 +502,22 @@ def classify_vote(voteId):
         vote_json = r.json()
     except requests.exceptions.JSONDecodeError:
         print(f"Invalid JSON for voteId {voteId}: {r.text}")
-        return 'Missing data'
+        vote_json["vorlagenArtId"] = None
 
-    vorlagenArtId = vote_json["vorlagenArtId"]
-
-    if vorlagenArtId in [1, 3, 10102]:
-        return "Initiative"
-    elif vorlagenArtId in [2, 10106, 10107]:
-        return "Referendum"
-    else:
-        return "Other"
+    finally:
+        vorlagen_art_id = vote_json["vorlagenArtId"]
+        if vorlagen_art_id in [1, 3, 10102]:
+            return "Initiative"
+        elif vorlagen_art_id in [2, 10106, 10107]:
+            return "Referendum"
+        elif vorlagen_art_id:
+            return "Undefined"
+        else:
+            return "Missing data"
 
 def build_vote_url(vote_id: int, file_name: str = "erlaeuterung.json", dotenv_path="agents/.env") -> str:
+    """ Returns the url to request the list with popular votes.
+        This method is used to keep API endpoints of the Bundeskanzlei the private """
     # TODO this code needs to be implemented in functions.py
     load_dotenv(dotenv_path=dotenv_path)
     template = os.getenv("BK_API_ERLAEUTERUNGEN")
@@ -505,12 +525,15 @@ def build_vote_url(vote_id: int, file_name: str = "erlaeuterung.json", dotenv_pa
     return url
 
 def build_votes_url(dotenv_path="agents/.env") -> str:
+    """ Returns the url to request the details for a given vote.
+        This method is used to keep API endpoints of the Bundeskanzlei the private """
     # TODO this code needs to be implemented in functions.py
     load_dotenv(dotenv_path=dotenv_path)
     template = os.getenv("BK_API_VORLAGE")
     return template
 
 def evaluate_context_window(prompt: str, encoding_type: str = "cl100k_base", limit: int = 131072):
+    """ Evaluates the input size of a prompt """
     # Encoder für Grok-Modelle (cl100k_base)
     encoding = tiktoken.get_encoding(encoding_type)
 
