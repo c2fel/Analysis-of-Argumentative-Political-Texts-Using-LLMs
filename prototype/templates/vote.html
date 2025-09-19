@@ -9,7 +9,7 @@
 <main class="flex-shrink-0">
     <div class="container">
         <h1 class="mt-5">{{ erlaeuterung.vorlagenTitel }}</h1>
-        <p>This popular vote is of type <b>{{ vote_type }}</b> and was held on <b>{{ vote_date }}</b> and contains {{ erlaeuterung.kapitel | length }} chapters.</p>
+        <p>This popular vote is of type <b>{{ vote_type }}</b> and was held on <b>{{ vote_date }}</b> and contains {{ erlaeuterung.kapitel | length }} chapters. Selected LLM: {{ model }}</p>
         <ul class="nav nav-pills nav-fill mb-3" id="pills-tab" role="tablist">
             <!-- TODO auch hier kann class "active" genutzt werden um UI zu optmimieren -->
             <li class="nav-item">
@@ -237,38 +237,15 @@ Highcharts.chart('{{ k.vote.titel | replace(" im ", " ") | lower | replace(" ", 
             </div>
             {% endfor %}
             <div class="tab-pane fade" id="tab{{ (erlaeuterung.kapitel | length) + 1 }}" role="tabpanel" aria-labelledby="tab{{ (erlaeuterung.kapitel | length) + 1 }}-tab">
-                <h2>Artikelübersicht</h2>
+                <h2>Artikelübersicht zur {{ newsArticles[model]['title'] }}</h2>
     <ul>
+        {% for article in newsArticles[model]['article_list'] %}
         <li>
-            <div class="article-title">Weltwoche (rechts/konservativ): Gute Nachricht für die Schweiz: Die Umweltverantwortungs-Initiative ist beim Volk hochkant durchgefallen – eine weitere krachende Niederlage für die Grünen</div>
-            <div class="article-url"><a href="https://weltwoche.ch/daily/gute-nachricht-fuer-die-schweiz-die-umweltverantwortungs-initiative-ist-beim-volk-hochkant-durchgefallen-eine-weitere-krachende-niederlage-fuer-die-gruenen/" target="_blank">https://weltwoche.ch/daily/gute-nachricht-fuer-die-schweiz-die-umweltverantwortungs-initiative-ist-beim-volk-hochkant-durchgefallen-eine-weitere-krachende-niederlage-fuer-die-gruenen/</a></div>
-            <div class="article-reflection">Kritische Reflexion: Der Artikel feiert das Nein als Rettung vor "unbedarften Jungpolitikern", die die Wirtschaft "an die Wand fahren" wollten, und kritisiert die Initiative als realitätsfern und ideologisch getrieben.</div>
+            <div class="article-title">{{ article.publisher }} ({{ article.label }}): {{ article.title }}</div>
+            <div class="article-url"><a href="{{ article.url }}" target="_blank">{{ article.url }}</a></div>
+            <div class="article-reflection">{{ article.summary }}</div>
         </li>
-        <li>
-            <div class="article-title">WOZ (links/alternativ): Umweltverantwortungsinitiative: Wer ist hier lustfeindlich?</div>
-            <div class="article-url"><a href="https://www.woz.ch/2505/umweltverantwortungsinitiative/wer-ist-hier-lustfeindlich/%21J8T9JSJSVR12" target="_blank">https://www.woz.ch/2505/umweltverantwortungsinitiative/wer-ist-hier-lustfeindlich/%21J8T9JSJSVR12</a></div>
-            <div class="article-reflection">Kritische Reflexion: Aus linker Perspektive wird die mediale und gesellschaftliche Ablehnung kritisiert, die die Initiative als "lustfeindlich" diffamiert; der Text reflektiert, wie Verdrängung von Konsumkritik den Wandel blockiert, und wirft Mainstream-Medien vor, Fakten zu verdrehen.</div>
-        </li>
-        <li>
-            <div class="article-title">NZZ (bürgerlich/konservativ): Umweltinitiative: So unnötig wie Klimakleber und übereifrige Richter</div>
-            <div class="article-url"><a href="https://www.nzz.ch/meinung/umweltverantwortung-wie-die-gruenen-aus-der-schweiz-ein-entwicklungsland-machen-wollen-ld.1867448" target="_blank">https://www.nzz.ch/meinung/umweltverantwortung-wie-die-gruenen-aus-der-schweiz-ein-entwicklungsland-machen-wollen-ld.1867448</a></div>
-            <div class="article-reflection">Kritische Reflexion: Die Initiative wird als "weltfremd" und schädlich für Klimaschutz dargestellt, da sie radikale Einschnitte fordert, die die Schweiz wirtschaftlich rückständig machen würde, verglichen mit Aktivismus wie Kleber-Aktionen.</div>
-        </li>
-        <li>
-            <div class="article-title">Tages-Anzeiger (zentristisch/liberal): Abstimmung: Leitartikel zur Umweltverantwortungsinitiative</div>
-            <div class="article-url"><a href="https://www.tagesanzeiger.ch/abstimmung-leitartikel-zur-umweltverantwortungsinitiative-578855744368" target="_blank">https://www.tagesanzeiger.ch/abstimmung-leitartikel-zur-umweltverantwortungsinitiative-578855744368</a></div>
-            <div class="article-reflection">Kritische Reflexion: Die Ideen werden als "naiv" abgetan, mit der Warnung, dass die Umsetzung die Schweiz wirtschaftlich um Jahrzehnte zurückwerfen würde und den Konsens zum Klimaschutz untergräbt.</div>
-        </li>
-        <li>
-            <div class="article-title">Berner Zeitung (regional-bürgerlich): Abstimmung 2025: Nicht einmal die Jungen sagten Ja zur Umweltverantwortungsinitiative</div>
-            <div class="article-url"><a href="https://www.bernerzeitung.ch/abstimmung-2025-nicht-einmal-die-jungen-sagten-ja-zur-umweltverantwortungsinitiative-205731748065" target="_blank">https://www.bernerzeitung.ch/abstimmung-2025-nicht-einmal-die-jungen-sagten-ja-zur-umweltverantwortungsinitiative-205731748065</a></div>
-            <div class="article-reflection">Kritische Reflexion: Der Artikel analysiert das Scheitern als Beleg für mangelnde Resonanz sogar bei Jungen, reflektiert den Konflikt zwischen Idealismus und Realität und kritisiert die Initiative als zu ambitioniert für breite Akzeptanz.</div>
-        </li>
-        <li>
-            <div class="article-title">SRF (öffentlich-rechtlich/neutral): Umweltverantwortungsinitiative scheitert an sich selbst: eine Analyse</div>
-            <div class="article-url"><a href="https://www.srf.ch/news/schweiz/abstimmungen-9-februar-2025/umweltverantwortungsinitiative/umweltverantwortungsinitiative-schweizer-stimmvolk-hat-keine-lust-auf-experimente" target="_blank">https://www.srf.ch/news/schweiz/abstimmungen-9-februar-2025/umweltverantwortungsinitiative/umweltverantwortungsinitiative-schweizer-stimmvolk-hat-keine-lust-auf-experimente</a></div>
-            <div class="article-reflection">Kritische Reflexion: Die Analyse betont, dass die drastischen Ziele für die Mehrheit zu experimentell und einschneidend waren, und reflektiert den gesellschaftlichen Widerstand gegen radikale Veränderungen im Umweltschutz.</div>
-        </li>
+        {% endfor %}
     </ul>
             </div>
         </div>

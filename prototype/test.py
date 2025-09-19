@@ -57,35 +57,3 @@ nx.draw(G, pos, with_labels=True, node_size=3000, node_color='lightblue', font_s
 plt.title("Argumente zur Umweltverantwortungsinitiative")
 plt.savefig("graph_6770.png")
 plt.close()
-
-import tiktoken
-
-retry = ""
-markdown_content = 'markdown_output/erlaeuterungen_6600_fr.md'
-# Deinen Prompt hier einfügen (als String)
-prompt = f"""{retry} The attached markdown file contains all the information that was given to Swiss citizens to vote on this topic. Score the complexity by easy, normal, or difficult. Consider that this score needs to apply for an average citizen. Only output the label of the score, no reasoning at all.
-
-```markdown
-{markdown_content}
-```"""
-# Encoder für Grok-Modelle (cl100k_base)
-encoding = tiktoken.get_encoding("cl100k_base")
-
-# Tokens zählen
-tokens = len(encoding.encode(prompt))
-print(f"Anzahl Tokens im Prompt: {tokens}")
-
-# Check gegen Limit
-limit = 131072
-if tokens > limit:
-    print("⚠️ Überschreitet das Limit! Kürze den Prompt.")
-elif tokens > limit * 0.8:  # 80% Puffer für Response
-    print("🔶 Nah am Limit – prüfe mit Response-Schätzung.")
-else:
-    print("✅ Sicher unter dem Limit.")
-
-# TODO this code needs to be implemented in functions.py
-load_dotenv(dotenv_path='agents/.env')
-erlaeuterung_template = os.getenv("BK_API_ERLAEUTERUNGEN")
-erlaeuterung_url = erlaeuterung_template.format(vote_id="6770")
-print(erlaeuterung_url)

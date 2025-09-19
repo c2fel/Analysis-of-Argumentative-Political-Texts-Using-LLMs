@@ -1,3 +1,4 @@
+import sys
 import time
 from dotenv import load_dotenv
 from flask import Flask, jsonify, render_template, request
@@ -44,13 +45,29 @@ def votes():
 @app.route('/votes/<int:voteId>')
 def vote(voteId):
     language = request.args.get('language', 'de')
-    vote = load_vote(voteId, language)
-
+    model = request.args.get('model', 'grok-4')
+    date, vote = load_vote(voteId, language)
+    print(date)
+    print(vote)
     contents = next((e for e in vote["erlaeuterungen"] if e["langKey"] == language), None)
+    print(contents)
     # print(contents['erlaeuterung'])
-
-    return render_template('vote.html', vote_date=vote['abstimmtag'], vote_id=voteId,
-                           erlaeuterung=contents['erlaeuterung'], vote_type=classify_vote(voteId))
+    #
+    # {{ newsArticles.gpt-5.title }}
+    # "voteNewsArticles": {
+    #         "gpt-5": {
+    #           "title": "Umweltverantwortungsinitiative",
+    #           "vote_id": 6770,
+    #           "article_list": [
+    #             {
+    #               "title": "Umweltverantwortungsinitiative: Wer ist hier lustfeindlich?",
+    #               "summary": "Meinungsbeitrag, der die UVI als notwendigen Schritt gegen Wegwerf- und Konsumgesellschaft verteidigt und Kritik an Medien-Frames übt. Publiziert am 30.01.2025.",
+    #               "publisher": "WOZ Die Wochenzeitung",
+    #               "url": "https://www.woz.ch/2505/umweltverantwortungsinitiative/wer-ist-hier-lustfeindlich/!J8T9JSJSVR12",
+    #               "label": "links/ökologisch. Quelle: WOZ. citeturn6view0"
+    #             },
+    return render_template('vote.html', vote_date=date, vote_id=voteId,
+                           erlaeuterung=contents['erlaeuterung'], vote_type=classify_vote(voteId), model=model, newsArticles=vote['voteNewsArticles'])
 
 
 @app.route('/test')
@@ -63,62 +80,20 @@ def vorlage_html():
     return render_template('vorlage_old.html')
 
 
-@app.route('/api/votes')
-def api_votes():
-    url = "https://app-prod-ws.voteinfo-app.ch/v1/archive/vorlagen?searchTerm=&geoLevelNummer=0&geoLevelLevel=0"
-    try:
-        resp = requests.get(url, timeout=10, headers={"User-Agent": "Mozilla/5.0"})
-        data = resp.json()
-        vorlagen_liste = []
-        for region in data.get("regionen", []):
-            for abstimmtage in region.get("abstimmtage", []):
-                datum = abstimmtage.get("abstimmtag", None)
-                if not datum or len(datum) != 8:
-                    continue
-                iso_date = f"{datum[:4]}-{datum[4:6]}-{datum[6:]}"
-                for gruppe in abstimmtage.get("vorlagenGruppen", []):
-                    for vorlage in gruppe.get("vorlagen", []):
-                        titel_de = None
-                        titel_feld = vorlage.get("vorlagenTitel", [])
-                        if isinstance(titel_feld, list):
-                            for t in titel_feld:
-                                if t.get("langKey") == "de":
-                                    titel_de = t.get("text", "")
-                                    break
-                        if not titel_de:
-                            titel_de = "(Kein Titel gefunden)"
-                        vorlagen_liste.append({
-                            "abstimmungDatum": iso_date,
-                            "titel": titel_de,
-                            "vorlagenId": vorlage.get("vorlagenId")
-                        })
-        return jsonify(vorlagen_liste)
-    except Exception as e:
-        print("FEHLER:", e)
-        return jsonify([])
-
-
-@app.route('/api/erlaeuterung/<int:vorlagen_id>')
-def api_erlaeuterung(vorlagen_id):
-    url = f"https://app-static.voteinfo-app.ch/v5/{vorlagen_id}/erlaeuterung.json"
-    try:
-        resp = requests.get(url, timeout=10, headers={"User-Agent": "Mozilla/5.0"})
-        print(f"Proxy call: {url} | Status: {resp.status_code}")
-        print("Preview:", resp.text[:200])
-        resp.raise_for_status()
-        return jsonify(resp.json())
-    except Exception as e:
-        print("FEHLER:", e)
-        return jsonify({"error": str(e)}), 500
-
 
 if __name__ == '__main__':
     s = time.time()
-    load_dotenv()
-    client = Client(
-        api_key=os.getenv("XAI_API_KEY"),
-        timeout=3600,  # change for longer timeout when submitting large prompts
-    )
-    initialize_data(TESTMODE=True)
+    # Das macht eh nichts, weil .env im wdir nicht existiert und kein alternativer Pfad angegeben ist
+    # load_dotenv()
+    # den client braucht es hier nicht
+    #client = Client(
+    #    api_key=os.getenv("XAI_API_KEY"),
+    #    timeout=3600,  # change for longer timeout when submitting large prompts
+    #)
+    success, return_string = initialize_data(TESTMODE=True)
+    if not success:
+        print(f"Failed to initialize data: {return_string}")
+        sys.exit(0)
+
     print((time.time() - s) / 60, "minutes")
-    app.run(debug=True) # for later: debug=False or at least: use_reloader=False (better performance at start up)
+    app.run(debug=True, use_reloader=False) # for later: debug=False or at least: use_reloader=False (better performance at start up)

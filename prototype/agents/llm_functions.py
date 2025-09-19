@@ -2,9 +2,11 @@ import inspect
 import json
 import os
 import hashlib
+import sys
 
 import tiktoken
-from datetime import datetime
+from datetime import datetime, time
+import time
 
 from dotenv import load_dotenv
 from enum import Enum, IntEnum
@@ -218,6 +220,10 @@ def search_news_articles(vote_title: str, vote_date: str, vote_id: int) -> dict[
                         input=messages,
                         text_format=News,  # Pydantic Schema
                     )
+                    if model == "gpt-5-nano": # tpm limit of 200 000, one markdown request has ca 80% of that
+                        # warte einige Sekunden um bei gpt-5 nano eine rate limit zu erreichen
+                        time.sleep(60)
+
                     news_obj_openai: News = openai_response.output_parsed
                     news_obj_openai.title = vote_title
                     news_obj_openai.vote_id = vote_id
@@ -225,7 +231,7 @@ def search_news_articles(vote_title: str, vote_date: str, vote_id: int) -> dict[
                     result[model] = news_obj_openai.model_dump()
 
                 except Exception as e:
-                    print(f"Fehler beim OpenAI API-Aufruf: {e}")
+                    print(f"Fehler beim OpenAI API-Aufruf {sys._getframe().f_code.co_name}: {e}")
                     # news_obj_openai = News(title=vote_title, vote_id=vote_id, article_list=[])
             elif provider["provider"] == 'xAI':
                 try:
@@ -248,7 +254,7 @@ def search_news_articles(vote_title: str, vote_date: str, vote_id: int) -> dict[
                     result[model] = xai_news.model_dump()
 
                 except Exception as e:
-                    print(f"Fehler beim xAI API-Aufruf: {e}")
+                    print(f"Fehler beim xAI API-Aufruf {sys._getframe().f_code.co_name}: {e}")
                     # news_obj_xai = News(title=vote_title, vote_id=vote_id, article_list=[])
 
     # FIXME Usage:
@@ -347,7 +353,7 @@ class Vote(BaseModel):
 
 def classify_arguments_by_markdown(markdown_path):
     # Lade Markdown file
-    markdown_path = "../markdown_output/erlaeuterungen_6770_de.md"  # Ersetze durch deinen Pfad
+    # markdown_path = "../markdown_output/erlaeuterungen_6770_de.md"  # Ersetze durch deinen Pfad
     with open(markdown_path, "r", encoding="utf-8") as f:
         markdown_text = f.read()
 
@@ -368,3 +374,8 @@ def classify_arguments_by_markdown(markdown_path):
     print(response.content)
 
     return response.content
+
+def write_summary_by_markdown(markdown_path):
+    return "Lorem ipsum"
+
+# print(search_news_articles("Umweltverantwortungsinitiative", "2025-02-09", 6770))

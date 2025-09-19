@@ -8,18 +8,27 @@
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Get the current language from URL query parameter
-        const urlParams = new URLSearchParams(window.location.search);
-        const currentLanguage = urlParams.get('language') || 'de'; // Default to 'de' if no parameter
+    // Get URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const currentLanguage = urlParams.get('language') || 'de'; // Default to 'de'
+    const currentModel = urlParams.get('model') || 'grok-4'; // Default to 'grok-4'
 
-        // Find all dropdown items and add 'selected' class to the matching language
-        document.querySelectorAll('.dropdown-item').forEach(item => {
-            const lang = item.getAttribute('href').split('=')[1];
-            if (lang === currentLanguage) {
-                item.classList.add('selected');
-            }
-        });
-    </script>
+    // Handle model dropdown
+    document.querySelectorAll('#model-menu .dropdown-item').forEach(item => {
+        const model = item.getAttribute('href').split('=')[1];
+        if (model === currentModel) {
+            item.classList.add('selected'); // Use Bootstrap's 'selected' class
+        }
+    });
+
+    // Handle language dropdown
+    document.querySelectorAll('#language-menu .dropdown-item').forEach(item => {
+        const language = item.getAttribute('href').split('=')[1];
+        if (language === currentLanguage) {
+            item.classList.add('selected'); // Use Bootstrap's 'selected' class
+        }
+    });
+</script>
 <script>
         // Funktion zur Formatierung des Datums
         function formatAbstimmungstag(dateString) {

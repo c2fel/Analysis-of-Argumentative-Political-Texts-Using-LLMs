@@ -3,6 +3,8 @@ import time
 import json
 import os
 import sys
+from itertools import islice
+
 import requests
 from datetime import datetime, date
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -12,25 +14,20 @@ from transformers.models.xlm.tokenization_xlm import lowercase_and_remove_accent
 import logging
 import tiktoken
 
-from prototype.agents.llm_functions import classify_topic_by_title, score_complexity_by_markdown
-
-# Konfiguriere Logging
-logging.basicConfig(
-    filename="initialize_data.log",
-    level=logging.ERROR,
-    format="%(asctime)s - %(levelname)s - %(message)s"
-)
+from prototype.agents.llm_functions import classify_topic_by_title, score_complexity_by_markdown, search_news_articles, \
+    classify_arguments_by_markdown
 
 
 def initialize_data(TESTMODE=None):
     # During development: Purge any content from votes.json at the start
     file_path = "static/votes.json"
-    #try:
-    #    with open(file_path, 'w') as file:
-    #        print(f"File '{file_path}' has been emptied")
-    #        pass
-    #except FileNotFoundError:
-    #    print(f"File '{file_path}' has been created")
+    if TESTMODE:
+        try:
+            if os.path.exists(file_path):
+                os.remove(file_path)
+                print("File deleted successfully")
+        except FileNotFoundError:
+            print(f"File '{file_path}' does not exist")
 
     # Greife auf des existierende JSON file zurück
     # Prüfe, ob die Datei existiert
@@ -40,8 +37,9 @@ def initialize_data(TESTMODE=None):
         try:
             # Öffne und lade die Datei
             with open(file_path, 'r', encoding='utf-8') as file:
-                data = json.load(file)
-            return 1
+                voting_data = json.load(file)
+                # if voting_data has been successfully parsed, we return 1 as all necessary data exists for UI
+            return True, "OK"
 
         except json.JSONDecodeError as e:
             return False, f"Ungültiges JSON in '{file_path}': {str(e)}"
@@ -51,31 +49,21 @@ def initialize_data(TESTMODE=None):
             return False, f"Fehler beim Lesen von '{file_path}': {str(e)}"
 
 
-
+    # else, we are going to load the voting data from source again and process it later
     # Fetch all voting dates and the respective votes
     voting_data = parse_votes()
 
     # FIXME: Only for small test:
-    # Annahme: Struktur wie data["regionen"][0]["abstimmtage"]
-    if TESTMODE:
-        regionen = voting_data.get("regionen", [])
-        if regionen and "abstimmtage" in regionen[0]:
-            abstimmtage = regionen[0]["abstimmtage"]
-            gekuerzt = abstimmtage[:2]  # nur die ersten zwei
-        else:
-            gekuerzt = []
+    # Limit # of votes to decrease load time, when testing llm labeling
 
-        # neues Dict mit derselben Struktur, aber gekürzt
-        voting_data = {
-            "regionen": [
-                {
-                    "abstimmtage": gekuerzt
-                }
-            ]
-        }
+    #print(voting_data)
+    if TESTMODE:
+        voting_data = dict(islice(voting_data.items(), 1))
+
+    # print(type(voting_data))
 
     # Funktion zum Verarbeiten einer einzelnen Abstimmung
-    def process_vote(vote_id, vote, vote_date, vote_index):
+    def process_vote(vote, vote_date, vote_index):
         try:
             # Initialisiere den Client für diesen Thread
             load_dotenv()
@@ -99,6 +87,10 @@ def initialize_data(TESTMODE=None):
             # Update vote with details
             vote.update(vote_details)
 
+            # vote_details['status'] beschreibt, die Verfügbarkeit von Erläuterungen:
+            # 0 = keine
+            # 1 = sehr beschränkt
+            # 2 = detailliert
             if vote_details['status'] > 0:
                 # Generate markdown files
                 markdown_files = generate_markdowns(vote['voteId'], vote_details)
@@ -110,6 +102,7 @@ def initialize_data(TESTMODE=None):
 
                 # LLM-based classification
                 vote['voteTopic'] = classify_topic_by_title(client, vote['voteTitle']['de'])
+                vote['voteNewsArticles'] = search_news_articles(vote['voteTitle']['de'], vote_date, vote['voteId'])
 
                 if vote_details['status'] > 1:
                     # LLM-based complexity score
@@ -120,6 +113,11 @@ def initialize_data(TESTMODE=None):
                         # retry the same prompt
                         vote['voteComplexity'] = score_complexity_by_markdown(client, vote['markdown_files']['de'], f"The last output from the same prompt was not as expected. Your last output: {vote['voteComplexity']}. Expected output should be one of these labels: {print(repr(range_complexity_score))}. Thus, eveluate again:")
 
+                    # LLM-based
+                    #vote['argumentationAssessment'] = classify_arguments_by_markdown(vote['markdown_files']['de'])
+
+                    # Add LLM-based summary as introduction
+                    # vote['voteSummary'] = write_summary_by_markdown(vote['markdown_files']['de'])
                 else:
                     vote['voteComplexity'] = 0
 
@@ -133,7 +131,7 @@ def initialize_data(TESTMODE=None):
 
         except Exception as e:
             print(f"Fehler bei der Verarbeitung von voteId {vote['voteId']}: {e}")
-            logging.error(f"Fehler bei voteId {vote['voteId']}: {e}")
+            # logging.error(f"Fehler bei voteId {vote['voteId']}: {e}")
             return {
                 "vote_date": vote_date,
                 "vote_index": vote_index,
@@ -142,11 +140,16 @@ def initialize_data(TESTMODE=None):
 
     # Parallelisiere die Verarbeitung der Abstimmungen
     results = []
-    with ThreadPoolExecutor(max_workers=50) as executor: # funktioniert mit 30
+    if TESTMODE:
+        number_of_workers = 1
+    else:
+        number_of_workers = 50 # works with 30
+
+    with ThreadPoolExecutor(max_workers=number_of_workers) as executor: # funktioniert mit 30
         future_to_vote = []
         for vote_date, votes in voting_data.items():
             for vote_index, vote in enumerate(votes):  # Verwende enumerate für den Index
-                future = executor.submit(process_vote, vote['voteId'], vote, vote_date, vote_index)
+                future = executor.submit(process_vote, vote, vote_date, vote_index)
                 future_to_vote.append((future, vote_date, vote_index))
 
         for future, vote_date, vote_index in future_to_vote:
@@ -168,14 +171,14 @@ def initialize_data(TESTMODE=None):
     with open("static/votes.json", "w", encoding="utf-8") as f:
         json.dump(voting_data, f, indent=2, ensure_ascii=False)
 
-    return 1
+    return True, "OK"
 
 
 # Rest der Datei bleibt unverändert
 def parse_votes():
     # url = "https://app-prod-ws.voteinfo-app.ch/v1/archive/vorlagen?searchTerm=&geoLevelNummer=0&geoLevelLevel=0"
     try:
-        resp = requests.get(url, timeout=10, headers={"User-Agent": "Mozilla/5.0"})
+        resp = requests.get(build_votes_url(), timeout=10, headers={"User-Agent": "Mozilla/5.0"})
     except Exception as e:
         print("Error:", e)
         return 0
@@ -271,7 +274,7 @@ def generate_markdowns(voteId, data):
     output_dir = "markdown_output"
     os.makedirs(output_dir, exist_ok=True)
 
-    base_url = "https://app-static.voteinfo-app.ch/v5/"
+    # base_url = "https://app-static.voteinfo-app.ch/v5/" # delete later
 
     for entry in data.get("erlaeuterungen", []):
         lang_key = entry.get("langKey")
@@ -317,7 +320,8 @@ def generate_markdowns(voteId, data):
                         img_info = component.get("image", {})
                         img_url = img_info.get("url", "")
                         if img_url:
-                            img_url = f"{base_url}{voteId}/{img_url}"
+                            img_url = build_vote_url(voteId, img_url, "agents/.env")
+                            # img_url = f"{base_url}{voteId}/{img_url}"
                         alt_text = img_info.get("altText", "")
                         markdown_content += f"![{alt_text}]({img_url})\n\n"
 
@@ -326,7 +330,8 @@ def generate_markdowns(voteId, data):
                         name = pdf_info.get("name", "")
                         url = pdf_info.get("url", "")
                         if url:
-                            url = f"{base_url}{voteId}/{url}"
+                            url = build_vote_url(voteId, url, "agents/.env")
+                            # url = f"{base_url}{voteId}/{url}"
                         markdown_content += f"[{name} (PDF)]({url})\n\n"
 
                     elif comp_type == "vote":
@@ -350,9 +355,11 @@ def generate_markdowns(voteId, data):
 
 
 def count_votes():
+    # delete later
+    # url = "https://app-prod-ws.voteinfo-app.ch/v1/archive/vorlagen?searchTerm=&geoLevelNummer=0&geoLevelLevel=0"
     try:
         r = requests.get(
-            "https://app-prod-ws.voteinfo-app.ch/v1/archive/vorlagen?searchTerm=&geoLevelNummer=0&geoLevelLevel=0",
+            build_votes_url(),
             headers={"User-Agent": "Mozilla/5.0"})
         votes_json = r.json()
     except Exception as e:
@@ -400,9 +407,28 @@ def load_votes(lang):
 
 
 def load_vote(voteId, language):
-    url = f"https://app-static.voteinfo-app.ch/v5/{voteId}/erlaeuterung.json"
+    # first try to fetch data from local json
+    path_votes_json = 'static/votes.json'
     try:
-        r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"})
+        with open(path_votes_json, 'r', encoding='utf-8') as file:
+            votes_json = json.load(file)
+            vote_json = next((vote for date in votes_json.values() for vote in date if vote["voteId"] == voteId), None)
+            date, vote = next(((date, vote) for date, votes in votes_json.items() for vote in votes if vote["voteId"] == voteId),
+                          (None, None))
+            #print({date: vote})
+            return date, vote
+
+    except FileNotFoundError:
+        print(f"Fehler: Die Datei {path_votes_json} wurde nicht gefunden.")
+    except json.JSONDecodeError:
+        print(f"Fehler: Die Datei {path_votes_json} enthält ungültiges JSON-Format.")
+    except Exception as e:
+        print(f"Ein Fehler ist aufgetreten: {e}")
+
+    # delete later
+    # url = f"https://app-static.voteinfo-app.ch/v5/{voteId}/erlaeuterung.json"
+    try:
+        r = requests.get(build_vote_url(voteId), headers={"User-Agent": "Mozilla/5.0"})
     except Exception as e:
         print("Error:", e)
         return "Error:", e
@@ -448,9 +474,10 @@ def classify_vote(voteId):
     except Exception as e:
         print(f"Ein unerwarteter Fehler ist aufgetreten: {str(e)}")
 
-    url = f"https://app-static.voteinfo-app.ch/v5/{voteId}/erlaeuterung.json"
+    # delete later
+    # url = f"https://app-static.voteinfo-app.ch/v5/{voteId}/erlaeuterung.json"
     try:
-        r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"})
+        r = requests.get(build_vote_url(voteId), headers={"User-Agent": "Mozilla/5.0"})
     except Exception as e:
         print("Error:", e)
         return "Error:", e
