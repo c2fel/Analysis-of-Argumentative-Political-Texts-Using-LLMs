@@ -164,6 +164,17 @@ class News(BaseModel):
 
 # --- Funktion zum Abruf ---
 def search_news_articles(vote_title: str, vote_date: str, vote_id: int) -> dict[str, Any]:
+    """
+    Returns a list of news articles, provided some sample input about a given vote.
+    :param vote_title:
+    :param vote_date:
+    :param vote_id:
+    :return:
+    """
+
+    # TODO mention in thesis that this prompt can not be run with temperature=0 and this results will vary at run time
+    # FIXME how do we handle for this in the user study?
+
     # Prompt
     user_message = (
         "You are a highly intelligent AI assistant helping Swiss citizens "
@@ -453,31 +464,46 @@ def write_summary_by_markdown(markdown_path):
             if provider["provider"] == 'OpenAI':
                 #  GPT Request mit Web Search
                 try:
-                    openai_response = openai_client.responses.parse( #FIXME parse not necessary here
+                    openai_response = openai_client.responses.create(
                         model=model,
-                        tools=[{"type": "web_search"}],  # Web Search aktivieren
-                        input=messages,
+                        reasoning={"effort": "low"}, # low only for testing FIXME change later to high
+                        input=messages
                     )
+                    # print(openai_response.output_text)
+                    result[model] = openai_response.output_text
 
                 except Exception as e:
                     print(f"Fehler beim OpenAI API-Aufruf {sys._getframe().f_code.co_name}: {e}")
                     # news_obj_openai = News(title=vote_title, vote_id=vote_id, article_list=[])
             elif provider["provider"] == 'xAI':
                 try:
-                    # xAI Request mit SearchParameters und response_model für Parsing
+                    # xAI Request
+                    # TODO implement reasoning effort like openai, see above
+                    # Not supported for grok-4: https://docs.x.ai/docs/guides/reasoning
+
                     xai_chat = xai_client.chat.create(
                         model=model,
                         messages=[system(system_message)],
                     )
                     xai_chat.append(user(user_message))
 
-                    # The parse method returns pydantic object
-                    xai_response, xai_news = xai_chat.parse(News) #FIXME parse not necessary here
+                    response = xai_chat.sample()
 
-                    result[model] = xai_news.model_dump()
+                    result[model] = response.content
+
+                    # FIXME: with this code, we could try to make 'gpt-5-nano' work
+                    # print("Number of completion tokens:")
+                    # print(response.usage.completion_tokens)
+                    # print("Number of reasoning tokens:")
+                    # print(response.usage.reasoning_tokens)
 
                 except Exception as e:
                     print(f"Fehler beim xAI API-Aufruf {sys._getframe().f_code.co_name}: {e}")
                     # news_obj_xai = News(title=vote_title, vote_id=vote_id, article_list=[])
 
     return result
+
+vote_json = {"voteId": 6760, "path": "../markdown_output/erlaeuterungen_6760_de.md"}
+markdown_path = "../markdown_output/erlaeuterungen_6760_de.md"
+vote_json["summary"] = write_summary_by_markdown(vote_json.get("path"))
+print(vote_json["summary"]["grok-4"])

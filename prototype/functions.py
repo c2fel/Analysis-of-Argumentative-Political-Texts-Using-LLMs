@@ -393,10 +393,12 @@ def generate_markdowns(voteId, data):
 
 
 def count_votes():
-    """ This method compares the number of LLM-tracked votes
-        against the total number of votes available. """
-    # delete later
-    # url = "https://app-prod-ws.voteinfo-app.ch/v1/archive/vorlagen?searchTerm=&geoLevelNummer=0&geoLevelLevel=0"
+    """ This method compares the number of "LLM-tracked" in static/votes.json
+        against the total number of votes available at the private endpoint. """
+
+    total_count = 0
+    tracked_count = 0
+
     try:
         r = requests.get(
             build_votes_url(),
@@ -406,25 +408,35 @@ def count_votes():
         print("Error:", e)
         return "Error:", e
 
+    # count votes in private endpoint
     if r.status_code == 200:
-        total_count = 0
-        active_count = 0
         for vote_date in votes_json["regionen"][0]["abstimmtage"]:
             votegroup_per_vote_date = len(vote_date["vorlagenGruppen"])
             if votegroup_per_vote_date != 0:
                 for votegroup in vote_date["vorlagenGruppen"]:
                     total_count = total_count + len(votegroup["vorlagen"])
 
-                vote_datetime = datetime.strptime(vote_date["abstimmtag"], "%Y%m%d")
-                cutoff = datetime(2019, 1, 1)
+    # Count in static/votes.json
+    file_path = "static/votes.json"
+    if os.path.exists(file_path) and os.path.isfile(file_path):
+        try:
+            # Öffne und lade die Datei
+            with open(file_path, 'r', encoding='utf-8') as file:
+                voting_data = json.load(file)
+                # if voting_data has been successfully parsed,
+                # we return 1 as all necessary data exists for UI
+        except json.JSONDecodeError as e:
+            return False, f"Ungültiges JSON in '{file_path}': {str(e)}"
+        except PermissionError:
+            return False, f"Keine Leseberechtigung für '{file_path}'."
+        except Exception as e:
+            return False, f"Fehler beim Lesen von '{file_path}': {str(e)}"
 
-                today = date.today()
+        for abstimmungstag, votes in voting_data.items():
+            print(tracked_count)
+            tracked_count = tracked_count + len(votes)
 
-                if vote_datetime > cutoff:
-                    for votegroup in vote_date["vorlagenGruppen"]:
-                        active_count = active_count + len(votegroup["vorlagen"])
-
-        return active_count, total_count
+    return tracked_count, total_count
 
 
 def load_votes(lang):
