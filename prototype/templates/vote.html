@@ -252,7 +252,7 @@ Highcharts.chart('{{ k.vote.titel | replace(" im ", " ") | lower | replace(" ", 
     </div>
     <br /><br />
     <div class="bottom-bar">
-        <p class="text-center">LLM Actions <button type="button" class="btn btn-primary">Explain</button> <button type="button" class="btn btn-secondary">Chat</button> <button type="button" class="btn btn-info">Else</button></p>
+        <p class="text-center">LLM Actions <button type="button" class="btn btn-primary" onclick="sendMarkedText()">Explain</button> <button type="button" class="btn btn-secondary" onclick="sendMarkedText()">Chat</button> <button type="button" class="btn btn-info">Argumentation Quality</button></p>
         <p id="actionOutput">LoremOutput</p>
     </div>
 </main>

@@ -66,3 +66,14 @@
             });
         });
     </script>
+<script>
+function sendMarkedText() {
+  const selection = window.getSelection();
+  const selectedText = selection ? selection.toString() : "";
+  // ENCODE URI COMPONENT, damit Sonderzeichen korrekt übertragen werden!
+  const encoded = encodeURIComponent(selectedText);
+
+  // Beispiel: Seite neu laden mit GET-Parameter "text"
+  window.location.href = "/?text=" + encoded;
+}
+</script>
