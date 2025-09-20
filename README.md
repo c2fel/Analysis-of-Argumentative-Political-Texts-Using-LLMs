@@ -7,13 +7,32 @@
    - grok-3-mini (partially in the Prototype Application)
    - gpt-5-2025-08-07 (partially in the Prototype Application)
    - gpt-5-mini-2025-08-07 (partially in the Prototype Application)
-   - gpt-5-nano-2025-08-07 (removed, controlling for TPM limit add unnecessary complexity)
 3. Open source LLMs 
-   - Apertus-70B (only in Jupyter Notebook)
    - Apertus-8B (only in Jupyter Notebook)
+   - Apertus-70B (only in Jupyter Notebook)
 
 ## Prototype Application with GUI
+Instructions to prepare your `.env` file and how the prototype can be started and used.
+
+### Preparations
+Create the `.env` file as followed in the `path/prototype` directory:
+
+```
+HUGGINFACE_TOKEN=[Your Token]
+OPENAI_API_KEY=[Your Token]
+XAI_API_KEY=[Your Token]
+BK_API_VORLAGE=[API endpoint provided by the Swiss Federal Chancellary]
+BK_API_ERLAEUTERUNGEN=[API endpoint provided by the Swiss Federal Chancellary]
+MODEL_CONFIG=[{"provider": "OpenAI", "models": ["gpt-5", "gpt-5-mini"]}, {"provider": "xAI", "models": ["grok-4", "grok-3-mini"]}]
+```
+
+`BK_API_VORLAGE` and `BK_API_ERLAEUTERUNGEN` are not public and can be requested at `support@bk.admin.ch`. Feel free to amend `MODEL_CONFIG` to your need or add future models. `gpt-5-nano` is not used due to the TPM limit of 200 000 token (as of 20.09.2025), see `https://platform.openai.com/docs/models/gpt-5-nano` for more details.
+
+### Initialize Prototype
 Run `prototype/app.py` and open `http://127.0.0.1:5000` in browser. Multilanguage and one LLM is implemented. For demonstration and performance purposes, all necessary metadata is stored in `prototype/static/votes.json`. If you want to run the app from scratch you need to create a `.env` file in `prototype/agents/` and add your own API keys.
+
+#### Test mode
+The test mode can be set in `app.py` by `initialize_data(TESTMODE=True)`. This limits the number of votes to 1 to 5 elements, instead of loading and processing all 380 popular votes, which are currently available.
 
 ## Acknowledgement
 The Federal Chancellery ([Bundeskanzlei](`https://www.bk.admin.ch/bk/en/home.html`)) kindly provided two endpoints to 
