@@ -9,7 +9,7 @@
 <main class="flex-shrink-0">
     <div class="container">
         <h1 class="mt-5">{{ erlaeuterung.vorlagenTitel }}</h1>
-        <p>This popular vote is of type <b>{{ vote_type }}</b> and was held on <b>{{ vote_date }}</b> and contains {{ erlaeuterung.kapitel | length }} chapters. Selected LLM: {{ model }}</p>
+        <p>This popular vote is of type <b>{{ vote_type }}</b> and was held on <b>{{ vote_date }}</b>.</p>
         <ul class="nav nav-pills nav-fill mb-3" id="pills-tab" role="tablist">
             <!-- TODO auch hier kann class "active" genutzt werden um UI zu optmimieren -->
             <li class="nav-item">
@@ -241,7 +241,7 @@ Highcharts.chart('{{ k.vote.titel | replace(" im ", " ") | lower | replace(" ", 
     <ul>
         {% for article in newsArticles[model]['article_list'] %}
         <li>
-            <div class="article-title">{{ article.publisher }} ({{ article.label }}): {{ article.title }}</div>
+            <div class="article-title">{{ article.publisher }} <button type="button" class="btn btn-info btn-sm">{{ article.label }}</button>: {{ article.title }}</div>
             <div class="article-url"><a href="{{ article.url }}" target="_blank">{{ article.url }}</a></div>
             <div class="article-reflection">{{ article.summary }}</div>
         </li>
@@ -249,8 +249,12 @@ Highcharts.chart('{{ k.vote.titel | replace(" im ", " ") | lower | replace(" ", 
     </ul>
             </div>
         </div>
-
+    </div>
     <br /><br />
+    <div class="bottom-bar">
+        <p class="text-center">LLM Actions <button type="button" class="btn btn-primary">Explain</button> <button type="button" class="btn btn-secondary">Chat</button> <button type="button" class="btn btn-info">Else</button></p>
+        <p id="actionOutput">LoremOutput</p>
+    </div>
 </main>
 {% include "footer.html" %}
 <script>

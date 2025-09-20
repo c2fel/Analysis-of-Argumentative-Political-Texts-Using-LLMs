@@ -27,16 +27,17 @@
                         <thead>
                             <tr>
                                 <!--<th>VoteId</th>-->
-                                <th style="width:75%;">Title</th>
-                                <th style="width:25%;">Classification</th>
+                                <th style="width:30%;">Title</th>
+                                <th>Metadata</th>
+                                <th>LLM Classification</th>
                             </tr>
                         </thead>
                         <tbody>
                         {% for vote in votes %}
                             <tr>
-                                <!--<td>{{ vote.voteId }}</td>-->
-                                <td><a href="/votes/{{ vote.voteId }}">{{ vote.voteTitle[language] }}</a></td>
-                                <td><button type="button" class="btn btn-secondary btn-sm">{{ vote.voteType }}</button> <button type="button" class="btn btn-info btn-sm">{{ vote.voteTopic }}</button> <button type="button" class="btn btn-warning btn-sm">{{ vote.voteComplexity }}</button> <button type="button" class="btn btn-warning btn-sm">{{ vote.status }}</button></td>
+                                <td>{% if vote.status == 2 %}<a href="/votes/{{ vote.voteId }}">{{ vote.voteTitle[language] }}</a>{% else %}{{ vote.voteTitle[language] }}{% endif %}</td>
+                                <td><button type="button" class="btn btn-secondary btn-sm">{{ vote.voteType }}</button> <button type="button" class="btn {% if vote.status == 2 %}btn-success btn-sm">Ready{% elif vote.status == 1 %}btn-danger btn-sm">Not ready{% else %}btn-danger btn-sm">Missing data{% endif %}</button></td>
+                                <td><button type="button" class="btn btn-info btn-sm">{{ vote.voteTopic }}</button> <button type="button" class="btn btn-warning btn-sm">{{ vote.voteComplexity }}</button></td>
                             </tr>
                         {% endfor %}
                         </tbody>
@@ -49,9 +50,6 @@
     </div>
     <br /><br /><br />
 </main>
-<footer class="bg-dark text-white p-3 mt-auto">  <!-- Schritt 2: mt-auto für Sticky-Effekt -->
-    <p class="text-center">© 2025 Deine Firma | Impressum</p>
-</footer>
 {% include "footer.html" %}
 </body>
 </html>

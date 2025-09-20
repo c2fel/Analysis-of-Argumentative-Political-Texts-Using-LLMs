@@ -6,6 +6,7 @@
 import json
 import os
 from itertools import islice
+import hashlib
 
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, date
@@ -15,7 +16,7 @@ from xai_sdk import Client
 import tiktoken
 
 from prototype.agents.llm_functions import classify_topic_by_title, score_complexity_by_markdown, \
-    search_news_articles
+    search_news_articles, classify_arguments_by_markdown
 
 
 def initialize_data(TESTMODE=None):
@@ -61,7 +62,7 @@ def initialize_data(TESTMODE=None):
 
     #print(voting_data)
     if TESTMODE:
-        voting_data = dict(islice(voting_data.items(), 2))
+        voting_data = dict(islice(voting_data.items(), 1))
 
     # print(type(voting_data))
 
@@ -94,6 +95,31 @@ def initialize_data(TESTMODE=None):
             # 1 = sehr beschränkt
             # 2 = detailliert
             if vote_details['status'] > 0:
+                # Rebuild all "typ": "text" in the chapters, only for language "de" at the moment
+                for erlaeuterung in vote_details['erlaeuterungen']:
+                    if erlaeuterung['langKey'] == "de":
+                        i = 1
+                        for chapter in erlaeuterung['erlaeuterung']['kapitel']:
+                            # print(chapter)
+                            for komponente in chapter['komponenten']:
+                                # print(komponente)
+                                if komponente['typ'] == "text":
+                                    # print(chapter['komponenten']['typ'])
+                                    komponente['sentence_list'] = []
+                                    sentences = komponente['text']['text'].split(". ")
+                                    for sentence in sentences:
+                                        hash_result = hashlib.md5(sentence.encode())
+                                        komponente['sentence_list'].append(
+                                            {
+                                                "id": i,
+                                                "hash": hash_result.hexdigest(),
+                                                "text": sentence
+                                            }
+                                        )
+                                        i += 1
+                            # del chapter['text'] # FIXME to save space, we could delete this key
+                print("JSON processed.")
+
                 # Generate markdown files
                 markdown_files = generate_markdowns(vote['voteId'], vote_details)
                 vote['markdown_files'] = markdown_files
@@ -125,10 +151,10 @@ def initialize_data(TESTMODE=None):
                             f"The last output from the same prompt was not as expected. "
                             f"Your last output: {vote['voteComplexity']}. "
                             f"Expected output should be one of these labels: {range_complexity_score}. "
-                            f"Thus, eveluate again:")
+                            f"Thus, evaluate again:")
 
                     # LLM-based
-                    # vote['argumentationAssessment'] = classify_arguments_by_markdown(vote['markdown_files']['de'])
+                    vote['argumentationAssessment'] = classify_arguments_by_markdown(vote['markdown_files']['de'])
 
                     # Add LLM-based summary as introduction
                     # vote['voteSummary'] = write_summary_by_markdown(vote['markdown_files']['de'])

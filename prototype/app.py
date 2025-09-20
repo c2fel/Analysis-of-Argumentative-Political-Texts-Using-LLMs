@@ -43,25 +43,9 @@ def vote(voteId):
     language = request.args.get('language', 'de')
     model = request.args.get('model', 'grok-4')
     date, vote = load_vote(voteId, language)
-    print(date)
-    print(vote)
+
     contents = next((e for e in vote["erlaeuterungen"] if e["langKey"] == language), None)
-    print(contents)
-    # print(contents['erlaeuterung'])
-    #
-    # {{ newsArticles.gpt-5.title }}
-    # "voteNewsArticles": {
-    #         "gpt-5": {
-    #           "title": "Umweltverantwortungsinitiative",
-    #           "vote_id": 6770,
-    #           "article_list": [
-    #             {
-    #               "title": "Umweltverantwortungsinitiative: Wer ist hier lustfeindlich?",
-    #               "summary": "Meinungsbeitrag, der die UVI als notwendigen Schritt gegen Wegwerf- und Konsumgesellschaft verteidigt und Kritik an Medien-Frames übt. Publiziert am 30.01.2025.",
-    #               "publisher": "WOZ Die Wochenzeitung",
-    #               "url": "https://www.woz.ch/2505/umweltverantwortungsinitiative/wer-ist-hier-lustfeindlich/!J8T9JSJSVR12",
-    #               "label": "links/ökologisch. Quelle: WOZ. citeturn6view0"
-    #             },
+
     return render_template('vote.html', vote_date=date, vote_id=voteId,
                            erlaeuterung=contents['erlaeuterung'], vote_type=classify_vote(voteId), model=model, newsArticles=vote['voteNewsArticles'])
 

@@ -126,18 +126,6 @@ def score_complexity_by_markdown(client, path_to_markdown="../markdown_output/er
         print(f"Fehler bei der Verarbeitung von Markdown-Datei '{path_to_markdown}': {e}")
         return "Error"
 
-def related_news_articles(client, vote_tile, retry=""):
-    client = Client(api_key=os.getenv("XAI_API_KEY"))
-
-    chat = client.chat.create(
-        model="grok-4",
-        search_parameters=SearchParameters(mode="auto"),
-    )
-
-    chat.append(user("Provide me a digest of world news of the week before July 9, 2025."))
-
-    response = chat.sample()
-    print(response.content)
 
 def evaluate_context_window(prompt, model, models):
     # check inputs
@@ -320,6 +308,7 @@ class Sentence(BaseModel):
 
     sentence: str = Field(description="The text content of the sentence.")
     id: int = Field(default_factory=lambda: Sentence._increment_id(), description="Unique identifier for the sentence.")
+    hash: str = Field(default=None, description="MD5 hash of the sentence text.")
     argument_type: Toulmin = Field(description="The type of argument")
     parent_id: Optional[int] = Field(default=None,
                                      description="The ID of the parent sentence this sentence references in the context of the argument, when the Toulmin model is applied")  # Wenn ein Satz beispielsweise ein Rebuttal (Gegeneinwand) darstellt, dann gibt es möglcherweise 2 parents
@@ -333,10 +322,11 @@ class Sentence(BaseModel):
         cls._id_counter += 1  # Zähler erhöhen
         return cls._id_counter
 
-    @computed_field(description="MD5 hash of the sentence text.")
-    @property
-    def text_hash(self) -> str:
-        return hashlib.md5(self.text.encode('utf-8')).hexdigest()
+    @validator('hash', pre=True, always=True)
+    def set_hash(cls, v, values):
+        if v is not None:
+            return v
+        return hashlib.md5(values.get('sentence', '').encode('utf-8')).hexdigest()
 
 
 class Argument(BaseModel):
@@ -379,10 +369,49 @@ def classify_arguments_by_markdown(markdown_path):
     response, vote = chat.parse(Vote)
     assert isinstance(vote, Vote)
 
-    print(vote.vote_title)
-    print(response.content)
+    content = response.content
+    if isinstance(content, bytes):
+        content = content.decode('utf-8')  # Dekodiere nur, wenn es Bytes sind
+    elif not isinstance(content, str):
+        raise ValueError("Unbekannter Inhaltstyp: Erwartet Bytes oder String")
 
-    return response.content
+    # Parse JSON zu Dictionary
+    try:
+        #return json.loads(content)
+        data = json.loads(content)
+        # Konvertiere das Dictionary in ein Vote-Modell, falls nötig
+        vote_instance = Vote(**data) if not isinstance(vote, Vote) else vote
+        # Rückgabe als Dictionary mit computed fields
+        return vote_instance.model_dump()
+        # TODO this seems to work: return vote_instance.model_dump(by_alias=True)
+        # see https://docs.pydantic.dev/2.0/usage/computed_fields/
+        # class Sentence(BaseModel):
+        #     _id_counter: int = 0  # Klassenvariablen-Zähler
+        #
+        #     sentence: str = Field(description="The text content of the sentence.")
+        #     id: int = Field(default_factory=lambda: Sentence._increment_id(), description="Unique identifier for the sentence.")
+        #     hash: str
+        #     argument_type: Toulmin = Field(description="The type of argument")
+        #     parent_id: Optional[int] = Field(default=None,
+        #                                      description="The ID of the parent sentence this sentence references in the context of the argument, when the Toulmin model is applied")  # Wenn ein Satz beispielsweise ein Rebuttal (Gegeneinwand) darstellt, dann gibt es möglcherweise 2 parents
+        #     # TODO oder auch nicht? Drüber nachdenken und besprechen
+        #     polarization_score: Score = Field(description="The amount of Polarization found in the given sentence")
+        #     populism_score: Score = Field(description="The amount of Populism found in the given sentence")
+        #     fallacy_list: List[Fallacies] = Field("Wähle von allen passenden aus")  # Choices!
+        #
+        #     @classmethod
+        #     def _increment_id(cls) -> int:
+        #         cls._id_counter += 1  # Zähler erhöhen
+        #         return cls._id_counter
+        #
+        #     @computed_field(description="MD5 hash of the sentence text.")
+        #     @property
+        #     def text_hash(self) -> str:
+        #         return hashlib.md5(self.text.encode('utf-8')).hexdigest()
+
+    except json.JSONDecodeError as e:
+        print(f"Fehler beim Parsen des JSON: {e} - Inhalt: {content}")
+        return {"error": "Ungültiges JSON-Format"}
 
 def write_summary_by_markdown(markdown_path):
     # Lade Markdown file
@@ -396,7 +425,11 @@ def write_summary_by_markdown(markdown_path):
         "to freely form an opinion on their own by adding context to their questions and tasks."
     )
     system_message = (
-        f"Write a summary"
+        f"Basierend auf dem Markdown file, erstelle mir ein neutrales Summary, "
+        f"welches ein Stimmbürger zur Meinungsbildung nutzen will. "
+        f"Zur Recherche kannst du auch Weblinks besuchen, die im Markdown enthalten sind. "
+        f"Dein Output sollte ein String mit HTML Code sein. Benutze nur die Tags <h1>, <h2>, <p>, <ul> und <li>."
+        f"Markdown-Text: ```{markdown_text}```"
     )
 
     # Umgebungsvariablen laden
@@ -413,19 +446,6 @@ def write_summary_by_markdown(markdown_path):
     # Natives xAI Client initialisieren
     xai_client = get_xai_client()
 
-    # Parse vote_date to datetime
-    vote_date_dt = datetime.strptime(vote_date, "%Y-%m-%d")
-
-    # Search parameters für Live Search
-    search_params = SearchParameters(
-        mode="on",  # Force live search
-        return_citations=True,  # Für URLs und Quellen
-        # from_date=datetime(2022, 1, 1), # TODO is this necessary? 6-12 months prior
-        to_date=vote_date_dt,  # Articles before vote_date
-        max_search_results=20,
-        sources=[web_source(country="CH")]
-    )
-
     result = {}
 
     for provider in model_config:
@@ -433,23 +453,11 @@ def write_summary_by_markdown(markdown_path):
             if provider["provider"] == 'OpenAI':
                 #  GPT Request mit Web Search
                 try:
-                    if model == "gpt-5-nano":  # tpm limit of 200 000, one markdown request has ca 80% of that
-                        # warte einige Sekunden um bei gpt-5 nano eine rate limit zu erreichen
-                        # important to wait before the first execution as we use multi threading
-                        time.sleep(60)
-
-                    openai_response = openai_client.responses.parse(
+                    openai_response = openai_client.responses.parse( #FIXME parse not necessary here
                         model=model,
                         tools=[{"type": "web_search"}],  # Web Search aktivieren
                         input=messages,
-                        text_format=News,  # Pydantic Schema
                     )
-
-                    news_obj_openai: News = openai_response.output_parsed
-                    news_obj_openai.title = vote_title
-                    news_obj_openai.vote_id = vote_id
-
-                    result[model] = news_obj_openai.model_dump()
 
                 except Exception as e:
                     print(f"Fehler beim OpenAI API-Aufruf {sys._getframe().f_code.co_name}: {e}")
@@ -460,17 +468,11 @@ def write_summary_by_markdown(markdown_path):
                     xai_chat = xai_client.chat.create(
                         model=model,
                         messages=[system(system_message)],
-                        search_parameters=search_params
                     )
                     xai_chat.append(user(user_message))
 
                     # The parse method returns pydantic object
-                    xai_response, xai_news = xai_chat.parse(News)
-                    assert isinstance(xai_news, News)
-
-                    # Add variables
-                    xai_news.title = vote_title
-                    xai_news.vote_id = vote_id
+                    xai_response, xai_news = xai_chat.parse(News) #FIXME parse not necessary here
 
                     result[model] = xai_news.model_dump()
 
@@ -478,9 +480,4 @@ def write_summary_by_markdown(markdown_path):
                     print(f"Fehler beim xAI API-Aufruf {sys._getframe().f_code.co_name}: {e}")
                     # news_obj_xai = News(title=vote_title, vote_id=vote_id, article_list=[])
 
-    # FIXME Usage:
-    # news = search_news_articles("Umweltverantwortungsinitiative", "2025-02-09", 6770)
-    # print(news)
     return result
-
-# print(search_news_articles("Umweltverantwortungsinitiative", "2025-02-09", 6770))
