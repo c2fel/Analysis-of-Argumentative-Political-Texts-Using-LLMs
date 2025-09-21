@@ -26,22 +26,29 @@ def api_get_vote(voteId):
 
 @app.route('/')
 def home():
+    language = request.args.get('language', 'de')
+    model = request.args.get('model', 'grok-4')
+
     a, b = count_votes()
-    return render_template('index.html', tracked_votes=a, total_votes=b)
+
+    return render_template('index.html', tracked_votes=a, total_votes=b, language=language, model=model)
 
 
 @app.route('/votes')
 def votes():
     language = request.args.get('language', 'de')
+    model = request.args.get('model', 'grok-4')
+
     abstimmungstage = load_votes(language)
-    # print(abstimmungstage)
-    return render_template("votes.html", abstimmungstage=abstimmungstage, language=language)
+
+    return render_template("votes.html", abstimmungstage=abstimmungstage, language=language, model=model)
 
 
 @app.route('/votes/<int:voteId>')
 def vote(voteId):
     language = request.args.get('language', 'de')
     model = request.args.get('model', 'grok-4')
+
     date, vote = load_vote(voteId, language)
 
     contents = next((e for e in vote["erlaeuterungen"] if e["langKey"] == language), None)
