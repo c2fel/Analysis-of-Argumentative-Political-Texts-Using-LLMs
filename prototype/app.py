@@ -50,15 +50,9 @@ def vote(voteId):
                            erlaeuterung=contents['erlaeuterung'], vote_type=classify_vote(voteId), model=model, newsArticles=vote['voteNewsArticles'], summary=vote['voteSummary'])
 
 
-@app.route('/test')
-def test():
-    return render_template('test_template.html')
-
-
 @app.route('/vorlage.html')
 def vorlage_html():
     return render_template('vorlage_old.html')
-
 
 
 if __name__ == '__main__':

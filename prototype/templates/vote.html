@@ -28,7 +28,9 @@
         <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade" id="tab0" role="tabpanel" aria-labelledby="tab0-tab">
                 <div class="container my-5">
-                    <span class="border border-info">Dieser Text wurde mittels einem Large Language Model {{ model }} generiert.</span>
+                    <div class="alert alert-info" role="alert">
+                        Dieser Text wurde mittels einem Large Language Model <button type="button" class="btn btn-light btn-sm" style="vertical-align: baseline;">{{ model }}</button> generiert.
+                    </div>
                     {{ summary[model] | replace('"', '') | safe }}
                 </div>
             </div>
@@ -38,7 +40,7 @@
                 <div class="container" style="min-height: 50vh;">
                     <div class="row" style="min-height: 50vh;">
                         <div class="col-8 bg-light" style="min-height: 50vh;">
-                            <span class="border border-info">Diese Inhalte entstammen den Erläuterungen aus dem Abstimmungsbüchlein, welches von der Bundeskanzlei herausgegeben wird.</span>
+                            <div class="alert alert-info" role="alert">Diese Inhalte entstammen den Erläuterungen aus dem Abstimmungsbüchlein, welches von der Bundeskanzlei herausgegeben wird.</div>
                             <h3>Contents</h3>
                             {% for k in chapter.komponenten %}
   {# Titel: #}
@@ -184,7 +186,9 @@ Highcharts.chart('{{ k.vote.titel | replace(" im ", " ") | lower | replace(" ", 
             </div>
             {% endfor %}
             <div class="tab-pane fade" id="tab{{ (erlaeuterung.kapitel | length) + 1 }}" role="tabpanel" aria-labelledby="tab{{ (erlaeuterung.kapitel | length) + 1 }}-tab">
-                <span class="border border-info">Diese Inhalte wurden mittels einem Large Language Model {{ model }} generiert.</span>
+                <div class="alert alert-info" role="alert">
+                    Dieser Text wurde mittels einem Large Language Model <button type="button" class="btn btn-light btn-sm" style="vertical-align: baseline;">{{ model }}</button> generiert.
+                </div>
                 <h2>Artikelübersicht zur {{ newsArticles[model]['title'] }}</h2>
     <ul>
         {% for article in newsArticles[model]['article_list'] %}
