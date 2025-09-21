@@ -28,63 +28,9 @@
         <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade" id="tab0" role="tabpanel" aria-labelledby="tab0-tab">
                 <div class="container my-5">
-                    <h1>Summary zur Umweltverantwortungsinitiative</h1>
-    <p>Die Umweltverantwortungsinitiative zielt darauf ab, den Ressourcenverbrauch und die Schadstoffemissionen in der Schweiz so zu reduzieren, dass sie die planetaren Belastbarkeitsgrenzen, gemessen am Bevölkerungsanteil der Schweiz, nicht überschreiten. Dies soll innerhalb von zehn Jahren durch sozialverträgliche Maßnahmen erreicht werden, ohne dass konkrete Maßnahmen im Initiativtext festgelegt sind. Die Initiative betrifft Bereiche wie Klima, Biodiversität, Wasserverbrauch, Bodennutzung sowie Stickstoff- und Phosphoreintrag.</p>
-
-    <h2>Ausgangslage</h2>
-    <p>Die Schweiz hat in den letzten Jahrzehnten Fortschritte im Umweltschutz erzielt, etwa durch effizienteren Ressourceneinsatz und geringere Pro-Kopf-Umweltbelastung. Dennoch überschreitet der Konsum in der Schweiz die planetaren Grenzen in Bereichen wie Klima, Biodiversität und Stickstoff. Weltweit werden natürliche Ressourcen wie Wasser, Boden und Luft oft überbeansprucht, was langfristig die Lebensgrundlagen gefährdet.</p>
-
-                    <h2>Ziele der Initiative</h2>
-    <ul>
-        <li><strong>Umweltbelastung reduzieren</strong>: Der Konsum in der Schweiz soll die planetaren Belastbarkeitsgrenzen nicht überschreiten (z. B. Treibhausgasemissionen um über 90 %, Biodiversitätsverlust um etwa 75 %, Stickstoffbelastung um etwa 50 %).</li>
-        <li><strong>Sozialverträgliche Umsetzung</strong>: Maßnahmen sollen im In- und Ausland sozialverträglich sein, ohne Benachteiligung einkommensschwacher Haushalte.</li>
-        <li><strong>Zeitrahmen</strong>: Zielerreichung innerhalb von zehn Jahren.</li>
-    </ul>
-        <div class="row">
-            <div class="col-12 col-md-6 left-column">
-
-
-
-    <h2>Argumente des Initiativkomitees (Pro)</h2>
-    <ul>
-        <li><strong>Schutz der Lebensgrundlagen</strong>: Die Initiative sichert sauberes Wasser, gesunde Lebensmittel und reine Luft für alle.</li>
-        <li><strong>Dringlichkeit</strong>: Die Klimakrise und das Artensterben erfordern schnelles Handeln, da Ökosystemveränderungen oft irreversibel sind.</li>
-        <li><strong>Wirtschaftliche Chancen</strong>: Förderung nachhaltiger Arbeitsplätze und innovativer Technologien (z. B. nachhaltige Landwirtschaft, Bautechnologien).</li>
-        <li><strong>Ganzheitlicher Ansatz</strong>: Umweltprobleme wie Klimakrise, Artensterben und Verschmutzung werden gemeinsam angegangen.</li>
-        <li><strong>Umweltgerechtigkeit</strong>: Reiche und Konzerne sollen größere Verantwortung tragen, kleine Unternehmen sollen unterstützt werden.</li>
-    </ul>
-
-    <h2>Argumente von Bundesrat und Parlament (Contra)</h2>
-    <ul>
-        <li><strong>Einschneidende Vorschriften</strong>: Neue Regelungen und Verbote würden den Konsum stark einschränken (z. B. Ernährung, Mobilität, Wohnen).</li>
-        <li><strong>Wirtschaftliche Belastung</strong>: Höhere Produktionskosten, eingeschränktes Angebot und geschwächte Wettbewerbsfähigkeit könnten Arbeitsplätze gefährden.</li>
-        <li><strong>Soziale Folgen</strong>: Höhere Preise könnten einkommensschwache Haushalte belasten, trotz geforderter Sozialverträglichkeit.</li>
-        <li><strong>Kurze Frist</strong>: Zehn Jahre seien zu kurz für umfassende, mehrheitsfähige Maßnahmen.</li>
-        <li><strong>Internationaler Kontext</strong>: Einseitige Maßnahmen der Schweiz könnten Handelsabkommen verletzen und hätten global nur geringe Wirkung.</li>
-    </ul>
-
-
-
-
-
-
-            </div>
-            <div class="col-12 col-md-6 right-column">
-                 <img src="../static/graph_6770.png" width="600" style="padding-top: 40px"/>
-            </div>
-        </div>
-
-                    <h2>Mögliche Auswirkungen</h2>
-    <ul>
-        <li><strong>Bevölkerung</strong>: Eingeschränktes Angebot an Produkten und Dienstleistungen, höhere Preise, Änderungen im Lebensstil (Ernährung, Mobilität, Wohnen).</li>
-        <li><strong>Wirtschaft</strong>: Höhere Produktionskosten, aber Chancen für nachhaltige Innovationen. Risiko der Abwanderung von Firmen.</li>
-        <li><strong>Bund und Kantone</strong>: Erheblicher Mehraufwand für Infrastrukturumbau, aber mögliche Einsparungen bei Umweltschäden.</li>
-        <li><strong>International</strong>: Mögliche Konflikte mit Handelsabkommen (z. B. WTO).</li>
-    </ul>
-                    <h2>Fazit</h2>
-    <p>Die Initiative fordert einen ambitionierten Wandel hin zu einer nachhaltigen Wirtschaft, birgt aber auch Risiken für die Wirtschaft und den Lebensstandard. Sie setzt auf schnelle, umfassende Maßnahmen, während Bundesrat und Parlament eine Fortsetzung der bisherigen, schrittweisen Umweltpolitik bevorzugen. Stimmbürger müssen abwägen, ob die Dringlichkeit der Umweltkrisen die potenziellen sozialen und wirtschaftlichen Folgen rechtfertigt.</p>
-
-    </div>
+                    <span class="border border-info">Dieser Text wurde mittels einem Large Language Model {{ model }} generiert.</span>
+                    {{ summary[model] | replace('"', '') | safe }}
+                </div>
             </div>
             <!-- TODO put class "active" depending on view -->
             {% for chapter in erlaeuterung.kapitel %}
@@ -92,6 +38,7 @@
                 <div class="container" style="min-height: 50vh;">
                     <div class="row" style="min-height: 50vh;">
                         <div class="col-8 bg-light" style="min-height: 50vh;">
+                            <span class="border border-info">Diese Inhalte entstammen den Erläuterungen aus dem Abstimmungsbüchlein, welches von der Bundeskanzlei herausgegeben wird.</span>
                             <h3>Contents</h3>
                             {% for k in chapter.komponenten %}
   {# Titel: #}
@@ -237,6 +184,7 @@ Highcharts.chart('{{ k.vote.titel | replace(" im ", " ") | lower | replace(" ", 
             </div>
             {% endfor %}
             <div class="tab-pane fade" id="tab{{ (erlaeuterung.kapitel | length) + 1 }}" role="tabpanel" aria-labelledby="tab{{ (erlaeuterung.kapitel | length) + 1 }}-tab">
+                <span class="border border-info">Diese Inhalte wurden mittels einem Large Language Model {{ model }} generiert.</span>
                 <h2>Artikelübersicht zur {{ newsArticles[model]['title'] }}</h2>
     <ul>
         {% for article in newsArticles[model]['article_list'] %}

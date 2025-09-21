@@ -47,7 +47,7 @@ def vote(voteId):
     contents = next((e for e in vote["erlaeuterungen"] if e["langKey"] == language), None)
 
     return render_template('vote.html', vote_date=date, vote_id=voteId,
-                           erlaeuterung=contents['erlaeuterung'], vote_type=classify_vote(voteId), model=model, newsArticles=vote['voteNewsArticles'])
+                           erlaeuterung=contents['erlaeuterung'], vote_type=classify_vote(voteId), model=model, newsArticles=vote['voteNewsArticles'], summary=vote['voteSummary'])
 
 
 @app.route('/test')
@@ -63,7 +63,7 @@ def vorlage_html():
 
 if __name__ == '__main__':
     s = time.time()
-    success, return_string = initialize_data() #TESTMODE=True
+    success, return_string = initialize_data() # TESTMODE=True
     if not success:
         print(f"Failed to initialize data: {return_string}")
         sys.exit(0)

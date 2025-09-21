@@ -16,7 +16,7 @@ from xai_sdk import Client
 import tiktoken
 
 from prototype.agents.llm_functions import classify_topic_by_title, score_complexity_by_markdown, \
-    search_news_articles, classify_arguments_by_markdown
+    search_news_articles, classify_arguments_by_markdown, write_summary_by_markdown
 
 
 def initialize_data(TESTMODE=None):
@@ -62,7 +62,7 @@ def initialize_data(TESTMODE=None):
 
     #print(voting_data)
     if TESTMODE:
-        voting_data = dict(islice(voting_data.items(), 1))
+        voting_data = dict(islice(voting_data.items(), 2))
 
     # print(type(voting_data))
 
@@ -157,7 +157,7 @@ def initialize_data(TESTMODE=None):
                     vote['argumentationAssessment'] = classify_arguments_by_markdown(vote['markdown_files']['de'])
 
                     # Add LLM-based summary as introduction
-                    # vote['voteSummary'] = write_summary_by_markdown(vote['markdown_files']['de'])
+                    vote['voteSummary'] = write_summary_by_markdown(vote['markdown_files']['de'])
                 else:
                     vote['voteComplexity'] = 0
 

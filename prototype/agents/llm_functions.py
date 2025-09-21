@@ -502,8 +502,3 @@ def write_summary_by_markdown(markdown_path):
                     # news_obj_xai = News(title=vote_title, vote_id=vote_id, article_list=[])
 
     return result
-
-vote_json = {"voteId": 6760, "path": "../markdown_output/erlaeuterungen_6760_de.md"}
-markdown_path = "../markdown_output/erlaeuterungen_6760_de.md"
-vote_json["summary"] = write_summary_by_markdown(vote_json.get("path"))
-print(vote_json["summary"]["grok-4"])
