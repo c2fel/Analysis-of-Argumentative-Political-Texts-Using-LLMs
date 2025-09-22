@@ -37,6 +37,33 @@ Run `prototype/app.py` and open [http://127.0.0.1:5000](http://127.0.0.1:5000) i
 The test mode can be set in `app.py` by `initialize_data(TESTMODE=True)`. This limits the number of votes to 1 to 5 elements, instead of loading and processing all 380 popular votes, which are currently available.
 
 ### Docker Container on HSG Infrastructure
+Let's configure the app with docker as followed:
+- Container name: `christoph-zweifel-container`
+- App name: `smart-voting-booklet-app`
+
+To start the docker container run the following commands:
+
+Build the app
+```
+docker build -t smart-voting-booklet-app .
+```
+Start the Docker container with the app
+```
+docker run -d -p 5000:5000 --name christoph-zweifel-container smart-voting-booklet-app
+```
+
+To check if things are running smoothly or debug:
+```
+docker ps
+docker logs christoph-zweifel-container
+```
+
+To stop and remove both the container and the built app:
+```
+docker stop thesis-container2               
+docker rm thesis-container2
+docker rmi argumentative-analysis-app
+```
 
 ## Acknowledgement
 The Federal Chancellery ([Bundeskanzlei](https://www.bk.admin.ch/bk/en/home.html)) kindly provided two endpoints to 
