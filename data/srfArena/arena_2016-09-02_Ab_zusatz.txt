@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"grüne Wirtschaft"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Innovation, ök.Fussabdruck"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"sachlich"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"z.T. angriffig (FDP-SP), sonst respektvoll"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"FDP, BDP&Bundesrat vs SP,Grüne &GLP"

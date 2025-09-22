@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Familienmodelle / Betreuungsmodelle Kinder"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Lohnungleichheit"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"gesittet"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"höflich, man lässt sich ausreden"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"konservativ vs. liberal"

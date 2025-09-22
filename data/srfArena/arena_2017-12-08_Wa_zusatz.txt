@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Terrorismus"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Migrationspolitik, Sicherheitspolitik, Islam, Integrationspolitik, Grundrechte"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"Bissig"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"Immer wieder Mal auf den Mann/Frau gespielt, aber im Grossen und Ganzen fair"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"Grün gegenden Rest"

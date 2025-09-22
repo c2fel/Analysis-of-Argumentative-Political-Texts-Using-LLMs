@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Nahrungsmittelspekulation"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Entwicklungshilfe"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"moderat, man lässt sich mehrheitlich aussprechen"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"respektvoll"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"JUSO vs. Rest"

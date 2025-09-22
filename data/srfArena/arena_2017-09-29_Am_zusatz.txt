@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Land ist gespalten/Polarisierung"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Machtgewinn Medien vs Verbände, Personenfreizügigkeit, Initiative, Referendum"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"ruhig"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"respektvoll"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"keine Pro/Contra, denn Diskussion an einem runden Tisch"

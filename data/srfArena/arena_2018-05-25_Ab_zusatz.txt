@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Geldspielgesetz"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Netzsperre"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"Sachlich, aber auch hart"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"Respektvoll"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"Jungparteien, FDP gegen den Rest der Parteien"

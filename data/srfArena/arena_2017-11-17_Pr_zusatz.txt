@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Profit statt Moral"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Steuergerechtigkeit, Konzernverantwortungs-Initiative"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"mehrheitlich sachli, aber laut und direkt"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"direkte Angriffe, emotional, aber auch sachlich, viele Underbrücje"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"FDP, SVP vs. SP"

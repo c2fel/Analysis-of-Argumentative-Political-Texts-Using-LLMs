@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Arbeitsgesetz (25h Woche)"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Kündigungsschutz, Vereinbarkeit Beruf-Familie"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"z.T. hitzig, humorvoll"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"respektvoll"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"juso vs FDP / Gewerkschaft vs Arbeitgeber"

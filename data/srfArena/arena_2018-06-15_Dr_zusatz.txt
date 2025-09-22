@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Konzernverantwortungs-Initiative"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Globalisierung"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"sachlich"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"respektvoll"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"FDP, CVP vs. SP"

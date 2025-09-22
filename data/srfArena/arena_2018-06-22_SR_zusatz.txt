@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Mediengesetz"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"No-Billag, SRG"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"immer wieder abgeschweift auf andere Themen"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"Respektvoll, aber hart"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"SVP, FDP vs. CVP, SP"

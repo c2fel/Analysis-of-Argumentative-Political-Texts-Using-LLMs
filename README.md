@@ -36,6 +36,8 @@ Run `prototype/app.py` and open [http://127.0.0.1:5000](http://127.0.0.1:5000) i
 #### Test mode
 The test mode can be set in `app.py` by `initialize_data(TESTMODE=True)`. This limits the number of votes to 1 to 5 elements, instead of loading and processing all 380 popular votes, which are currently available.
 
+### Docker Container on HSG Infrastructure
+
 ## Acknowledgement
 The Federal Chancellery ([Bundeskanzlei](https://www.bk.admin.ch/bk/en/home.html)) kindly provided two endpoints to 
 fetch data about past Popular Votes and their respective information (Erläuterungen).

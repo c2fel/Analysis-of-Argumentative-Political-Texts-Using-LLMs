@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Export-Kriegsmaterial"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Neutralität, himanitäre Tradition"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"Sachlich aber emotionsgeladen."
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"Respektvoll, aber hart in der Sache"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"SVP, FDP - GLP, Gsoa"

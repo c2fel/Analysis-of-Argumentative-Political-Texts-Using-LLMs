@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Wer wird Bundesrat"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Europapolitik"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"z.T. hitzig"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"respektvoll"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"verschiedene Konfliklager"

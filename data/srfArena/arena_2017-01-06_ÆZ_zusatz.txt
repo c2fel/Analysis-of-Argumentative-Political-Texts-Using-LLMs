@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Migrationspolitik"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Altersvorsorge"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"hitzig"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"man lässt sich nicht ausreden"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"alle gegen alle"

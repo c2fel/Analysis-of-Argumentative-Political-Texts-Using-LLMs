@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Fortpflanzungsmedizin"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Abtreibung"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";NA
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";NA
-"Konfliktstruktur";"Welche Lager bildeten sich?";"SVP& EVP vs FDP&Bundesrat(SP)"

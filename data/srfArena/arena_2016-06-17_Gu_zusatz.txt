@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"CH-Pass für 3.Generation"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Doppelbürgerschaft"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"stark von persönlichen Meinungen geprägt -> nicht sehr sachlich"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"respektvoll"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"SP vs SVP"

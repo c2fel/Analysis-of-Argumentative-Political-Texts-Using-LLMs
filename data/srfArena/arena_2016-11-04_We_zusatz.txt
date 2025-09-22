@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Rechtspopulismus"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Masseneinwanderung,  EU, Flüchtlingskrise, Selbstbestimmungs-Initiative"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"Hitzig, ausweichend"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"Viele gegenseitige Unterbrechungen"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"rechts vs. links / SVP, ADF vs. SP, GLP"

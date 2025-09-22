@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"EU"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Rahmenabkommen, Bilaterale, Personenfreizügigkeit, Künigungsinitiatve, MEI"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"Mehrheitlich sachlich, aber sehr hitzig"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"Respeltvoll, aber hart in der Sache"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"SVP, AUNS vs. SP, CVP, FDP"

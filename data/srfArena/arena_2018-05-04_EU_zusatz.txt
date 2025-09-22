@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Rahmenabkommen"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Lohnschutz, Masseneinwanderungs-Initiative, Kündigungs-Initiative, Personenfreizügigkeit"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"sachlich aber direkt"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"respektvoll"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"SVP vs. Gewerkschaften vs. BDP, Economiesuisse"

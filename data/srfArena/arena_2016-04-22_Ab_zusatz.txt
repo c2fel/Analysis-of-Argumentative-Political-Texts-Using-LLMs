@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Asylgesetzrevision"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Kampagnenmanagement SVP"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"gesittet"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"höflich, man lässt sich mehrheitlich ausreden"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"SVP vs. Rest"

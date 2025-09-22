@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Impfen, HIV"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";NA
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"Nicht immmer fundierte Argumente. Emotional."
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"Respektvoll"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"Schuhlmedizin vs. Heilpraktik"

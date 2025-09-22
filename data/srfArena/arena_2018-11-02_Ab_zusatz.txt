@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Hornkuh-Initiative"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"-"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"Sachlich, aber auch emotional"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"Respektvoll"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"Bundesrat, BDP vs. Initianten, SP"

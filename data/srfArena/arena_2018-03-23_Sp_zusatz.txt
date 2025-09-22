@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Sozialhilfemissbrauch"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Flüchtlinge"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"hitzig"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"angriffig"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"SVP&CVP vs SP&Mäder"

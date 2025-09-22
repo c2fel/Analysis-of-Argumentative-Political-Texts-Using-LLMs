@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"No-Billag-Initiative: was bedeutet ein Ja zu No Billag für Radio und Fernsehen in der Schweiz?"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Bringt No Billag mehr Wahlfreiheit und bessere Inhalte? Sowie ein vielfältigeres und attraktiveres Angebot?"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"gesellig"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"respektvoll"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"Oliver Kessler, Gregor Rutz, Andreas Kleeb, Jessica Brestel vs. Joachim Eder, Roger Nordmann, André Moesch"

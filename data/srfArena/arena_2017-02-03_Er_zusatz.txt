@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Trumps ""Muslim-Ban"""
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Globalisierung, Abschottungspolitik"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"emotional, heiter"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"man lässt sich nicht ausreden"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"Trump-Befürworter (James Foley) vs. -Gegner (Rest)"

@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Strassenfonds NAF"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Finanzierung ÖV"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"gesittet"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"sehr höflich"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"Grüne/SP vs. Rest"

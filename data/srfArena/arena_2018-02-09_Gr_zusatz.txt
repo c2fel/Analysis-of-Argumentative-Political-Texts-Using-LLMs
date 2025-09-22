@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag";"X__1"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Pauschalbesteuerung";NA
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";NA;"Neue Steuerreform"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"hitzig";NA
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"meist respektvoll";NA
-"Konfliktstruktur";"Welche Lager bildeten sich?";"SP/Grüne vs. FDP/Basler Zeitung";NA

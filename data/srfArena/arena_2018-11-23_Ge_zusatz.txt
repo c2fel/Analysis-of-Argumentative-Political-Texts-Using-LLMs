@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Transparenz- Initiative"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Geldspielgesetz"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"Sachlich"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"Respektvoll, man hat sich nicht immer ausreden lasen"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"Mitte-Rechts gegen Mitte-Links"

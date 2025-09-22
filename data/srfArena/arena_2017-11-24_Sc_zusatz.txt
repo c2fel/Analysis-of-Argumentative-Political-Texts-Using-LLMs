@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"EWR"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"EU, Bilaterale, MEI"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"sachlich"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"korrekt"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"Blocher vs. Rest"

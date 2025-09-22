@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Populismus"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"USR III, Migration, Personenfreizügigkeit; Masseneinwanderungsinitiative, Bilaterale"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"schnelles hin und her, mit unterbrechungen, im am thema vorbei diskutiert"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"Sehr ausweichend und jeder hat seine Standpunkte/Parte vertreten"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"Triangle: links-rechts-mitte"

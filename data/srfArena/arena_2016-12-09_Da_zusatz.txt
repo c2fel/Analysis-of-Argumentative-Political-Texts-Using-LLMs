@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Populismus"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"MEI, EU, Islam"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"hitzig"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"angriffig"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"SVP, FPÖ vs. FDP, Operation Libero"

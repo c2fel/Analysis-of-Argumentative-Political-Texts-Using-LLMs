@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Zweite Gotthardröhre"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Sanierung, Verladung"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"hitzig"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"mehrheitlich respektvoll"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"Bundesrat/SVP vs. SP/Grüne"

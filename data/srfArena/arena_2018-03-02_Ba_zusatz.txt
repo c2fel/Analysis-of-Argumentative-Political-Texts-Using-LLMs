@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Freihandelsabkommen"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Fair-Food- und Ernährungssouveränitäts Initiative"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"gesittet"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"respektvoll"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"CVP/Grüne vs. FDP/Avenir Suisse"

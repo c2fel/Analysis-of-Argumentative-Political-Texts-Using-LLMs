@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Christliche Werte"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Islamistischer Fundamentalismus"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"hitzig"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"sachlich"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"CVP, SVP vs. BDP, SP (SVP und CVP nicht komplett Deckungsgleich)"

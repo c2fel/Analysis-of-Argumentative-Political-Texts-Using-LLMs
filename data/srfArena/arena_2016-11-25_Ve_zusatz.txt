@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Landwirtschaft - Bauern"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Direktzahlungen, Stablisierungsprogramm, Ernöhrungssicherheit"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"Linien wurden stark verteidigt"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"respektvoll aber hart"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"SVP, CVP vs. FDP, SP"

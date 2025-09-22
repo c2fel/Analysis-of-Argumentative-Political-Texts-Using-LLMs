@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Finanzierung Strassenbau und -unterhalt"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Einwanderung Schweiz, Mlichkuhinitiative"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"emotional, aber mehrheitlich gesittet"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"man lässt sich mehrheitlich ausreden"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"SVP/FDP vs. SP/Grüne"

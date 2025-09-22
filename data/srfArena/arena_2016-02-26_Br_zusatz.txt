@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Armeewaffen Zuhause?"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Waffenexport"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"gesittet"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"respektvoll, man lässt sich ausreden"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"SVP vs. Rest"

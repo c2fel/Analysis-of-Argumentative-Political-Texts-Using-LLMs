@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Rahmenabkommen"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Bukaterale, Lohnschutz"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"Hitzig, mit viel hin und her"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"Respektvoll aber hart"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"SVP vs. SP vs.  GLP, FDP"

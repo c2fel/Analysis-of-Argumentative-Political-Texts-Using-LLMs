@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Milizparlament (Lohn), Schweiz-EU"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";""
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"moderat"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"respektvoll"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"SVP vs FDP/BDP/GLP/CVP vs SP"

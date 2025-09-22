@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"No Billag Initiative"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"-"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"Grösstenteils sachlich"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"Respektvoll, aber direkt"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"SVP vs. FDP, SP"

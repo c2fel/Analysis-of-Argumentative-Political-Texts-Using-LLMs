@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Brexit"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Schweiz-EU"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";NA
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"angriffig"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"Köppel vs Ricklin"

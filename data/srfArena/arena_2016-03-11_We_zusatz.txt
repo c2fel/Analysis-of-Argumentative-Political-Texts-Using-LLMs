@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Adoptionsrechte für gleichgeschlechtliche Ehepaare"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Gleichgeschlechtliche Ehe"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"emotional, hitzig"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"man lässt sich trotzdem mehrheitlich ausreden"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"SVP/Kirche vs. Rest"

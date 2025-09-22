@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Flüchtlingsdrama"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Eurosur"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"sachlich, z.T. hitzig"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"z.T. angriffig"
-"Konfliktstruktur";"Welche Lager bildeten sich?";""

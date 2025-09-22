@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Selbstbestimmungsinitiative, Schweizer Recht vs. Europarecht"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Masseneinwanderungsinitiative"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"gesittet"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"man lässt sich mehrheitlich ausreden"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"SVP vs. Rest"

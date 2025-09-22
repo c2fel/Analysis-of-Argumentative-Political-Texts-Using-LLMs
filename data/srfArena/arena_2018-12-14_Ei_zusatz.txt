@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Migrationspakt UNO"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Migrationspolitik, Flüchtlingspolitik"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"Emotional"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"Nicht aussprechen lassen,direkte Angriffe"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"SVP, FDP - SP"

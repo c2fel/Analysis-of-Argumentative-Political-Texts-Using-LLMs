@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Ablhenung der Steuerreform USR III"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Soziale Umverteilung"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"gesittet"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"höflich, man lässt sich ausreden"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"FDP vs. Rest"

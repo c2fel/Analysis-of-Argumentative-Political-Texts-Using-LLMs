@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"USR III-AHV 2020 Paket"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Versicherungsgesetz"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"Sehr sachlich"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"Sehr respektvol"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"Konsens der Parreien vs. Junge GLP"

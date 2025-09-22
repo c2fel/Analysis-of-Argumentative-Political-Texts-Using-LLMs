@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Fall Rupperswil"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Verwahrungen, Opferhilfe, Prävention"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"z.T. emotional, ruhig"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"respektvoll"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"keine wirklichen Konfliktlager"

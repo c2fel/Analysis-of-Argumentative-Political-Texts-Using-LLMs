@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Politik am Volk vorbei?"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Altersvorsorge 2020, USR III, EU, Rahmenabkommen"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"Sehr sachlich"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"Sehr respektvoll"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"Unterschiedki he Konstelationen, je nach Thema"

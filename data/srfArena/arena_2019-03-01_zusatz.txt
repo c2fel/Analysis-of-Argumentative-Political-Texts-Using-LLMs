@@ -1,6 +1,0 @@
-"Dimensionen;""Beschrieb"";""Eintrag"""
-"Hauptthema;""Welches Thema stand im Vordergrund?"";""Chantal Gallade: Austritt aus SP"""
-"Weitere Themen;""Welche weiteren Themen kamen zur Sprache?"";""Lohnschutz, Europapolitik -> Rahmenabkommen"""
-"Art der Diskussion;""Wie gestaltet sich die Diskussion?"";""hitzig, aber z.T. auch humorvoll"""
-"Umgang;""Wie war der Umgang zw. den Diskutanten?"";""grösstenteils korrekt"""
-"Konfliktstruktur;""Welche Lager bildeten sich?"";""verschiedene (SP gespalten)"""

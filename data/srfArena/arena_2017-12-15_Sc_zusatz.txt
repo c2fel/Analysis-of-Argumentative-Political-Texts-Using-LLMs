@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Detektive IV Rente"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Sozialhilfe"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"Sachlich"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"Respektvoll, teilweise emotionale Beiträge der Zuschauer"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"SVO, CVP vs. SP, Grüne"

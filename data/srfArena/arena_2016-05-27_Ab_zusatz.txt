@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Service Public Initiative"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";NA
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"viele persönliche Geschichten"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"respektvoll"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"Salvisberg vs Rytz"

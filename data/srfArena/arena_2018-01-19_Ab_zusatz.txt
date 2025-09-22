@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag";"X__1"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Finanzordnung: Darf der Bund weiterhin Steuern erheben?";NA
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";NA;"Staat und Demokratie"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"gesellig";NA
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"respektvoll";NA
-"Konfliktstruktur";"Welche Lager bildeten sich?";"UP vs. rest";NA

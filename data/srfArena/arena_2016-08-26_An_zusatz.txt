@@ -1,6 +1,0 @@
-"Dimensionen";"Beschrieb";"Eintrag"
-"Hauptthema";"Welches Thema stand im Vordergrund?";"Südgrenze (Flüchtlinge)"
-"Weitere Themen";"Welche weiteren Themen kamen zur Sprache?";"Asylgesetz, Dublin-Abkommen"
-"Art der Diskussion";"Wie gestaltet sich die Diskussion?";"hitzig"
-"Umgang";"Wie war der Umgang zw. den Diskutanten?";"respektvoll"
-"Konfliktstruktur";"Welche Lager bildeten sich?";"SVP vs Grüne (aber: verschiedene Konfliktstrukturen, d.h. in einigen Punkten waren sich die Politiker auch einig)"
