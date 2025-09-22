@@ -60,9 +60,9 @@ docker logs christoph-zweifel-container
 
 To stop and remove both the container and the built app:
 ```
-docker stop thesis-container2               
-docker rm thesis-container2
-docker rmi argumentative-analysis-app
+docker stop christoph-zweifel-container
+docker rm christoph-zweifel-container
+docker rmi smart-voting-booklet-app
 ```
 
 ## Acknowledgement
