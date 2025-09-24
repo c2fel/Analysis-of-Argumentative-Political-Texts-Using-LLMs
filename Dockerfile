@@ -13,6 +13,6 @@ COPY . .
 
 ENV PYTHONPATH=/app
 
-EXPOSE 5000
+EXPOSE 10002
 
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:10002", "app:app"]

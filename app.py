@@ -1,5 +1,12 @@
+import os
 import sys
 import time
+
+from xai_sdk import Client
+from xai_sdk.search import SearchParameters, web_source
+from xai_sdk.chat import system, user
+
+from llm_files.clients import get_openai_client, get_xai_client
 from flask import Flask, jsonify, render_template, request
 
 from functions import load_votes, load_vote, count_votes, classify_vote, parse_votes, initialize_data
@@ -64,7 +71,7 @@ def vorlage_html():
 
 if __name__ == '__main__':
     s = time.time()
-    success, return_string = initialize_data(TESTMODE=True) # TESTMODE=True
+    success, return_string = initialize_data() # TESTMODE=True
     if not success:
         print(f"Failed to initialize data: {return_string}")
         sys.exit(0)
@@ -73,4 +80,4 @@ if __name__ == '__main__':
     # app.run(debug=True, use_reloader=False) # for later: debug=False or at least: use_reloader=False (better performance at start up)
 
     # Docker version
-    app.run(host='0.0.0.0', port=5000, debug=False)
+    app.run(host='0.0.0.0', port=10002, debug=False)
