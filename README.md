@@ -38,7 +38,7 @@ The test mode can be set in `app.py` by `initialize_data(TESTMODE=True)`. This l
 
 ### Docker Container on HSG Infrastructure
 Let's configure the app with docker as followed:
-- Container name: `christoph-zweifel-container`
+- Container name: `christoph-zweifel-thesis`
 - App name: `smart-voting-booklet-app`
 
 To start the docker container run the following commands:
@@ -49,28 +49,24 @@ docker build -t smart-voting-booklet-app .
 ```
 Start the Docker container with the app
 ```
-docker run -d -p 5000:5000 --name christoph-zweifel-container smart-voting-booklet-app
-```
-Start the Docker container with the app (HSG Server) `depreciated`
-```
-docker run -d -p 10002:10002 --name christoph-zweifel-container smart-voting-booklet-app
+docker run -d -p 10002:10002 --name christoph-zweifel-thesis smart-voting-booklet-app
 ```
 Start the Docker container on thesis.zweifel.cz
 ```
-docker run -d --name christoph-zweifel-app -p 127.0.0.1:10002:10002 -e GUNICORN_CMD_ARGS="--bind 0.0.0.0:10002 --workers=2 --threads=2 --timeout=60 --access-logfile - --error-logfile - --forwarded-allow-ips=*" smart-voting-booklet-app:latest
+docker run -d --name christoph-zweifel-thesis -p 127.0.0.1:10002:10002 -e GUNICORN_CMD_ARGS="--bind 0.0.0.0:10002 --workers=2 --threads=2 --timeout=60 --access-logfile - --error-logfile - --forwarded-allow-ips=*" smart-voting-booklet-app:latest
 ```
 
 
 To check if things are running smoothly or debug:
 ```
 docker ps
-docker logs christoph-zweifel-container
+docker logs christoph-zweifel-thesis
 ```
 
 To stop and remove both the container and the built app:
 ```
-docker stop christoph-zweifel-container
-docker rm christoph-zweifel-container
+docker stop christoph-zweifel-thesis
+docker rm christoph-zweifel-thesis
 docker rmi smart-voting-booklet-app
 ```
 

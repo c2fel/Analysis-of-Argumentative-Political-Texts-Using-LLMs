@@ -16,7 +16,33 @@ app = Flask(__name__)
 # for llm call at run time
 @app.route('/llm-interactions', methods=['POST'])
 def llm_actions():
-    return jsonify({"hello": "world"})
+    data = request.get_json(force=True)  # force=True ensures it parses even without correct header
+
+    # Access fields
+    highlighted_text = data.get("highlighted_text", None)
+    markdown_path = data.get("markdown_path", None)
+    with open(markdown_path, "r", encoding="utf-8") as f:
+        markdown_text = f.read()
+    prompt = f"Explain the following quote from a Swiss popular vote information text:\n{highlighted_text} \n\nTo give you additional context about the quote, here is the full voting booklet where the quote originated: \n{markdown_text}"
+
+    model = data.get("model", "grok-4")
+    xai_client = get_xai_client()
+    chat = xai_client.chat.create(model=model)
+    chat.append(system("You are a highly intelligent AI assistant helping Swiss citizens to freely form an opinion on their own by adding context to their questions and task."))
+    chat.append(user(prompt))
+    response = chat.sample()
+
+    # Do something with it
+    output = {
+        "message": "Hello World",
+        "highlighted_text": highlighted_text,
+        "markdown_path": markdown_path,
+        "model": model,
+        "prompt": prompt,
+        "output": response.content
+    }
+
+    return jsonify(output), 200
 
 # This is currently not used, but prepared if eventually a UI based on Next.JS with SSR will be developed
 @app.route('/api/get-votes')
