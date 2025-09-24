@@ -182,7 +182,7 @@ Highcharts.chart('{{ k.vote.titel | replace(" im ", " ") | lower | replace(" ", 
 {% endfor %}
 
                         </div>
-                        <div class="col-4 bg-secondary text-white" style="min-height: 50vh;">
+                        <div id="outputs" class="col-4 bg-secondary text-white" style="min-height: 50vh;">
                             <h3>Annotations / Chat</h3>
 
                         </div>
@@ -209,8 +209,8 @@ Highcharts.chart('{{ k.vote.titel | replace(" im ", " ") | lower | replace(" ", 
     </div>
     <br /><br />
     <div class="bottom-bar">
-        <p class="text-center">LLM Actions <button type="button" class="btn btn-primary" onclick="sendMarkedText()">Explain</button> <button type="button" class="btn btn-secondary" onclick="sendMarkedText()">Chat</button> <button type="button" class="btn btn-info">Argumentation Quality</button></p>
-        <p id="actionOutput">LoremOutput</p>
+        <p class="text-center">LLM Actions <button type="button" class="btn btn-primary" onclick="sendMarkedText()" disabled>Explain</button> <button type="button" class="btn btn-secondary" onclick="sendMarkedText()" disabled>Chat</button> <button type="button" class="btn btn-info" disabled>Argumentation Quality</button></p>
+        <code id="actionOutput">LoremOutput</code>
     </div>
 </main>
 {% include "footer.html" %}

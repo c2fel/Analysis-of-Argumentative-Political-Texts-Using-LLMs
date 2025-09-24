@@ -51,6 +51,15 @@ Start the Docker container with the app
 ```
 docker run -d -p 5000:5000 --name christoph-zweifel-container smart-voting-booklet-app
 ```
+Start the Docker container with the app (HSG Server) `depreciated`
+```
+docker run -d -p 10002:10002 --name christoph-zweifel-container smart-voting-booklet-app
+```
+Start the Docker container on thesis.zweifel.cz
+```
+docker run -d --name christoph-zweifel-app -p 127.0.0.1:10002:10002 -e GUNICORN_CMD_ARGS="--bind 0.0.0.0:10002 --workers=2 --threads=2 --timeout=60 --access-logfile - --error-logfile - --forwarded-allow-ips=*" smart-voting-booklet-app:latest
+```
+
 
 To check if things are running smoothly or debug:
 ```

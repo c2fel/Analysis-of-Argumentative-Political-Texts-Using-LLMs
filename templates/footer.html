@@ -1,6 +1,6 @@
 <footer class="footer mt-auto py-3 bg-body-tertiary" style="height: 250px;">
     <div class="container d-flex justify-content-between align-items-center">
-        <img src="http://127.0.0.1:5000/static/unisg.jpeg" alt="Logo" style="height:100px;">
+        <img src="/static/unisg.jpeg" alt="Logo" style="height:100px;">
         <span class="text-body-secondary">Master Thesis, Christoph Zweifel</span>
     </div>
 </footer>
@@ -70,10 +70,27 @@
 function sendMarkedText() {
   const selection = window.getSelection();
   const selectedText = selection ? selection.toString() : "";
-  // ENCODE URI COMPONENT, damit Sonderzeichen korrekt übertragen werden!
-  const encoded = encodeURIComponent(selectedText);
+  if (!selectedText) {
+    alert("Kein Text markiert!");
+    return;
+  }
 
-  // Beispiel: Seite neu laden mit GET-Parameter "text"
-  window.location.href = "/?text=" + encoded;
+  // Sende den Text per POST an den Server (ohne Encoding, da JSON)
+  fetch('/llm', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ text: selectedText })
+  })
+  .then(response => response.json())
+  .then(data => {
+    // Blende den LLM-Output im Div ein
+    document.getElementById('outputs').innerHTML = data.output;
+  })
+  .catch(error => {
+    console.error('Fehler:', error);
+    document.getElementById('outputs').innerHTML = 'Fehler beim Abrufen des LLM-Outputs.';
+  });
 }
 </script>

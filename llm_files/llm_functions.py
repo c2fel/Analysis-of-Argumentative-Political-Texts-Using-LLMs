@@ -177,11 +177,11 @@ def search_news_articles(vote_title: str, vote_date: str, vote_id: int) -> dict[
     # FIXME how do we handle for this in the user study?
 
     # Prompt
-    user_message = (
+    system_message = (
         "You are a highly intelligent AI assistant helping Swiss citizens "
         "to freely form an opinion on their own by adding context to their questions and tasks."
     )
-    system_message = (
+    user_message = (
         f"Suche 3-5 Zeitungsartikel, die die Abstimmung zur {vote_title} diskutieren, "
         f"welche vor dem {vote_date} publiziert wurden. "
         "Achte darauf, dass du Schweizer Zeitungen mit verschiedenen politischen Ausrichtungen "

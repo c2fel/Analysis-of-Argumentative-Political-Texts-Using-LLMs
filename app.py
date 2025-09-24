@@ -13,6 +13,11 @@ from functions import load_votes, load_vote, count_votes, classify_vote, parse_v
 
 app = Flask(__name__)
 
+# for llm call at run time
+@app.route('/llm-interactions', methods=['POST'])
+def llm_actions():
+    return jsonify({"hello": "world"})
+
 # This is currently not used, but prepared if eventually a UI based on Next.JS with SSR will be developed
 @app.route('/api/get-votes')
 def api_get_votes():
