@@ -10,6 +10,7 @@ from llm_files.clients import get_openai_client, get_xai_client
 from flask import Flask, jsonify, render_template, request
 
 from functions import load_votes, load_vote, count_votes, classify_vote, parse_votes, initialize_data
+from llm_files.llm_functions import chat_with_llm, explain_quote
 
 app = Flask(__name__)
 
@@ -21,28 +22,44 @@ def llm_actions():
     # Access fields
     highlighted_text = data.get("highlighted_text", None)
     markdown_path = data.get("markdown_path", None)
-    with open(markdown_path, "r", encoding="utf-8") as f:
-        markdown_text = f.read()
-    prompt = f"Explain the following quote from a Swiss popular vote information text:\n{highlighted_text} \n\nTo give you additional context about the quote, here is the full voting booklet where the quote originated: \n{markdown_text}"
 
-    model = data.get("model", "grok-4")
-    xai_client = get_xai_client()
-    chat = xai_client.chat.create(model=model)
-    chat.append(system("You are a highly intelligent AI assistant helping Swiss citizens to freely form an opinion on their own by adding context to their questions and task."))
-    chat.append(user(prompt))
-    response = chat.sample()
+    explanations = explain_quote(highlighted_text, markdown_path)
 
     # Do something with it
     output = {
         "message": "Hello World",
         "highlighted_text": highlighted_text,
         "markdown_path": markdown_path,
-        "model": model,
-        "prompt": prompt,
-        "output": response.content
+        "output": explanations
     }
 
     return jsonify(output), 200
+
+
+@app.route('/chat', methods=['GET', 'POST'])
+def chat_interaction():
+    """
+    GET /chat: given a user's session and a voting topic, provides a list of unique chatIds
+    (which can used to further extend conversation)
+
+    POST /chat:
+
+    :return:
+    """
+    if request.method == 'GET':
+        return jsonify({"text": "es giht nünt"}), 200
+    elif request.method == 'POST':
+        data = request.get_json(force=True)  # force=True ensures it parses even without correct header
+
+        # Access fields
+        input = data.get("input", None)
+        markdown_path = data.get("markdown_path", None)
+
+        response = chat_with_llm(input, markdown_path)
+
+        return jsonify(response), 200
+    else:
+        return jsonify({"text": "Bad Request"}), 400
 
 # This is currently not used, but prepared if eventually a UI based on Next.JS with SSR will be developed
 @app.route('/api/get-votes')

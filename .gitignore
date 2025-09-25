@@ -172,3 +172,9 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# npm stuff
+node_modules/
+
+# do not commit markdown files, only only selected ones for debug/testing
+markdown_output/

@@ -503,3 +503,69 @@ def write_summary_by_markdown(markdown_path):
                     # news_obj_xai = News(title=vote_title, vote_id=vote_id, article_list=[])
 
     return result
+
+def explain_quote(highlighted_text: str, markdown_path: str) -> dict[str, Any]:
+    with open(markdown_path, "r", encoding="utf-8") as f:
+        markdown_text = f.read()
+
+    prompt = f"Explain the following quote from a Swiss popular vote information text:\n{highlighted_text} \n\nTo give you additional context about the quote, here is the full voting booklet where the quote originated: \n{markdown_text}"
+    system_message = (
+        "You are a highly intelligent AI assistant helping Swiss citizens to freely form "
+        "an opinion on their own by adding context to their questions and tasks."
+    )
+    user_message = (prompt)
+
+    # Umgebungsvariablen laden
+    load_dotenv()
+    model_config = json.loads(os.environ['MODEL_CONFIG'])
+
+    # OpenAI Client initialisieren
+    openai_client = get_openai_client()
+    messages = [
+        {"role": "system", "content": system_message},
+        {"role": "user", "content": user_message},
+    ]
+
+    # Natives xAI Client initialisieren
+    xai_client = get_xai_client()
+
+    result = {}
+
+    for provider in model_config:
+        for model in provider["models"]:
+            if provider["provider"] == 'OpenAI':
+                #  GPT Request mit Web Search
+                try:
+                    openai_response = openai_client.responses.create(
+                        model=model,
+                        input=messages,
+                    )
+                    if model == "gpt-5-nano":  # tpm limit of 200 000, one markdown request has ca 80% of that
+                        # warte einige Sekunden um bei gpt-5 nano eine rate limit zu erreichen
+                        time.sleep(1)
+
+                    result[model] = openai_response.output_text
+
+                except Exception as e:
+                    print(f"Fehler beim OpenAI API-Aufruf {sys._getframe().f_code.co_name}: {e}")
+                    # news_obj_openai = News(title=vote_title, vote_id=vote_id, article_list=[])
+            elif provider["provider"] == 'xAI':
+                try:
+                    xai_chat = xai_client.chat.create(
+                        model=model,
+                        messages=[system(system_message)],
+                    )
+
+                    # xAI Request
+                    xai_chat.append(user(user_message))
+
+                    result[model] = xai_chat.sample()
+
+                except Exception as e:
+                    print(f"Fehler beim xAI API-Aufruf {sys._getframe().f_code.co_name}: {e}")
+                    # news_obj_xai = News(title=vote_title, vote_id=vote_id, article_list=[])
+
+    return result
+
+def chat_with_llm(input: str, markdown_path: str) -> dict[str, Any]:
+    pass
