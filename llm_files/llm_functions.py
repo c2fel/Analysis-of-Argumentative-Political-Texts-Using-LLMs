@@ -432,11 +432,11 @@ def write_summary_by_markdown(markdown_path):
         markdown_text = f.read()
 
     # Prompt
-    user_message = (
+    system_message = (
         "You are a highly intelligent AI assistant helping Swiss citizens "
         "to freely form an opinion on their own by adding context to their questions and tasks."
     )
-    system_message = (
+    user_message = (
         f"Basierend auf dem Markdown file, erstelle mir ein neutrales Summary, "
         f"welches ein Stimmbürger zur Meinungsbildung nutzen will. "
         f"Zur Recherche kannst du auch Weblinks besuchen, die im Markdown enthalten sind. "
