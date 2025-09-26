@@ -15,25 +15,18 @@ from llm_files.llm_functions import chat_with_llm, explain_quote
 app = Flask(__name__)
 
 # for llm call at run time
-@app.route('/llm-interactions', methods=['POST'])
-def llm_actions():
-    data = request.get_json(force=True)  # force=True ensures it parses even without correct header
+@app.route('/explain/<int:voteId>', methods=['POST'])
+def llm_actions(voteId):
+    language = request.args.get('language', 'de')
+    model = request.args.get('model', 'grok-4')
 
     # Access fields
+    data = request.get_json(force=True)  # force=True ensures it parses even without correct header
     highlighted_text = data.get("highlighted_text", None)
-    markdown_path = data.get("markdown_path", None)
 
-    explanations = explain_quote(highlighted_text, markdown_path)
+    explanations = explain_quote(highlighted_text, voteId, language, model)
 
-    # Do something with it
-    output = {
-        "message": "Hello World",
-        "highlighted_text": highlighted_text,
-        "markdown_path": markdown_path,
-        "output": explanations
-    }
-
-    return jsonify(output), 200
+    return jsonify(explanations), 200
 
 
 @app.route('/chat', methods=['GET', 'POST'])

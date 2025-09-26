@@ -504,16 +504,21 @@ def write_summary_by_markdown(markdown_path):
 
     return result
 
-def explain_quote(highlighted_text: str, markdown_path: str) -> dict[str, Any]:
+def explain_quote(highlighted_text: str, voteId: int, language: str, model: str) -> dict[str, Any]:
+    # markdown_output/erlaeuterungen_6770_de.md
+    markdown_path = f"markdown_output/erlaeuterungen_{voteId}_{language}.md"
     with open(markdown_path, "r", encoding="utf-8") as f:
         markdown_text = f.read()
 
-    prompt = f"Explain the following quote from a Swiss popular vote information text:\n{highlighted_text} \n\nTo give you additional context about the quote, here is the full voting booklet where the quote originated: \n{markdown_text}"
+    user_message = (
+        f"Explain the following quote from a Swiss popular vote information text:\n{highlighted_text} \n\n"
+        f"To give you additional context about the quote, here is the full voting booklet "
+        f"where the quote originated: \n{markdown_text}"
+    )
     system_message = (
         "You are a highly intelligent AI assistant helping Swiss citizens to freely form "
         "an opinion on their own by adding context to their questions and tasks."
     )
-    user_message = (prompt)
 
     # Umgebungsvariablen laden
     load_dotenv()
@@ -530,11 +535,13 @@ def explain_quote(highlighted_text: str, markdown_path: str) -> dict[str, Any]:
     xai_client = get_xai_client()
 
     result = {}
+    result["message"] = "Hello World, this is just a test message"
+    result["highlighted_text"] = highlighted_text
 
     for provider in model_config:
         for model in provider["models"]:
             if provider["provider"] == 'OpenAI':
-                #  GPT Request mit Web Search
+                #  GPT Request
                 try:
                     openai_response = openai_client.responses.create(
                         model=model,
@@ -544,7 +551,8 @@ def explain_quote(highlighted_text: str, markdown_path: str) -> dict[str, Any]:
                         # warte einige Sekunden um bei gpt-5 nano eine rate limit zu erreichen
                         time.sleep(1)
 
-                    result[model] = openai_response.output_text
+                    print(openai_response.keys())
+                    result["responses"][model] = openai_response.output_text
 
                 except Exception as e:
                     print(f"Fehler beim OpenAI API-Aufruf {sys._getframe().f_code.co_name}: {e}")
@@ -559,7 +567,8 @@ def explain_quote(highlighted_text: str, markdown_path: str) -> dict[str, Any]:
                     # xAI Request
                     xai_chat.append(user(user_message))
 
-                    result[model] = xai_chat.sample()
+                    print(xai_chat.keys())
+                    result["responses"][model] = xai_chat.sample()
 
                 except Exception as e:
                     print(f"Fehler beim xAI API-Aufruf {sys._getframe().f_code.co_name}: {e}")

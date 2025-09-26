@@ -31,7 +31,21 @@ MODEL_CONFIG=[{"provider": "OpenAI", "models": ["gpt-5", "gpt-5-mini"]}, {"provi
 Feel free to amend `MODEL_CONFIG` to your need or add future models. `gpt-5-nano` is not used due to the TPM limit of 200 000 token (as of 20.09.2025), see [API Documentation](https://platform.openai.com/docs/models/gpt-5-nano) for more details.
 
 ### Initialize Prototype
-Run `prototype/app.py` and open [http://127.0.0.1:5000](http://127.0.0.1:5000) in browser. Multilanguage and one LLM is implemented. For demonstration and performance purposes, all necessary metadata is stored in `prototype/static/votes.json`. If you want to run the app from scratch you need to create a `.env` file in `prototype/agents/` and add your own API keys.
+Run `prototype/app.py` and open [http://127.0.0.1:10002](http://127.0.0.1:10002) in browser. Multilanguage and one LLM is implemented. For demonstration and performance purposes, all necessary metadata is stored in `prototype/static/votes.json`. If you want to run the app from scratch you need to create a `.env` file in `prototype/agents/` and add your own API keys and necessary GET endpoints to import voting data.
+
+```
+HUGGINFACE_TOKEN=[YOUR_SECRET]
+OPENAI_API_KEY=[YOUR_SECRET]
+XAI_API_KEY=[YOUR_SECRET]
+PUBLICAI_API_KEY=[YOUR_SECRET]
+BK_API_VORLAGE=[URL]
+BK_API_ERLAEUTERUNGEN=[BASE_URL]/{vote_id}/{file_name}
+MODEL_CONFIG=[
+    {"provider": "OpenAI", "models": ["gpt-5", "gpt-5-mini", "gpt-5-nano"]},
+    {"provider": "xAI", "models": ["grok-4", "grok-3-mini"]},
+    {"provider": "PublicAI", "models": ["swiss-ai/apertus-70b-instruct", "swiss-ai/apertus-8b-instruct"]}
+]
+```
 
 #### Test mode
 The test mode can be set in `app.py` by `initialize_data(TESTMODE=True)`. This limits the number of votes to 1 to 5 elements, instead of loading and processing all 380 popular votes, which are currently available.
@@ -51,11 +65,11 @@ Start the Docker container with the app
 ```
 docker run -d -p 10002:10002 --name christoph-zweifel-thesis smart-voting-booklet-app
 ```
+
 Start the Docker container on thesis.zweifel.cz
 ```
 docker run -d --name christoph-zweifel-thesis -p 127.0.0.1:10002:10002 -e GUNICORN_CMD_ARGS="--bind 0.0.0.0:10002 --workers=2 --threads=2 --timeout=60 --access-logfile - --error-logfile - --forwarded-allow-ips=*" smart-voting-booklet-app:latest
 ```
-
 
 To check if things are running smoothly or debug:
 ```
